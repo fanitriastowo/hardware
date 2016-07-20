@@ -17,6 +17,15 @@
 	<!-- Scan classpath for annotations @Controller only -->
 	<context:component-scan base-package="org.itsolution.hardware.penjualan.controller" />
 
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property
+			name="location"
+			value="/WEB-INF/jasper-config.xml" />
+		<property
+			name="order"
+			value="0" />
+	</bean>
+
 	<!-- Map simple view name such as "test" into /WEB-INF/views/test.jsp -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property
@@ -25,6 +34,9 @@
 		<property
 			name="suffix"
 			value=".jsp" />
+		<property
+			name="order"
+			value="1" />
 	</bean>
 
 	<bean
