@@ -40,7 +40,7 @@ public class InitDB {
 
 	@PostConstruct
 	public void initialDB() {
-
+	    
 		RoleEntity admin = roleRepository.findOneByName("ROLE_ADMIN");
 		if (admin != null) {
 			return;
