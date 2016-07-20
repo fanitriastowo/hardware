@@ -2,7 +2,7 @@
 	<ul class="x-navigation">
 
 		<li class="xn-logo">
-			<a href='<spring:url value="/administrator/dashboard" />'>ATLANT</a>
+			<a href='<spring:url value="/" />'>HARDWARE</a>
 			<a href="#" class="x-navigation-control"></a>
 		</li>
 

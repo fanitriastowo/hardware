@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
@@ -10,19 +13,29 @@
 	<jpa:repositories base-package="org.itsolution.hardware.penjualan.repository" />
 
 	<context:component-scan base-package="org.itsolution.hardware.penjualan">
-		<context:exclude-filter type="annotation"
+		<context:exclude-filter
+			type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
+	<bean
+		class="org.springframework.orm.jpa.JpaTransactionManager"
 		id="transactionManager">
-		<property name="dataSource" ref="dataSource" />
+		<property
+			name="dataSource"
+			ref="dataSource" />
 	</bean>
 
 	<import resource="security.xml" />
 
-	<import resource="database-dev.xml" />
+	<beans profile="dev">
+		<import resource="database-dev.xml" />
+	</beans>
+
+	<beans profile="openshift">
+		<import resource="database-prod.xml" />
+	</beans>
 
 </beans>
