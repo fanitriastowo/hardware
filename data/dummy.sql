@@ -1,11 +1,11 @@
 --
--- PostgreSQL database dump
+-- adminajufxfwQL database dump
 --
 
 -- Dumped from database version 9.5.3
 -- Dumped by pg_dump version 9.5.3
 
--- Started on 2016-07-20 19:57:25
+-- Started on 2016-07-20 22:07:14
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -14,37 +14,6 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET row_security = off;
-
-DROP DATABASE penjualanhardware;
---
--- TOC entry 2236 (class 1262 OID 16543)
--- Name: penjualanhardware; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE penjualanhardware WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'English_United States.1252' LC_CTYPE = 'English_United States.1252';
-
-
-ALTER DATABASE penjualanhardware OWNER TO postgres;
-
-\connect penjualanhardware
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 7 (class 2615 OID 16750)
--- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO postgres;
 
 --
 -- TOC entry 1 (class 3079 OID 12355)
@@ -67,7 +36,7 @@ SET search_path = public, pg_catalog;
 
 --
 -- TOC entry 188 (class 1259 OID 16841)
--- Name: hibernate_sequence; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: hibernate_sequence; Type: SEQUENCE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE SEQUENCE hibernate_sequence
@@ -78,7 +47,7 @@ CREATE SEQUENCE hibernate_sequence
     CACHE 1;
 
 
-ALTER TABLE hibernate_sequence OWNER TO postgres;
+ALTER TABLE hibernate_sequence OWNER TO adminajufxfw;
 
 SET default_tablespace = '';
 
@@ -86,7 +55,7 @@ SET default_with_oids = false;
 
 --
 -- TOC entry 181 (class 1259 OID 16752)
--- Name: master_brand; Type: TABLE; Schema: public; Owner: postgres
+-- Name: master_brand; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE master_brand (
@@ -96,11 +65,11 @@ CREATE TABLE master_brand (
 );
 
 
-ALTER TABLE master_brand OWNER TO postgres;
+ALTER TABLE master_brand OWNER TO adminajufxfw;
 
 --
 -- TOC entry 182 (class 1259 OID 16760)
--- Name: master_kategori; Type: TABLE; Schema: public; Owner: postgres
+-- Name: master_kategori; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE master_kategori (
@@ -110,11 +79,11 @@ CREATE TABLE master_kategori (
 );
 
 
-ALTER TABLE master_kategori OWNER TO postgres;
+ALTER TABLE master_kategori OWNER TO adminajufxfw;
 
 --
 -- TOC entry 183 (class 1259 OID 16768)
--- Name: master_produk; Type: TABLE; Schema: public; Owner: postgres
+-- Name: master_produk; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE master_produk (
@@ -132,11 +101,11 @@ CREATE TABLE master_produk (
 );
 
 
-ALTER TABLE master_produk OWNER TO postgres;
+ALTER TABLE master_produk OWNER TO adminajufxfw;
 
 --
 -- TOC entry 184 (class 1259 OID 16777)
--- Name: master_role; Type: TABLE; Schema: public; Owner: postgres
+-- Name: master_role; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE master_role (
@@ -145,11 +114,11 @@ CREATE TABLE master_role (
 );
 
 
-ALTER TABLE master_role OWNER TO postgres;
+ALTER TABLE master_role OWNER TO adminajufxfw;
 
 --
 -- TOC entry 185 (class 1259 OID 16782)
--- Name: master_user; Type: TABLE; Schema: public; Owner: postgres
+-- Name: master_user; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE master_user (
@@ -165,11 +134,11 @@ CREATE TABLE master_user (
 );
 
 
-ALTER TABLE master_user OWNER TO postgres;
+ALTER TABLE master_user OWNER TO adminajufxfw;
 
 --
 -- TOC entry 186 (class 1259 OID 16790)
--- Name: transaksi_pemesanan; Type: TABLE; Schema: public; Owner: postgres
+-- Name: transaksi_pemesanan; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE transaksi_pemesanan (
@@ -188,11 +157,11 @@ CREATE TABLE transaksi_pemesanan (
 );
 
 
-ALTER TABLE transaksi_pemesanan OWNER TO postgres;
+ALTER TABLE transaksi_pemesanan OWNER TO adminajufxfw;
 
 --
 -- TOC entry 187 (class 1259 OID 16798)
--- Name: transaksi_pengiriman; Type: TABLE; Schema: public; Owner: postgres
+-- Name: transaksi_pengiriman; Type: TABLE; Schema: public; Owner: adminajufxfw
 --
 
 CREATE TABLE transaksi_pengiriman (
@@ -206,772 +175,772 @@ CREATE TABLE transaksi_pengiriman (
 );
 
 
-ALTER TABLE transaksi_pengiriman OWNER TO postgres;
+ALTER TABLE transaksi_pengiriman OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2155 (class 2613 OID 16635)
--- Name: 16635; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16635; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16635');
 
 
-ALTER LARGE OBJECT 16635 OWNER TO postgres;
+ALTER LARGE OBJECT 16635 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2156 (class 2613 OID 16636)
--- Name: 16636; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16636; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16636');
 
 
-ALTER LARGE OBJECT 16636 OWNER TO postgres;
+ALTER LARGE OBJECT 16636 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2157 (class 2613 OID 16637)
--- Name: 16637; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16637; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16637');
 
 
-ALTER LARGE OBJECT 16637 OWNER TO postgres;
+ALTER LARGE OBJECT 16637 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2158 (class 2613 OID 16638)
--- Name: 16638; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16638; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16638');
 
 
-ALTER LARGE OBJECT 16638 OWNER TO postgres;
+ALTER LARGE OBJECT 16638 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2159 (class 2613 OID 16639)
--- Name: 16639; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16639; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16639');
 
 
-ALTER LARGE OBJECT 16639 OWNER TO postgres;
+ALTER LARGE OBJECT 16639 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2160 (class 2613 OID 16640)
--- Name: 16640; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16640; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16640');
 
 
-ALTER LARGE OBJECT 16640 OWNER TO postgres;
+ALTER LARGE OBJECT 16640 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2161 (class 2613 OID 16641)
--- Name: 16641; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16641; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16641');
 
 
-ALTER LARGE OBJECT 16641 OWNER TO postgres;
+ALTER LARGE OBJECT 16641 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2162 (class 2613 OID 16642)
--- Name: 16642; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16642; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16642');
 
 
-ALTER LARGE OBJECT 16642 OWNER TO postgres;
+ALTER LARGE OBJECT 16642 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2163 (class 2613 OID 16643)
--- Name: 16643; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16643; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16643');
 
 
-ALTER LARGE OBJECT 16643 OWNER TO postgres;
+ALTER LARGE OBJECT 16643 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2164 (class 2613 OID 16644)
--- Name: 16644; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16644; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16644');
 
 
-ALTER LARGE OBJECT 16644 OWNER TO postgres;
+ALTER LARGE OBJECT 16644 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2165 (class 2613 OID 16645)
--- Name: 16645; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16645; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16645');
 
 
-ALTER LARGE OBJECT 16645 OWNER TO postgres;
+ALTER LARGE OBJECT 16645 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2166 (class 2613 OID 16739)
--- Name: 16739; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16739; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16739');
 
 
-ALTER LARGE OBJECT 16739 OWNER TO postgres;
+ALTER LARGE OBJECT 16739 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2167 (class 2613 OID 16740)
--- Name: 16740; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16740; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16740');
 
 
-ALTER LARGE OBJECT 16740 OWNER TO postgres;
+ALTER LARGE OBJECT 16740 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2168 (class 2613 OID 16741)
--- Name: 16741; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16741; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16741');
 
 
-ALTER LARGE OBJECT 16741 OWNER TO postgres;
+ALTER LARGE OBJECT 16741 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2169 (class 2613 OID 16742)
--- Name: 16742; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16742; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16742');
 
 
-ALTER LARGE OBJECT 16742 OWNER TO postgres;
+ALTER LARGE OBJECT 16742 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2170 (class 2613 OID 16743)
--- Name: 16743; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16743; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16743');
 
 
-ALTER LARGE OBJECT 16743 OWNER TO postgres;
+ALTER LARGE OBJECT 16743 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2171 (class 2613 OID 16744)
--- Name: 16744; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16744; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16744');
 
 
-ALTER LARGE OBJECT 16744 OWNER TO postgres;
+ALTER LARGE OBJECT 16744 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2172 (class 2613 OID 16745)
--- Name: 16745; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16745; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16745');
 
 
-ALTER LARGE OBJECT 16745 OWNER TO postgres;
+ALTER LARGE OBJECT 16745 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2173 (class 2613 OID 16746)
--- Name: 16746; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16746; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16746');
 
 
-ALTER LARGE OBJECT 16746 OWNER TO postgres;
+ALTER LARGE OBJECT 16746 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2174 (class 2613 OID 16747)
--- Name: 16747; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16747; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16747');
 
 
-ALTER LARGE OBJECT 16747 OWNER TO postgres;
+ALTER LARGE OBJECT 16747 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2175 (class 2613 OID 16748)
--- Name: 16748; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16748; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16748');
 
 
-ALTER LARGE OBJECT 16748 OWNER TO postgres;
+ALTER LARGE OBJECT 16748 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2176 (class 2613 OID 16749)
--- Name: 16749; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16749; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16749');
 
 
-ALTER LARGE OBJECT 16749 OWNER TO postgres;
+ALTER LARGE OBJECT 16749 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2177 (class 2613 OID 16843)
--- Name: 16843; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16843; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16843');
 
 
-ALTER LARGE OBJECT 16843 OWNER TO postgres;
+ALTER LARGE OBJECT 16843 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2178 (class 2613 OID 16844)
--- Name: 16844; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16844; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16844');
 
 
-ALTER LARGE OBJECT 16844 OWNER TO postgres;
+ALTER LARGE OBJECT 16844 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2179 (class 2613 OID 16845)
--- Name: 16845; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16845; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16845');
 
 
-ALTER LARGE OBJECT 16845 OWNER TO postgres;
+ALTER LARGE OBJECT 16845 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2180 (class 2613 OID 16846)
--- Name: 16846; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16846; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16846');
 
 
-ALTER LARGE OBJECT 16846 OWNER TO postgres;
+ALTER LARGE OBJECT 16846 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2181 (class 2613 OID 16847)
--- Name: 16847; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16847; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16847');
 
 
-ALTER LARGE OBJECT 16847 OWNER TO postgres;
+ALTER LARGE OBJECT 16847 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2182 (class 2613 OID 16848)
--- Name: 16848; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16848; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16848');
 
 
-ALTER LARGE OBJECT 16848 OWNER TO postgres;
+ALTER LARGE OBJECT 16848 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2183 (class 2613 OID 16849)
--- Name: 16849; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16849; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16849');
 
 
-ALTER LARGE OBJECT 16849 OWNER TO postgres;
+ALTER LARGE OBJECT 16849 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2184 (class 2613 OID 16850)
--- Name: 16850; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16850; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16850');
 
 
-ALTER LARGE OBJECT 16850 OWNER TO postgres;
+ALTER LARGE OBJECT 16850 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2185 (class 2613 OID 16851)
--- Name: 16851; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16851; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16851');
 
 
-ALTER LARGE OBJECT 16851 OWNER TO postgres;
+ALTER LARGE OBJECT 16851 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2186 (class 2613 OID 16852)
--- Name: 16852; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16852; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16852');
 
 
-ALTER LARGE OBJECT 16852 OWNER TO postgres;
+ALTER LARGE OBJECT 16852 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2187 (class 2613 OID 16853)
--- Name: 16853; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16853; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16853');
 
 
-ALTER LARGE OBJECT 16853 OWNER TO postgres;
+ALTER LARGE OBJECT 16853 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2188 (class 2613 OID 16854)
--- Name: 16854; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16854; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16854');
 
 
-ALTER LARGE OBJECT 16854 OWNER TO postgres;
+ALTER LARGE OBJECT 16854 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2189 (class 2613 OID 16855)
--- Name: 16855; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16855; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16855');
 
 
-ALTER LARGE OBJECT 16855 OWNER TO postgres;
+ALTER LARGE OBJECT 16855 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2190 (class 2613 OID 16856)
--- Name: 16856; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16856; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16856');
 
 
-ALTER LARGE OBJECT 16856 OWNER TO postgres;
+ALTER LARGE OBJECT 16856 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2191 (class 2613 OID 16857)
--- Name: 16857; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16857; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16857');
 
 
-ALTER LARGE OBJECT 16857 OWNER TO postgres;
+ALTER LARGE OBJECT 16857 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2192 (class 2613 OID 16858)
--- Name: 16858; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16858; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16858');
 
 
-ALTER LARGE OBJECT 16858 OWNER TO postgres;
+ALTER LARGE OBJECT 16858 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2193 (class 2613 OID 16859)
--- Name: 16859; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16859; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16859');
 
 
-ALTER LARGE OBJECT 16859 OWNER TO postgres;
+ALTER LARGE OBJECT 16859 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2194 (class 2613 OID 16860)
--- Name: 16860; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16860; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16860');
 
 
-ALTER LARGE OBJECT 16860 OWNER TO postgres;
+ALTER LARGE OBJECT 16860 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2195 (class 2613 OID 16861)
--- Name: 16861; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16861; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16861');
 
 
-ALTER LARGE OBJECT 16861 OWNER TO postgres;
+ALTER LARGE OBJECT 16861 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2196 (class 2613 OID 16862)
--- Name: 16862; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16862; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16862');
 
 
-ALTER LARGE OBJECT 16862 OWNER TO postgres;
+ALTER LARGE OBJECT 16862 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2197 (class 2613 OID 16863)
--- Name: 16863; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16863; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16863');
 
 
-ALTER LARGE OBJECT 16863 OWNER TO postgres;
+ALTER LARGE OBJECT 16863 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2198 (class 2613 OID 16864)
--- Name: 16864; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16864; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16864');
 
 
-ALTER LARGE OBJECT 16864 OWNER TO postgres;
+ALTER LARGE OBJECT 16864 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2199 (class 2613 OID 16865)
--- Name: 16865; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16865; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16865');
 
 
-ALTER LARGE OBJECT 16865 OWNER TO postgres;
+ALTER LARGE OBJECT 16865 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2200 (class 2613 OID 16866)
--- Name: 16866; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16866; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16866');
 
 
-ALTER LARGE OBJECT 16866 OWNER TO postgres;
+ALTER LARGE OBJECT 16866 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2201 (class 2613 OID 16867)
--- Name: 16867; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16867; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16867');
 
 
-ALTER LARGE OBJECT 16867 OWNER TO postgres;
+ALTER LARGE OBJECT 16867 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2202 (class 2613 OID 16868)
--- Name: 16868; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16868; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16868');
 
 
-ALTER LARGE OBJECT 16868 OWNER TO postgres;
+ALTER LARGE OBJECT 16868 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2203 (class 2613 OID 16869)
--- Name: 16869; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16869; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16869');
 
 
-ALTER LARGE OBJECT 16869 OWNER TO postgres;
+ALTER LARGE OBJECT 16869 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2204 (class 2613 OID 16870)
--- Name: 16870; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16870; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16870');
 
 
-ALTER LARGE OBJECT 16870 OWNER TO postgres;
+ALTER LARGE OBJECT 16870 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2205 (class 2613 OID 16871)
--- Name: 16871; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16871; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16871');
 
 
-ALTER LARGE OBJECT 16871 OWNER TO postgres;
+ALTER LARGE OBJECT 16871 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2206 (class 2613 OID 16872)
--- Name: 16872; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16872; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16872');
 
 
-ALTER LARGE OBJECT 16872 OWNER TO postgres;
+ALTER LARGE OBJECT 16872 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2207 (class 2613 OID 16873)
--- Name: 16873; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16873; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16873');
 
 
-ALTER LARGE OBJECT 16873 OWNER TO postgres;
+ALTER LARGE OBJECT 16873 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2208 (class 2613 OID 16874)
--- Name: 16874; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16874; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16874');
 
 
-ALTER LARGE OBJECT 16874 OWNER TO postgres;
+ALTER LARGE OBJECT 16874 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2209 (class 2613 OID 16875)
--- Name: 16875; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16875; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16875');
 
 
-ALTER LARGE OBJECT 16875 OWNER TO postgres;
+ALTER LARGE OBJECT 16875 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2210 (class 2613 OID 16876)
--- Name: 16876; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16876; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16876');
 
 
-ALTER LARGE OBJECT 16876 OWNER TO postgres;
+ALTER LARGE OBJECT 16876 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2211 (class 2613 OID 16877)
--- Name: 16877; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16877; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16877');
 
 
-ALTER LARGE OBJECT 16877 OWNER TO postgres;
+ALTER LARGE OBJECT 16877 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2212 (class 2613 OID 16878)
--- Name: 16878; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16878; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16878');
 
 
-ALTER LARGE OBJECT 16878 OWNER TO postgres;
+ALTER LARGE OBJECT 16878 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2213 (class 2613 OID 16879)
--- Name: 16879; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16879; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16879');
 
 
-ALTER LARGE OBJECT 16879 OWNER TO postgres;
+ALTER LARGE OBJECT 16879 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2214 (class 2613 OID 16880)
--- Name: 16880; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16880; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16880');
 
 
-ALTER LARGE OBJECT 16880 OWNER TO postgres;
+ALTER LARGE OBJECT 16880 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2215 (class 2613 OID 16881)
--- Name: 16881; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16881; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16881');
 
 
-ALTER LARGE OBJECT 16881 OWNER TO postgres;
+ALTER LARGE OBJECT 16881 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2216 (class 2613 OID 16882)
--- Name: 16882; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16882; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16882');
 
 
-ALTER LARGE OBJECT 16882 OWNER TO postgres;
+ALTER LARGE OBJECT 16882 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2217 (class 2613 OID 16883)
--- Name: 16883; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16883; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16883');
 
 
-ALTER LARGE OBJECT 16883 OWNER TO postgres;
+ALTER LARGE OBJECT 16883 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2218 (class 2613 OID 16884)
--- Name: 16884; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16884; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16884');
 
 
-ALTER LARGE OBJECT 16884 OWNER TO postgres;
+ALTER LARGE OBJECT 16884 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2219 (class 2613 OID 16885)
--- Name: 16885; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16885; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16885');
 
 
-ALTER LARGE OBJECT 16885 OWNER TO postgres;
+ALTER LARGE OBJECT 16885 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2220 (class 2613 OID 16886)
--- Name: 16886; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16886; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16886');
 
 
-ALTER LARGE OBJECT 16886 OWNER TO postgres;
+ALTER LARGE OBJECT 16886 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2221 (class 2613 OID 16887)
--- Name: 16887; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16887; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16887');
 
 
-ALTER LARGE OBJECT 16887 OWNER TO postgres;
+ALTER LARGE OBJECT 16887 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2222 (class 2613 OID 16888)
--- Name: 16888; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16888; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16888');
 
 
-ALTER LARGE OBJECT 16888 OWNER TO postgres;
+ALTER LARGE OBJECT 16888 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2223 (class 2613 OID 16889)
--- Name: 16889; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16889; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16889');
 
 
-ALTER LARGE OBJECT 16889 OWNER TO postgres;
+ALTER LARGE OBJECT 16889 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2224 (class 2613 OID 16890)
--- Name: 16890; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16890; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16890');
 
 
-ALTER LARGE OBJECT 16890 OWNER TO postgres;
+ALTER LARGE OBJECT 16890 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2225 (class 2613 OID 16891)
--- Name: 16891; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16891; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16891');
 
 
-ALTER LARGE OBJECT 16891 OWNER TO postgres;
+ALTER LARGE OBJECT 16891 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2226 (class 2613 OID 16892)
--- Name: 16892; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16892; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16892');
 
 
-ALTER LARGE OBJECT 16892 OWNER TO postgres;
+ALTER LARGE OBJECT 16892 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2227 (class 2613 OID 16893)
--- Name: 16893; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16893; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16893');
 
 
-ALTER LARGE OBJECT 16893 OWNER TO postgres;
+ALTER LARGE OBJECT 16893 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2228 (class 2613 OID 16894)
--- Name: 16894; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16894; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16894');
 
 
-ALTER LARGE OBJECT 16894 OWNER TO postgres;
+ALTER LARGE OBJECT 16894 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2229 (class 2613 OID 16895)
--- Name: 16895; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16895; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16895');
 
 
-ALTER LARGE OBJECT 16895 OWNER TO postgres;
+ALTER LARGE OBJECT 16895 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2230 (class 2613 OID 16896)
--- Name: 16896; Type: BLOB; Schema: -; Owner: postgres
+-- Name: 16896; Type: BLOB; Schema: -; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.lo_create('16896');
 
 
-ALTER LARGE OBJECT 16896 OWNER TO postgres;
+ALTER LARGE OBJECT 16896 OWNER TO adminajufxfw;
 
 --
 -- TOC entry 2238 (class 0 OID 0)
 -- Dependencies: 188
--- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: adminajufxfw
 --
 
 SELECT pg_catalog.setval('hibernate_sequence', 29, true);
@@ -980,7 +949,7 @@ SELECT pg_catalog.setval('hibernate_sequence', 29, true);
 --
 -- TOC entry 2147 (class 0 OID 16752)
 -- Dependencies: 181
--- Data for Name: master_brand; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: master_brand; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 INSERT INTO master_brand VALUES (8, '16846', 'Samsung');
@@ -993,7 +962,7 @@ INSERT INTO master_brand VALUES (27, '16890', 'SanDisk');
 --
 -- TOC entry 2148 (class 0 OID 16760)
 -- Dependencies: 182
--- Data for Name: master_kategori; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: master_kategori; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 INSERT INTO master_kategori VALUES (5, '16843', 'RAM');
@@ -1007,7 +976,7 @@ INSERT INTO master_kategori VALUES (26, '16889', 'Flashdisk');
 --
 -- TOC entry 2149 (class 0 OID 16768)
 -- Dependencies: 183
--- Data for Name: master_produk; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: master_produk; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 INSERT INTO master_produk VALUES (14, '16857', '16858', 1500000, 'produk-952521Monitor.png', 0, 'Monitor Samsung 20''', '16859', 30, 8, 6);
@@ -1027,7 +996,7 @@ INSERT INTO master_produk VALUES (29, '16894', '16895', 250000, 'produk-761024Fl
 --
 -- TOC entry 2150 (class 0 OID 16777)
 -- Dependencies: 184
--- Data for Name: master_role; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: master_role; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 INSERT INTO master_role VALUES (1, 'ROLE_ADMIN');
@@ -1037,7 +1006,7 @@ INSERT INTO master_role VALUES (2, 'ROLE_MEMBER');
 --
 -- TOC entry 2151 (class 0 OID 16782)
 -- Dependencies: 185
--- Data for Name: master_user; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: master_user; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 INSERT INTO master_user VALUES (3, true, 'lakilaki', 'admin', '$2a$10$ixxQCfMF2EXlLdJNTlQPb.dFKrdIVHZm5iAH75JHtn1Y9Cu62T1MK', '085747505359', '2016-07-20', 'admin@itsolution.com', 1);
@@ -1047,7 +1016,7 @@ INSERT INTO master_user VALUES (4, true, 'lakilaki', 'Angga Setyo', '$2a$10$9NFy
 --
 -- TOC entry 2152 (class 0 OID 16790)
 -- Dependencies: 186
--- Data for Name: transaksi_pemesanan; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: transaksi_pemesanan; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 
@@ -1055,7 +1024,7 @@ INSERT INTO master_user VALUES (4, true, 'lakilaki', 'Angga Setyo', '$2a$10$9NFy
 --
 -- TOC entry 2153 (class 0 OID 16798)
 -- Dependencies: 187
--- Data for Name: transaksi_pengiriman; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: transaksi_pengiriman; Type: TABLE DATA; Schema: public; Owner: adminajufxfw
 --
 
 
@@ -1375,137 +1344,9 @@ SELECT pg_catalog.lo_close(0);
 
 COMMIT;
 
-SET search_path = public, pg_catalog;
+-- Completed on 2016-07-20 22:07:14
 
 --
--- TOC entry 2013 (class 2606 OID 16759)
--- Name: master_brand_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_brand
-    ADD CONSTRAINT master_brand_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2015 (class 2606 OID 16767)
--- Name: master_kategori_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_kategori
-    ADD CONSTRAINT master_kategori_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2017 (class 2606 OID 16776)
--- Name: master_produk_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_produk
-    ADD CONSTRAINT master_produk_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2019 (class 2606 OID 16781)
--- Name: master_role_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_role
-    ADD CONSTRAINT master_role_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2021 (class 2606 OID 16789)
--- Name: master_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_user
-    ADD CONSTRAINT master_user_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2023 (class 2606 OID 16797)
--- Name: transaksi_pemesanan_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY transaksi_pemesanan
-    ADD CONSTRAINT transaksi_pemesanan_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2025 (class 2606 OID 16805)
--- Name: transaksi_pengiriman_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY transaksi_pengiriman
-    ADD CONSTRAINT transaksi_pengiriman_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 2028 (class 2606 OID 16816)
--- Name: fk_65meel6173nv97ahp04fybf8q; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_user
-    ADD CONSTRAINT fk_65meel6173nv97ahp04fybf8q FOREIGN KEY (role_id) REFERENCES master_role(id);
-
-
---
--- TOC entry 2027 (class 2606 OID 16811)
--- Name: fk_6do78km2mc3omsksq3bm7sk0e; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_produk
-    ADD CONSTRAINT fk_6do78km2mc3omsksq3bm7sk0e FOREIGN KEY (kategori_id) REFERENCES master_kategori(id);
-
-
---
--- TOC entry 2029 (class 2606 OID 16821)
--- Name: fk_ai08ob6vhg4j0odgibtfr9mq; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY transaksi_pemesanan
-    ADD CONSTRAINT fk_ai08ob6vhg4j0odgibtfr9mq FOREIGN KEY (produk_id) REFERENCES master_produk(id);
-
-
---
--- TOC entry 2031 (class 2606 OID 16831)
--- Name: fk_dkt6i9e4ddy1dqk5w5etf8r2m; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY transaksi_pengiriman
-    ADD CONSTRAINT fk_dkt6i9e4ddy1dqk5w5etf8r2m FOREIGN KEY (pemesanan_id) REFERENCES transaksi_pemesanan(id);
-
-
---
--- TOC entry 2032 (class 2606 OID 16836)
--- Name: fk_en2aluscjodspkiaxas1mk4qh; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY transaksi_pengiriman
-    ADD CONSTRAINT fk_en2aluscjodspkiaxas1mk4qh FOREIGN KEY (user_id) REFERENCES master_user(id);
-
-
---
--- TOC entry 2026 (class 2606 OID 16806)
--- Name: fk_o49v03rl5kjapwm6olj61hp2i; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY master_produk
-    ADD CONSTRAINT fk_o49v03rl5kjapwm6olj61hp2i FOREIGN KEY (brand_id) REFERENCES master_brand(id);
-
-
---
--- TOC entry 2030 (class 2606 OID 16826)
--- Name: fk_qo53s65gjfi5aqerfsr92fw57; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY transaksi_pemesanan
-    ADD CONSTRAINT fk_qo53s65gjfi5aqerfsr92fw57 FOREIGN KEY (user_id) REFERENCES master_user(id);
-
-
--- Completed on 2016-07-20 19:57:25
-
---
--- PostgreSQL database dump complete
+-- adminajufxfwQL database dump complete
 --
 
