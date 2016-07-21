@@ -2,6 +2,7 @@ package org.itsolution.hardware.penjualan.dto;
 
 public class UserDTO {
 
+    private Integer id;
 	private String nama;
 	private String phone;
 	private String username;
@@ -11,7 +12,15 @@ public class UserDTO {
 	private Integer tahun;
 	private String jenisKelamin = "lakilaki";
 
-	public String getNama() {
+	public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNama() {
 		return nama;
 	}
 

@@ -47,9 +47,9 @@ Aplikasi yang digunakan untuk menejemen barang hardware komputer dan pemesanan.
 * Edit dan Hapus daftar Produk (Administrator)
 * ~Edit dan Hapus daftar Kategori (Administrator)~
 * ~Edit dan Hapus daftar Brands (Administrator)~
-* Daftar Member CRUD (Administrator)
+* ~~Daftar Member CRUD (Administrator)~~
 * Halaman Setting (Administrator)
-* Integerasi Google analytics (Administrator)
+* ~~Integerasi Google analytics (Administrator)~~
 * Konfirmasi email pengiriman (Administrator)
 * report grafik pie pemesanan (Administrator)
 * Jquery Validation (Administrator)
