@@ -10,6 +10,8 @@ import org.itsolution.hardware.penjualan.entity.UserEntity;
 import org.itsolution.hardware.penjualan.repository.RoleRepository;
 import org.itsolution.hardware.penjualan.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +26,7 @@ public class UserService {
 	@Autowired
 	private RoleRepository roleRepository;
 
+	@CacheEvict(value = "memberFindAll", allEntries = true)
 	public void save(UserDTO userDTO) {
 		if (userDTO != null) {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -52,6 +55,7 @@ public class UserService {
 		return userRepository.findOneByUsername(username);
 	}
 
+	@Cacheable("memberFindAll")
 	public List<UserEntity> findAllMember() {
 		RoleEntity roleMember = roleRepository.findOneByName("ROLE_MEMBER");
 		return userRepository.findAllByRole(roleMember);

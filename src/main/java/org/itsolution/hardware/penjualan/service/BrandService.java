@@ -5,6 +5,8 @@ import java.util.List;
 import org.itsolution.hardware.penjualan.entity.BrandEntity;
 import org.itsolution.hardware.penjualan.repository.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,12 +17,14 @@ public class BrandService {
 	@Autowired
 	private BrandRepository brandRepository;
 
+	@CacheEvict(value = "brandFindAll", allEntries = true)
 	public void save(BrandEntity brandEntity) {
 		if (brandEntity != null) {
 			brandRepository.save(brandEntity);
 		}
 	}
 
+	@Cacheable("brandFindAll")
 	public List<BrandEntity> findAll() {
 		return brandRepository.findAll();
 	}
@@ -33,12 +37,14 @@ public class BrandService {
 		return brandRepository.findOne(id);
 	}
 
+	@CacheEvict(value = "brandFindAll", allEntries = true)
 	public void update(BrandEntity brandEntity) {
 		if (brandEntity != null) {
 			brandRepository.save(brandEntity);
 		}
 	}
 
+	@CacheEvict(value = "brandFindAll", allEntries = true)
 	public void delete(Integer id) {
 		BrandEntity brandEntity = findOne(id);
 		if (brandEntity != null) {

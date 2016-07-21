@@ -8,6 +8,8 @@ import org.itsolution.hardware.penjualan.entity.PengirimanEntity;
 import org.itsolution.hardware.penjualan.entity.UserEntity;
 import org.itsolution.hardware.penjualan.repository.PengirimanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +26,7 @@ public class PengirimanService {
 	@Autowired
 	private UserService userService;
 
+	@CacheEvict(value = "pengirimanFindAll", allEntries = true)
 	public void save(PengirimanDTO dto) {
 
 		PemesananEntity pemesananEntity = pemesananService.findOneBypemesananId(dto.getPemesananId());
@@ -39,6 +42,7 @@ public class PengirimanService {
 		pengirimanRepository.save(entity);
 	}
 
+	@Cacheable("pengirimanFindAll")
 	public List<PengirimanEntity> findAll() {
 		return pengirimanRepository.findAll();
 	}

@@ -1,5 +1,6 @@
 package org.itsolution.hardware.penjualan.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +16,11 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "master_user")
-public class UserEntity {
+public class UserEntity implements Serializable {
 
-	@Id
+    private static final long serialVersionUID = 1L;
+    
+    @Id
 	@GeneratedValue
 	private Integer id;
 	private String username;

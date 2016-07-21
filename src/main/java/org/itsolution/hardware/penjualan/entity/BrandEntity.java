@@ -1,5 +1,6 @@
 package org.itsolution.hardware.penjualan.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,9 +14,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "master_brand")
-public class BrandEntity {
+public class BrandEntity implements Serializable {
 
-	@Id
+    private static final long serialVersionUID = 1L;
+
+    @Id
 	@GeneratedValue
 	private Integer id;
 
