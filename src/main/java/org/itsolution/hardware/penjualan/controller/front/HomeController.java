@@ -1,6 +1,8 @@
 package org.itsolution.hardware.penjualan.controller.front;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.itsolution.hardware.penjualan.entity.ProdukEntity;
 import org.itsolution.hardware.penjualan.service.ProdukService;
@@ -20,8 +22,10 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public ModelAndView index() {
+	    List<ProdukEntity> findAll = produkService.findAll();
+	    Collections.shuffle(findAll, new Random());
 		ModelAndView mav = new ModelAndView("front/home");
-		mav.addObject("produks", produkService.findAll());
+		mav.addObject("produks", findAll);
 		return mav;
 	}
 	
