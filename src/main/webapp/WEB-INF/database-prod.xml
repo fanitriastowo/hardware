@@ -16,7 +16,7 @@
 			value="org.postgresql.Driver" />
 		<property
 			name="url"
-			value="jdbc:postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT/hardware" />
+			value="jdbc:postgresql://${OPENSHIFT_POSTGRESQL_DB_HOST}:${OPENSHIFT_POSTGRESQL_DB_PORT}/hardware" />
 		<property
 			name="username"
 			value="adminajufxfw" />
