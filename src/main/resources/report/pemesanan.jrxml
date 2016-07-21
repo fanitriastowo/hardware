@@ -5,6 +5,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="url" class="java.lang.String"/>
 	<field name="namaPenerima" class="java.lang.String"/>
 	<field name="phonePenerima" class="java.lang.String"/>
 	<field name="alamatPengiriman" class="java.lang.String"/>
@@ -43,7 +44,7 @@
 					<bottomPen lineWidth="1.0" lineColor="#828282"/>
 					<rightPen lineWidth="1.0" lineColor="#828282"/>
 				</box>
-				<imageExpression><![CDATA["http://localhost:8080/hardware.itsolution/assets/administrator/img/logo.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{url} + "/assets/administrator/img/logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -271,7 +272,7 @@ Cilacap, Jawa Tengah]]></text>
 					<bottomPen lineWidth="2.0"/>
 					<rightPen lineWidth="2.0"/>
 				</box>
-				<imageExpression><![CDATA["http://localhost:8080/hardware.itsolution/assets/images/produk/" + $F{produkEntity.image}]]></imageExpression>
+				<imageExpression><![CDATA[$P{url} + "/assets/images/produk/" + $F{produkEntity.image}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="10" y="41" width="90" height="20" uuid="4de6c6eb-aece-49e7-ac9b-42b151a080bc"/>
