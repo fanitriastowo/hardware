@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-02-09T12:56:37 -->
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-07-22T07:05:53 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -20,20 +20,22 @@
 			<staticText>
 				<reportElement x="0" y="0" width="278" height="30" uuid="e6aacf04-2bcf-4191-9ccc-021d857a744d"/>
 				<textElement textAlignment="Left">
-					<font fontName="Arial" size="25" isBold="true"/>
+					<font fontName="Lucida Bright" size="25" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PEMESANAN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="-1" y="40" width="40" height="20" uuid="c53adeea-4c3d-494c-8943-f78f5186b033"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Hari Ini:]]></text>
 			</staticText>
 			<textField pattern="dd MMMM yyyy">
 				<reportElement x="39" y="40" width="100" height="20" uuid="335d9187-959f-4cc3-92b1-24ef3ebd2ebd"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Lucida Bright"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
@@ -61,7 +63,7 @@
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Penerima:]]></text>
 			</staticText>
@@ -69,7 +71,9 @@
 				<reportElement x="339" y="40" width="204" height="20" uuid="028f03d8-d590-4a81-b8c4-d8b28569673a">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Bright"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{namaPenerima}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -77,39 +81,42 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[No. Telp:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="340" y="77" width="202" height="20" uuid="4d74edcd-1ae4-4094-8909-2bee1caf4d8e"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Bright"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{phonePenerima}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="280" y="0" width="272" height="25" uuid="e25dab7b-7f2b-4f1b-9443-2c3d264e1807"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Penerima]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="7" y="0" width="272" height="26" uuid="f08b16cc-4447-45b4-8547-4d637d53f682"/>
+				<reportElement x="-1" y="0" width="280" height="26" uuid="f08b16cc-4447-45b4-8547-4d637d53f682"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14" isBold="true"/>
+					<font fontName="Lucida Bright" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pengirim]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="287" y="110" width="50" height="20" uuid="7e7ad1f6-0f52-45fc-aadd-397adbd758f0"/>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Alamat:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="340" y="109" width="202" height="60" uuid="febbc440-feab-4fff-a1b9-a6c1a5e37dc5"/>
 				<textElement verticalAlignment="Top">
+					<font fontName="Lucida Bright"/>
 					<paragraph spacingBefore="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{alamatPengiriman}]]></textFieldExpression>
@@ -119,21 +126,21 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pengirim:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="7" y="110" width="60" height="20" uuid="94dfe90a-b3d3-4e07-985e-a5e716310376"/>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Alamat:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="7" y="77" width="60" height="20" uuid="9bf56bd4-70b7-44b1-a0e0-d64666e0e1d1"/>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[No. Telp:]]></text>
 			</staticText>
@@ -141,17 +148,22 @@
 				<reportElement x="70" y="40" width="190" height="20" uuid="05622eff-c28a-4fae-8f87-71423d6b2e6b">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Bright"/>
+				</textElement>
 				<text><![CDATA[CV. IT Solution]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="70" y="77" width="190" height="20" uuid="984964eb-f182-41ec-a543-5fc218caa5f4"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lucida Bright"/>
+				</textElement>
 				<text><![CDATA[(123) 456-7890]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="70" y="110" width="190" height="58" uuid="8886bc0d-1dd6-4827-a91a-634d2317ecad"/>
 				<textElement>
+					<font fontName="Lucida Bright"/>
 					<paragraph spacingBefore="5"/>
 				</textElement>
 				<text><![CDATA[Jalan Gerilya Timur, no 39 Blok C
@@ -160,21 +172,21 @@ Cilacap, Jawa Tengah]]></text>
 			<staticText>
 				<reportElement x="7" y="180" width="60" height="20" uuid="1af8b136-96b8-401a-a0a4-2373fe3613c2"/>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Kode Pos:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="70" y="180" width="190" height="20" uuid="24457f51-a31a-4d2c-8b41-dc047d8f3ae8"/>
 				<textElement verticalAlignment="Middle">
-					<font isBold="false"/>
+					<font fontName="Lucida Bright" isBold="false"/>
 				</textElement>
 				<text><![CDATA[53215]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="287" y="180" width="50" height="20" uuid="dcf15cac-1da4-4b11-b442-e911d9e03daa"/>
 				<textElement verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font fontName="Lucida Bright" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Kode Pos:]]></text>
 			</staticText>
@@ -204,63 +216,63 @@ Cilacap, Jawa Tengah]]></text>
 			<staticText>
 				<reportElement x="10" y="89" width="90" height="20" uuid="60960654-a757-4026-a467-d73bdcdf9f3d"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Kategori:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="109" y="89" width="219" height="20" uuid="a435a0ef-df42-46e3-87cb-208679bad0e4"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Lucida Bright" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{produkEntity.kategoriEntity.nama}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="10" y="113" width="90" height="20" uuid="458a675f-719c-4c02-94fc-6c5b340900d7"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nama Item:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="109" y="113" width="290" height="20" uuid="fcf1ebb6-a486-4358-826b-37de1c31b53a"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Lucida Bright" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{namaItem}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="410" y="10" width="131" height="20" forecolor="#F22116" uuid="77d4b4ee-a745-4389-86cc-20898f836210"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="14" isBold="true" isUnderline="true"/>
+					<font fontName="Lucida Bright" size="14" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Regular Service]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="400" y="380" width="131" height="20" uuid="fd7d0473-739a-414a-9562-ed0a0807be4c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Tertanda:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="399" y="460" width="131" height="20" uuid="3e82f661-ebda-4ba3-afdd-347bd50dc555"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[C.V. IT Solution]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="10" y="65" width="90" height="20" uuid="5cfcdf9f-b686-4cab-8b16-999e440bf98d"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Tgl Pesan:]]></text>
 			</staticText>
 			<textField pattern="dd MMMM yyyy">
 				<reportElement x="109" y="65" width="180" height="20" uuid="1190b625-e412-483b-b389-43a0cef6ecf6"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Lucida Bright" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tanggalPemesanan}]]></textFieldExpression>
 			</textField>
@@ -277,28 +289,28 @@ Cilacap, Jawa Tengah]]></text>
 			<staticText>
 				<reportElement x="10" y="41" width="90" height="20" uuid="4de6c6eb-aece-49e7-ac9b-42b151a080bc"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Email:]]></text>
 			</staticText>
 			<textField pattern="">
 				<reportElement x="109" y="41" width="180" height="20" uuid="9f09d166-1f4c-477e-bf23-b78c43e6fce1"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Lucida Bright" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{pemesananId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="10" y="17" width="90" height="20" uuid="b993d4fc-de02-4d57-9e21-0ee7f34854ad"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font fontName="Lucida Bright" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ID Pemesanan:]]></text>
 			</staticText>
 			<textField pattern="">
 				<reportElement x="109" y="17" width="180" height="20" uuid="069054df-b3ce-47dc-b2e2-b0b923c34e13"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12"/>
+					<font fontName="Lucida Bright" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{userEntity.username}]]></textFieldExpression>
 			</textField>

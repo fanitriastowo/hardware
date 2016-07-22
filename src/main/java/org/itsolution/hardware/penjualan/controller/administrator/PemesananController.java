@@ -38,8 +38,6 @@ public class PemesananController {
         modelMap.addAttribute("dataSource", list);
         modelMap.addAttribute("url", request.getScheme() + "://" + request.getServerName() + ":"
                 + request.getServerPort() + request.getContextPath());
-        System.out.println(request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-                + request.getContextPath());
 
         return new ModelAndView("pemesanan", modelMap);
     }
