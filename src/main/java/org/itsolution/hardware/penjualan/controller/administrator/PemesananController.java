@@ -35,10 +35,15 @@ public class PemesananController {
         List<PemesananEntity> list = new ArrayList<>();
         list.add(pemesananEntity);
 
+        String uri = request.getScheme() + "://" +  // "http" + "://
+                request.getServerName() + ":" +     // "localhost" + ":"
+                request.getServerPort() +           // "80"
+                request.getContextPath();           // hardware
+
         modelMap.addAttribute("dataSource", list);
-        modelMap.addAttribute("logo", request.getServletContext().getRealPath("/assets/administrator/img/logo.png"));
-        modelMap.addAttribute("url", request.getServletContext().getRealPath("/assets/images/produk/"));
-        System.out.println(request.getServletContext().getRealPath("/assets/images/produk/"));
+        modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
+        modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
+        System.out.println(uri + "/assets/images/produk/");
 
         return new ModelAndView("pemesanan", modelMap);
     }
