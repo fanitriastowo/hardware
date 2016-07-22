@@ -60,7 +60,6 @@ public class InitDB {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
         UserEntity userAdmin = new UserEntity();
-        userAdmin.setId(1);
         userAdmin.setUsername("admin@itsolution.com");
         userAdmin.setPassword(encoder.encode("admin"));
         userAdmin.setEnabled(true);
@@ -72,7 +71,6 @@ public class InitDB {
         userRepository.save(userAdmin);
 
         UserEntity userMember1 = new UserEntity();
-        userMember1.setId(2);
         userMember1.setUsername("angga.setyo@gmail.com");
         userMember1.setPassword(encoder.encode("angga"));
         userMember1.setEnabled(true);
@@ -84,7 +82,6 @@ public class InitDB {
         userRepository.save(userMember1);
         
         UserEntity userMember2 = new UserEntity();
-        userMember2.setId(3);
         userMember2.setUsername("fani.triastowo@gmail.com");
         userMember2.setPassword(encoder.encode("fani"));
         userMember2.setEnabled(true);
