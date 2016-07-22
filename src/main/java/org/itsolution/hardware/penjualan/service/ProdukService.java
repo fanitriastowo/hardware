@@ -17,7 +17,7 @@ public class ProdukService {
     @Autowired
     private ProdukRepository produkRepository;
 
-    @CacheEvict(value = "brandFindAll", allEntries = true)
+    @CacheEvict(value = "produkFindAll", allEntries = true)
     public void save(ProdukEntity produkEntity) {
         produkRepository.save(produkEntity);
     }

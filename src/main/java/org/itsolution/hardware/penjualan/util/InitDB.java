@@ -267,7 +267,7 @@ public class InitDB {
         produkProcessor1.setSpesifikasi("Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 + "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         produkProcessor1.setStok(30);
-        produkProcessor1.setImage("produk-203128AMD Processor.jpg");
+        produkProcessor1.setImage("produk-203128AMDProcessor.jpg");
         produkRepository.save(produkProcessor1);
 
         ProdukEntity produkProcessor2 = new ProdukEntity();
@@ -282,7 +282,7 @@ public class InitDB {
         produkProcessor2.setSpesifikasi("Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 + "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         produkProcessor2.setStok(30);
-        produkProcessor2.setImage("produk-521307AMD Processor.jpg");
+        produkProcessor2.setImage("produk-521307AMDProcessor.jpg");
         produkRepository.save(produkProcessor2);
 
         ProdukEntity produkMotherboard1 = new ProdukEntity();
@@ -297,7 +297,7 @@ public class InitDB {
         produkMotherboard1.setSpesifikasi("Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 + "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         produkMotherboard1.setStok(30);
-        produkMotherboard1.setImage("produk-209984AMD Motherboard.jpg");
+        produkMotherboard1.setImage("produk-209984AMDMotherboard.jpg");
         produkRepository.save(produkMotherboard1);
 
         ProdukEntity produkMotherboard2 = new ProdukEntity();
@@ -312,7 +312,7 @@ public class InitDB {
         produkMotherboard2.setSpesifikasi("Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 + "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         produkMotherboard2.setStok(30);
-        produkMotherboard2.setImage("produk-320020AMD Motherboard.jpg");
+        produkMotherboard2.setImage("produk-320020AMDMotherboard.jpg");
         produkRepository.save(produkMotherboard2);
 
         ProdukEntity produkFlashdisk1 = new ProdukEntity();

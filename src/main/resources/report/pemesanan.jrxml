@@ -315,10 +315,6 @@ Cilacap, Jawa Tengah]]></text>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{userEntity.username}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="260" y="200" width="285" height="130" uuid="9fc6b5ca-9c81-4075-8b64-248c57fde6f0"/>
-				<textFieldExpression><![CDATA[$P{produkImage} + $F{produkEntity.image}]]></textFieldExpression>
-			</textField>
 		</band>
 	</summary>
 </jasperReport>
