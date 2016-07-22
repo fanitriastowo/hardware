@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-07-22T07:37:49 -->
+<!-- 2016-07-22T07:44:39 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -95,14 +95,14 @@
 			<staticText>
 				<reportElement x="280" y="0" width="272" height="25" uuid="e25dab7b-7f2b-4f1b-9443-2c3d264e1807"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Lucida Bright" size="12" isBold="true"/>
+					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Penerima]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="-1" y="0" width="280" height="26" uuid="f08b16cc-4447-45b4-8547-4d637d53f682"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Lucida Bright" size="14" isBold="true"/>
+					<font fontName="SansSerif" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pengirim]]></text>
 			</staticText>
