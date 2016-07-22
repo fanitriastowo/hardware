@@ -36,8 +36,9 @@ public class PemesananController {
         list.add(pemesananEntity);
 
         modelMap.addAttribute("dataSource", list);
-        modelMap.addAttribute("url", request.getScheme() + "://" + request.getServerName() + ":"
-                + request.getServerPort() + request.getContextPath());
+        modelMap.addAttribute("logo", request.getServletContext().getRealPath("/assets/administrator/img/logo.png"));
+        modelMap.addAttribute("url", request.getServletContext().getRealPath("/assets/images/produk/"));
+        System.out.println(request.getServletContext().getRealPath("/assets/images/produk/"));
 
         return new ModelAndView("pemesanan", modelMap);
     }

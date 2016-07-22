@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-07-22T07:44:39 -->
+<!-- 2016-07-22T08:11:29 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="logo" class="java.lang.String"/>
 	<parameter name="url" class="java.lang.String"/>
 	<field name="namaPenerima" class="java.lang.String"/>
 	<field name="phonePenerima" class="java.lang.String"/>
@@ -46,7 +47,7 @@
 					<bottomPen lineWidth="1.0" lineColor="#828282"/>
 					<rightPen lineWidth="1.0" lineColor="#828282"/>
 				</box>
-				<imageExpression><![CDATA[$P{url} + "/assets/administrator/img/logo.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -284,7 +285,7 @@ Cilacap, Jawa Tengah]]></text>
 					<bottomPen lineWidth="2.0"/>
 					<rightPen lineWidth="2.0"/>
 				</box>
-				<imageExpression><![CDATA[$P{url} + "/assets/images/produk/" + $F{produkEntity.image}]]></imageExpression>
+				<imageExpression><![CDATA[$P{url} + "/" + $F{produkEntity.image}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="10" y="41" width="90" height="20" uuid="4de6c6eb-aece-49e7-ac9b-42b151a080bc"/>

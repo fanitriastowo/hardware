@@ -1,7 +1,9 @@
-package org.itsolution.hardware.penjualan.test.controller.front;
+package org.itsolution.hardware.penjualan.test.controller.administrator;
 
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,7 @@ public class PemesananControllerTest {
     }
 
     @Test
+    @Ignore
     public void testAksesDaftarBrand() {
 
         MockHttpServletRequest request = new MockHttpServletRequest();
@@ -44,8 +47,8 @@ public class PemesananControllerTest {
 
                     .andExpect(MockMvcResultMatchers.status().isOk())
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("url", request.getScheme() + "://"
-                            + request.getServerName() + ":" + request.getServerPort() + "/" + request.getContextPath()))
+                    .andExpect(MockMvcResultMatchers.model().attribute("url",
+                            Matchers.is(request.getServletContext().getRealPath("/assets/images/produk/"))))
 
                     .andExpect(MockMvcResultMatchers.view().name("pemesanan"));
 
