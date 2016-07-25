@@ -20,7 +20,7 @@
 				<div class="registration-panel">
 					
 					<div class="col-sm-offset-1 col-sm-4">
-						<form:form commandName="user" cssClass="form-horizontal form-registrasi" action="${pageContext.request.contextPath }/registration/register" method="post">
+						<form:form commandName="user" cssClass="form-horizontal form-registrasi" action="${pageContext.request.contextPath }/registration" method="post">
 							<div class="form-group">
 								<label class="sr-only" for="name">Nama Lengkap</label>
 								<div class="input-group">

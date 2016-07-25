@@ -11,6 +11,7 @@
 		<config>src/main/webapp/WEB-INF/database-prod.xml</config>
 		<config>src/main/webapp/WEB-INF/jasper-config.xml</config>
 		<config>src/main/webapp/WEB-INF/security.xml</config>
+		<config>src/main/webapp/WEB-INF/email-config.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/applicationContext.xml</config>

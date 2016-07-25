@@ -36,7 +36,7 @@ Aplikasi yang digunakan untuk menejemen barang hardware komputer dan pemesanan.
 * Isi Content Halaman Hubungi Kami (Front)
 * Halaman Setting Member (Front)
 * ~~Setelah Checkout keranjang, stok berkurang dan jumlah terbeli bertambah (Front)~~
-* Konfirmasi Email aktivasi akun setelah registrasi (Front)
+* ~~Konfirmasi Email aktivasi akun setelah registrasi (Front)~~
 * Konfirmasi Email transfer setelah checkout (Front)
 * Paging halaman beranda (Front)
 * JQuery Validation (Front)
@@ -45,8 +45,8 @@ Aplikasi yang digunakan untuk menejemen barang hardware komputer dan pemesanan.
 * Isi Content Halaman Summary (Administrator)
 * Report Daftar Pengiriman (Administrator)
 * Edit dan Hapus daftar Produk (Administrator)
-* ~Edit dan Hapus daftar Kategori (Administrator)~
-* ~Edit dan Hapus daftar Brands (Administrator)~
+* ~~Edit dan Hapus daftar Kategori (Administrator)~~
+* ~~Edit dan Hapus daftar Brands (Administrator)~~
 * ~~Daftar Member CRUD (Administrator)~~
 * Halaman Setting (Administrator)
 * ~~Integerasi Google analytics (Administrator)~~

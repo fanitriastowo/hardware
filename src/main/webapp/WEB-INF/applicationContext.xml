@@ -51,6 +51,7 @@
 	</bean>
 
 	<import resource="security.xml" />
+	<import resource="email-config.xml" />
 
 	<beans profile="dev">
 		<import resource="database-dev.xml" />
@@ -58,6 +59,10 @@
 
 	<beans profile="openshift">
 		<import resource="database-prod.xml" />
+	</beans>
+
+	<beans profile="myServer">
+		<import resource="database-myserver.xml" />
 	</beans>
 
 </beans>

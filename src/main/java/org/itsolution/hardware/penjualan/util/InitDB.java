@@ -1,6 +1,7 @@
 package org.itsolution.hardware.penjualan.util;
 
 import java.util.Date;
+import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
@@ -9,11 +10,13 @@ import org.itsolution.hardware.penjualan.entity.KategoriEntity;
 import org.itsolution.hardware.penjualan.entity.ProdukEntity;
 import org.itsolution.hardware.penjualan.entity.RoleEntity;
 import org.itsolution.hardware.penjualan.entity.UserEntity;
+import org.itsolution.hardware.penjualan.entity.VerificationToken;
 import org.itsolution.hardware.penjualan.repository.BrandRepository;
 import org.itsolution.hardware.penjualan.repository.KategoriRepository;
 import org.itsolution.hardware.penjualan.repository.ProdukRepository;
 import org.itsolution.hardware.penjualan.repository.RoleRepository;
 import org.itsolution.hardware.penjualan.repository.UserRepository;
+import org.itsolution.hardware.penjualan.repository.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,6 +28,9 @@ public class InitDB {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private VerificationTokenRepository verificationTokenRepository;
 
     @Autowired
     private RoleRepository roleRepository;
@@ -70,27 +76,10 @@ public class InitDB {
         userAdmin.setTanggalLahir(new Date());
         userRepository.save(userAdmin);
 
-        UserEntity userMember1 = new UserEntity();
-        userMember1.setUsername("angga.setyo@gmail.com");
-        userMember1.setPassword(encoder.encode("angga"));
-        userMember1.setEnabled(true);
-        userMember1.setJenisKelamin("lakilaki");
-        userMember1.setNama("Angga Setyo");
-        userMember1.setPhone("087898745888");
-        userMember1.setRole(roleMember);
-        userMember1.setTanggalLahir(new Date());
-        userRepository.save(userMember1);
-        
-        UserEntity userMember2 = new UserEntity();
-        userMember2.setUsername("fani.triastowo@gmail.com");
-        userMember2.setPassword(encoder.encode("fani"));
-        userMember2.setEnabled(true);
-        userMember2.setJenisKelamin("lakilaki");
-        userMember2.setNama("Fani Triastowo");
-        userMember2.setPhone("087898745888");
-        userMember2.setRole(roleMember);
-        userMember2.setTanggalLahir(new Date());
-        userRepository.save(userMember2);
+        VerificationToken token1 = new VerificationToken(UUID.randomUUID().toString(), userAdmin);
+        verificationTokenRepository.save(token1);
+
+        // =================================================================================================
 
         KategoriEntity kategoriRAM = new KategoriEntity();
         kategoriRAM.setNama("RAM");

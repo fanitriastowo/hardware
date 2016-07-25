@@ -12,5 +12,6 @@
 		<class>org.itsolution.hardware.penjualan.entity.RoleEntity</class>
 		<class>org.itsolution.hardware.penjualan.entity.PemesananEntity</class>
 		<class>org.itsolution.hardware.penjualan.entity.PengirimanEntity</class>
+		<class>org.itsolution.hardware.penjualan.entity.VerificationToken</class>
 	</persistence-unit>
 </persistence>
