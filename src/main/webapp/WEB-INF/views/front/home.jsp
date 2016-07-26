@@ -19,6 +19,7 @@
    <section
       id="portfolio"
       class="container">
+      <p><strong>Promo:</strong></p>
       <ul class="portfolio-items col-4">
          <c:forEach
             items="${produks }"

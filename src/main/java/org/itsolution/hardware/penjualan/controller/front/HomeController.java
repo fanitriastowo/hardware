@@ -22,9 +22,11 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public ModelAndView index() {
+	    ModelAndView mav = new ModelAndView("front/home");
+
 	    List<ProdukEntity> findAll = produkService.findAll();
 	    Collections.shuffle(findAll, new Random());
-		ModelAndView mav = new ModelAndView("front/home");
+	    
 		mav.addObject("produks", findAll);
 		return mav;
 	}
