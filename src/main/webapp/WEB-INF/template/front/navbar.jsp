@@ -50,7 +50,7 @@
 					</ul>
 				</li>
 				</security:authorize>
-				<li id="contact"><a href='<spring:url value="/contact" />'>Hubungi Kami</a></li>
+				<!-- <li id="contact"><a href='<spring:url value="/contact" />'>Hubungi Kami</a></li> -->
 			</ul>
 		</div> <!-- .collapse -->
 	</div> <!-- .container -->

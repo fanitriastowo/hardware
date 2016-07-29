@@ -37,14 +37,14 @@ public class BrandService {
 		return brandRepository.findOne(id);
 	}
 
-	@CacheEvict(value = "brandFindAll", allEntries = true)
+	@CacheEvict(value = {"brandFindAll", "produkFindAll"}, allEntries = true)
 	public void update(BrandEntity brandEntity) {
 		if (brandEntity != null) {
 			brandRepository.save(brandEntity);
 		}
 	}
 
-	@CacheEvict(value = "brandFindAll", allEntries = true)
+	@CacheEvict(value = {"brandFindAll", "produkFindAll"}, allEntries = true)
 	public void delete(Integer id) {
 		BrandEntity brandEntity = findOne(id);
 		if (brandEntity != null) {

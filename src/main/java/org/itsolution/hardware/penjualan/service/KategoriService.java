@@ -37,14 +37,14 @@ public class KategoriService {
         return kategoriRepository.findOne(id);
     }
 
-    @CacheEvict(value = "kategoriFindAll", allEntries = true)
+    @CacheEvict(value = {"kategoriFindAll", "produkFindAll"}, allEntries = true)
     public void update(KategoriEntity kategoriEntity) {
         if (kategoriEntity != null) {
             kategoriRepository.save(kategoriEntity);
         }
     }
 
-    @CacheEvict(value = "kategoriFindAll", allEntries = true)
+    @CacheEvict(value = {"kategoriFindAll", "produkFindAll"}, allEntries = true)
     public void delete(Integer id) {
         kategoriRepository.delete(id);
     }
