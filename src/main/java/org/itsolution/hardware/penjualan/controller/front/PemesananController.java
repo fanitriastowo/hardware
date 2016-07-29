@@ -10,11 +10,13 @@ import org.itsolution.hardware.penjualan.dto.ProdukKeranjangDTO;
 import org.itsolution.hardware.penjualan.entity.PemesananEntity;
 import org.itsolution.hardware.penjualan.entity.ProdukEntity;
 import org.itsolution.hardware.penjualan.entity.UserEntity;
+import org.itsolution.hardware.penjualan.event.OnCompleteCheckoutEvent;
 import org.itsolution.hardware.penjualan.service.PemesananService;
 import org.itsolution.hardware.penjualan.service.ProdukService;
 import org.itsolution.hardware.penjualan.service.UserService;
 import org.itsolution.hardware.penjualan.util.IDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,6 +37,9 @@ public class PemesananController {
 
     @Autowired
     private ProdukService produkService;
+    
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
 
     @RequestMapping("/checkout")
     public ModelAndView checkoutProduk(
@@ -69,6 +74,8 @@ public class PemesananController {
                 pemesanan.setUserEntity(userEntity);
                 pemesananService.save(pemesanan);
             }
+            
+            eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
 
             listKeranjang.clear();
             return new ModelAndView("redirect:/");

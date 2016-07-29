@@ -27,7 +27,7 @@ public class PengirimanService {
 	private UserService userService;
 
 	@CacheEvict(value = "pengirimanFindAll", allEntries = true)
-	public void save(PengirimanDTO dto) {
+	public PengirimanEntity save(PengirimanDTO dto) {
 
 		PemesananEntity pemesananEntity = pemesananService.findOneBypemesananId(dto.getPemesananId());
 		UserEntity userEntity = userService.findOneByUsername(dto.getEmail());
@@ -40,6 +40,7 @@ public class PengirimanService {
 		entity.setTanggalPengiriman(dto.getTanggalPengiriman());
 		entity.setUserEntity(userEntity);
 		pengirimanRepository.save(entity);
+		return entity;
 	}
 
 	@Cacheable("pengirimanFindAll")

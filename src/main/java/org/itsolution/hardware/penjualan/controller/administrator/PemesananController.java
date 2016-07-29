@@ -27,6 +27,14 @@ public class PemesananController {
         mav.addObject("pemesanans", pemesananService.findAllOrderByTransfer());
         return mav;
     }
+    
+    @RequestMapping("/ubah_status_transfer/{id}")
+    public ModelAndView ubahStatusTransfer(@PathVariable Integer id) {
+        
+        PemesananEntity pemesananEntity = pemesananService.findOne(id);
+        pemesananService.ubahStatusTransfer(pemesananEntity);
+        return new ModelAndView("redirect:/administrator/pemesanan");
+    }
 
     @RequestMapping("/cetak/{id}")
     public ModelAndView cetakPemesanan(@PathVariable("id") Integer id, ModelMap modelMap, HttpServletRequest request) {
@@ -43,7 +51,6 @@ public class PemesananController {
         modelMap.addAttribute("dataSource", list);
         modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
         modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
-        System.out.println(uri + "/assets/images/produk/");
 
         return new ModelAndView("pemesanan", modelMap);
     }

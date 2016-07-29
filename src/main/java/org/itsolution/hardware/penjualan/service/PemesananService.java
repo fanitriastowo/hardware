@@ -53,4 +53,11 @@ public class PemesananService {
     public PemesananEntity findOneBypemesananId(Integer pemesananId) {
         return pemesananRepository.findOneByPemesananId(pemesananId);
     }
+
+    @CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
+            "pemesananFindOneByPemesananId" }, allEntries = true)
+    public void ubahStatusTransfer(PemesananEntity pemesananEntity) {
+        pemesananEntity.setTransfer(true);
+        pemesananRepository.save(pemesananEntity);
+    }
 }

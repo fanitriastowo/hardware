@@ -6,12 +6,15 @@ import java.util.List;
 
 import org.itsolution.hardware.penjualan.dto.PengirimanDTO;
 import org.itsolution.hardware.penjualan.entity.PemesananEntity;
+import org.itsolution.hardware.penjualan.entity.PengirimanEntity;
 import org.itsolution.hardware.penjualan.entity.UserEntity;
+import org.itsolution.hardware.penjualan.event.OnCompleteAddPengirimanEvent;
 import org.itsolution.hardware.penjualan.service.PemesananService;
 import org.itsolution.hardware.penjualan.service.PengirimanService;
 import org.itsolution.hardware.penjualan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -27,6 +30,9 @@ public class PengirimanController {
 	private PengirimanService pengirimanService;
 	
 	@Autowired
+	private ApplicationEventPublisher eventPublisher;
+	
+	@Autowired
 	private PemesananService pemesananService;
 	
 	@Autowired
@@ -38,11 +44,6 @@ public class PengirimanController {
 		binder.registerCustomEditor(Date.class, "tanggalPengiriman", new CustomDateEditor(formatter, false));
 	}
 	
-	@ModelAttribute("pengiriman")
-	public PengirimanDTO construct() {
-		return new PengirimanDTO();
-	}
-
 	@RequestMapping
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView("administrator/pengiriman/administrator-daftar-pengiriman");
@@ -51,7 +52,7 @@ public class PengirimanController {
 	}
 
 	@RequestMapping("/tambah")
-	public ModelAndView tambahPengiriman() {
+	public ModelAndView tambahPengiriman(@ModelAttribute("pengiriman") PengirimanDTO dto) {
 		ModelAndView mav = new ModelAndView("administrator/pengiriman/administrator-tambah-pengiriman");
 		
 		List<PemesananEntity> pemesananList = pemesananService.findAll();
@@ -64,7 +65,8 @@ public class PengirimanController {
 	
 	@RequestMapping("/tambah_post")
 	public ModelAndView tambahPengirimanPost(@ModelAttribute("pengiriman") PengirimanDTO dto) {
-		pengirimanService.save(dto);
+		PengirimanEntity pengirimanEntity = pengirimanService.save(dto);
+		eventPublisher.publishEvent(new OnCompleteAddPengirimanEvent(pengirimanEntity));
 		return new ModelAndView("administrator/pengiriman/administrator-tambah-pengiriman");
 	}
 }

@@ -11,6 +11,17 @@
 	</entity>
 
 	<entity>
+		<entity-name>org.itsolution.hardware.penjualan.entity.VerificationToken</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>746</entity-X-Coordinate>
+		<entity-Y-Coordinate>500</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>org.itsolution.hardware.penjualan.entity.ProdukEntity</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>326</entity-height>
@@ -33,17 +44,6 @@
 	</entity>
 
 	<entity>
-		<entity-name>org.itsolution.hardware.penjualan.entity.PengirimanEntity</entity-name>
-		<entity-width>161</entity-width>
-		<entity-height>226</entity-height>
-		<entity-X-Coordinate>519</entity-X-Coordinate>
-		<entity-Y-Coordinate>12</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
 		<entity-name>org.itsolution.hardware.penjualan.entity.BrandEntity</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>166</entity-height>
@@ -55,11 +55,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>org.itsolution.hardware.penjualan.entity.RoleEntity</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>750</entity-X-Coordinate>
-		<entity-Y-Coordinate>320</entity-Y-Coordinate>
+		<entity-name>org.itsolution.hardware.penjualan.entity.PengirimanEntity</entity-name>
+		<entity-width>161</entity-width>
+		<entity-height>226</entity-height>
+		<entity-X-Coordinate>519</entity-X-Coordinate>
+		<entity-Y-Coordinate>12</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -67,7 +67,7 @@
 
 	<entity>
 		<entity-name>org.itsolution.hardware.penjualan.entity.PemesananEntity</entity-name>
-		<entity-width>120</entity-width>
+		<entity-width>145</entity-width>
 		<entity-height>326</entity-height>
 		<entity-X-Coordinate>221</entity-X-Coordinate>
 		<entity-Y-Coordinate>60</entity-Y-Coordinate>
@@ -77,11 +77,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>org.itsolution.hardware.penjualan.entity.VerificationToken</entity-name>
+		<entity-name>org.itsolution.hardware.penjualan.entity.RoleEntity</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>166</entity-height>
-		<entity-X-Coordinate>746</entity-X-Coordinate>
-		<entity-Y-Coordinate>500</entity-Y-Coordinate>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>750</entity-X-Coordinate>
+		<entity-Y-Coordinate>320</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
