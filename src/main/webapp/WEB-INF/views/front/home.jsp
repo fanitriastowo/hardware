@@ -34,9 +34,10 @@
                            alt="Image"
                            src='<spring:url value="/assets/images/produk/${produk.image }" />'
                            class="img-rounded">
-                        <h4 class="text-center">
-                           <c:out value="${produk.nama}" />
-                        </h4>
+                        <p class="text-center">
+                           <strong><c:out value="${produk.nama}" /> </strong><br />
+                           Rp. <fmt:formatNumber value="${produk.harga}" type="NUMBER" />
+                        </p>
                         <div class="overlay">
                            <a
                               class="preview btn btn-danger"
@@ -48,9 +49,10 @@
                            alt="Image"
                            src='<spring:url value="/assets/front/images/blank.jpg" />'
                            class="img-rounded">
-                        <h4 class="text-center">
-                           <c:out value="${produk.nama}" />
-                        </h4>
+                        <p class="text-center">
+                           <c:out value="${produk.nama}" /> <br/>
+                           Rp. <fmt:formatNumber value="${produk.harga}" type="NUMBER" />
+                        </p>
                         <div class="overlay">
                            <a
                               class="preview btn btn-danger"
