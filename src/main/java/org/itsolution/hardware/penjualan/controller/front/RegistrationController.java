@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/registration")
@@ -33,17 +34,19 @@ public class RegistrationController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView registerNewMember(@ModelAttribute("user") UserDTO userDTO, final HttpServletRequest request) {
+    public ModelAndView registerNewMember(@ModelAttribute("user") UserDTO userDTO, final HttpServletRequest request,
+            RedirectAttributes redirectAttributes) {
+        
         final UserEntity userEntity = userService.registerNewUser(userDTO);
         eventPublisher
                 .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
+        redirectAttributes.addFlashAttribute("confirm", false);
         return new ModelAndView("redirect:/login");
     }
 
     @RequestMapping("/registration_confirm")
     public ModelAndView confirmRegistrationMember(@RequestParam("token") final String token) {
         final String result = userService.validateVerificationToken(token);
-        System.out.println(result);
         return new ModelAndView("redirect:/login");
     }
 
