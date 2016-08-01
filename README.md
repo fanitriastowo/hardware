@@ -33,7 +33,6 @@ Aplikasi yang digunakan untuk menejemen barang hardware komputer dan pemesanan.
 * ~~Search produk di navbar (Front)~~
 * ~~Hapus produk di dalam keranjang dan Edit jumlah pesanan (Front)~~
 * ~~Isi Content Halaman Bantuan (Front)~~
-* Isi Content Halaman Hubungi Kami (Front)
 * Halaman Setting Member (Front)
 * ~~Setelah Checkout keranjang, stok berkurang dan jumlah terbeli bertambah (Front)~~
 * ~~Konfirmasi Email aktivasi akun setelah registrasi (Front)~~
