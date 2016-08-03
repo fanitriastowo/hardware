@@ -75,9 +75,9 @@ public class PemesananController {
                 pemesananService.save(pemesanan);
             }
             
+            listKeranjang.clear();
             eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
 
-            listKeranjang.clear();
             return new ModelAndView("redirect:/");
         } else {
             redirectAttributes.addFlashAttribute("login", false);

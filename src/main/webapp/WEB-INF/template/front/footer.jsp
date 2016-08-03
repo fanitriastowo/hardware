@@ -25,9 +25,9 @@
 			    <h4>Alamat</h4>
 			    <address>
 			        <strong>CV. IT Solution</strong><br>
-			        Jalan Gerilya Timur, no 39 Blok C<br>
-			        Cilacap, Jawa Tengah<br>
-			        <abbr title="Telepon">Phone:</abbr> (123) 456-7890
+			        Jalan Nusantara, no 15<br>
+			        Cilacap Utara, Jawa Tengah<br>
+			        <abbr title="Telepon">Phone:</abbr> (0282) 542228
 			    </address>
 			    <h4>Follow Us</h4>
 				<div class="center">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-07-22T09:47:50 -->
+<!-- 2016-08-04T04:58:32 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -184,20 +184,6 @@ Cilacap, Jawa Tengah]]></text>
 				</textElement>
 				<text><![CDATA[53215]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="287" y="180" width="50" height="20" uuid="dcf15cac-1da4-4b11-b442-e911d9e03daa"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="SansSerif" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Kode Pos:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="340" y="180" width="202" height="20" uuid="41067597-5970-4090-8fec-d7e3cad0d8b5"/>
-				<textElement verticalAlignment="Middle">
-					<font isBold="false"/>
-				</textElement>
-				<text><![CDATA[-]]></text>
-			</staticText>
 			<line>
 				<reportElement x="280" y="0" width="1" height="221" uuid="363efeef-ab1b-4f78-bd1b-7eefde22da02"/>
 				<graphicElement>
@@ -295,7 +281,7 @@ Cilacap, Jawa Tengah]]></text>
 				<text><![CDATA[Email:]]></text>
 			</staticText>
 			<textField pattern="">
-				<reportElement x="109" y="41" width="180" height="20" uuid="9f09d166-1f4c-477e-bf23-b78c43e6fce1"/>
+				<reportElement x="109" y="17" width="180" height="20" uuid="9f09d166-1f4c-477e-bf23-b78c43e6fce1"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
@@ -309,7 +295,7 @@ Cilacap, Jawa Tengah]]></text>
 				<text><![CDATA[ID Pemesanan:]]></text>
 			</staticText>
 			<textField pattern="">
-				<reportElement x="109" y="17" width="180" height="20" uuid="069054df-b3ce-47dc-b2e2-b0b923c34e13"/>
+				<reportElement x="110" y="41" width="180" height="20" uuid="069054df-b3ce-47dc-b2e2-b0b923c34e13"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
