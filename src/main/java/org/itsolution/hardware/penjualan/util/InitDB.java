@@ -151,7 +151,6 @@ public class InitDB {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         brandRepository.save(brandSanDisk);
 
-        /*
         ProdukEntity produkMonitor1 = new ProdukEntity();
         produkMonitor1.setBrandEntity(brandSamsung);
         produkMonitor1.setDeskripsi("Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
@@ -181,7 +180,6 @@ public class InitDB {
         produkMonitor2.setStok(30);
         produkMonitor2.setImage("produk-573576Monitor.png");
         produkRepository.save(produkMonitor2);
-        */
 
         ProdukEntity produkRAM1 = new ProdukEntity();
         produkRAM1.setBrandEntity(brandVisipro);

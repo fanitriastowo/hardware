@@ -20,7 +20,7 @@
       id="portfolio"
       class="container">
       <p><strong>Promo:</strong></p>
-      <ul class="portfolio-items col-5">
+      <ul class="portfolio-items col-4">
          <c:forEach
             items="${produks }"
             var="produk">
@@ -34,10 +34,10 @@
                            alt="Image"
                            src='<spring:url value="/assets/images/produk/${produk.image }" />'
                            class="img-rounded">
-                        <h6 class="text-center" style="overflow: hidden; white-space: nowrap;">
+                        <h5 class="text-center" style="overflow: hidden; white-space: nowrap;">
                            <strong><c:out value="${produk.nama}" /> </strong><br />
                            Rp. <fmt:formatNumber value="${produk.harga}" type="NUMBER" />
-                        </h6>
+                        </h5>
                         <div class="overlay">
                            <a
                               class="preview btn btn-danger"
@@ -49,10 +49,10 @@
                            alt="Image"
                            src='<spring:url value="/assets/front/images/blank.jpg" />'
                            class="img-rounded">
-                        <h6 class="text-center" style="overflow: hidden; white-space: nowrap;">
+                        <h5 class="text-center" style="overflow: hidden; white-space: nowrap;">
                            <c:out value="${produk.nama}" /> <br/>
                            Rp. <fmt:formatNumber value="${produk.harga}" type="NUMBER" />
-                        </h6>
+                        </h5>
                         <div class="overlay">
                            <a
                               class="preview btn btn-danger"
