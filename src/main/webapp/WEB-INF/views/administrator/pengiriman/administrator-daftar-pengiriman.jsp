@@ -71,7 +71,7 @@
 													</c:otherwise>
 												</c:choose>
 											<td>
-												<a href="#" title="Lihat Detail Pengiriman" class="btn btn-info btn-rounded btn-sm"><span class="fa fa-search"></span></a>
+												<a href='<spring:url value="/administrator/pengiriman/cetak_detail/${pengiriman.id}" />' title="Lihat Detail Pengiriman" class="btn btn-info btn-rounded btn-sm"><span class="fa fa-search"></span></a>
 											</td>
 										</tr>
 										</c:forEach>

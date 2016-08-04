@@ -2,7 +2,10 @@ package org.itsolution.hardware.penjualan.controller.administrator;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.itsolution.hardware.penjualan.dto.PengirimanDTO;
 import org.itsolution.hardware.penjualan.entity.PemesananEntity;
@@ -16,7 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,6 +54,25 @@ public class PengirimanController {
 		ModelAndView mav = new ModelAndView("administrator/pengiriman/administrator-daftar-pengiriman");
 		mav.addObject("pengirimanList", pengirimanService.findAll());
 		return mav;
+	}
+
+	@RequestMapping("/cetak_detail/{id}")
+	public ModelAndView cetakDetailPengiriman(@PathVariable Integer id, ModelMap modelMap, HttpServletRequest request) {
+
+		PengirimanEntity pengirimanEntity = pengirimanService.findOne(id);
+        List<PengirimanEntity> list = new ArrayList<>();
+        list.add(pengirimanEntity);
+
+        String uri = request.getScheme() + "://" +  // "http" + "://
+                request.getServerName() + ":" +     // "localhost" + ":"
+                request.getServerPort() +           // "80"
+                request.getContextPath();           // hardware
+
+        modelMap.addAttribute("dataSource", list);
+        modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
+        modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
+
+        return new ModelAndView("pengiriman", modelMap);
 	}
 
 	@RequestMapping("/tambah")

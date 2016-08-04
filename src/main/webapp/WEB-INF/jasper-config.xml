@@ -13,4 +13,10 @@
 		p:url="classpath:/report/pemesanan.jrxml"
 		p:reportDataKey="dataSource" />
 
+	<bean
+		id="pengiriman"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+		p:url="classpath:/report/pengiriman.jrxml"
+		p:reportDataKey="dataSource" />
+
 </beans>

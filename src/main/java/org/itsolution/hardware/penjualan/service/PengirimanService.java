@@ -47,4 +47,8 @@ public class PengirimanService {
 	public List<PengirimanEntity> findAll() {
 		return pengirimanRepository.findAll();
 	}
+
+	public PengirimanEntity findOne(Integer id) {
+		return pengirimanRepository.findOne(id);
+	}
 }
