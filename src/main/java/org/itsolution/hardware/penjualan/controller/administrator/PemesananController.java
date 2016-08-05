@@ -1,5 +1,7 @@
 package org.itsolution.hardware.penjualan.controller.administrator;
 
+import org.itsolution.hardware.penjualan.dto.PemesananDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,5 +55,29 @@ public class PemesananController {
         modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
 
         return new ModelAndView("pemesanan", modelMap);
+    }
+
+    @RequestMapping("/cetak_analisa_pasar")
+    public ModelAndView cetakAnalisaPasar(ModelMap modelMap, HttpServletRequest request) {
+
+        List<PemesananDTO> listDTO = new ArrayList<>();
+        List<Object[]> list = pemesananService.findAllForPieChart();
+
+        for (Object[] object : list) {
+            PemesananDTO dto = new PemesananDTO();
+            dto.setJumlah((Long) object[0]);
+            dto.setKabupaten((String) object[1]);
+            dto.setNama(Long.toString((Long) object[0]));
+            listDTO.add(dto);
+        }
+
+        String uri = request.getScheme() + "://" +  // "http" + "://
+                request.getServerName() + ":" +     // "localhost" + ":"
+                request.getServerPort() +           // "80"
+                request.getContextPath();           // hardware
+
+        modelMap.addAttribute("dataSource", listDTO);
+        modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
+        return new ModelAndView("cetakAnalisisPemesanan", modelMap);
     }
 }

@@ -83,8 +83,11 @@ public class ProdukController {
 			@ModelAttribute("produkKeranjang") ProdukKeranjangDTO produkKeranjangDTO) {
 
 		ModelAndView mav = new ModelAndView("redirect:/keranjang");
+
+		ProdukEntity produkEntity = produkService.findOne(id);
 		ProdukKeranjangDTO dto = listKeranjang.get(id);
 		dto.setJumlahBarang(produkKeranjangDTO.getJumlahBarang());
+		dto.setTotalHarga(produkEntity.getHarga() * produkKeranjangDTO.getJumlahBarang());
 
 		return mav;
 	}

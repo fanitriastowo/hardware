@@ -5,6 +5,8 @@ public class PemesananDTO {
 	private String nama;
 	private String phone;
 	private String alamat;
+	private String kabupaten;
+	private Long jumlah;
 
 	public String getNama() {
 		return nama;
@@ -28,6 +30,22 @@ public class PemesananDTO {
 
 	public void setAlamat(String alamat) {
 		this.alamat = alamat;
+	}
+
+	public String getKabupaten() {
+		return kabupaten;
+	}
+
+	public void setKabupaten(String kabupaten) {
+		this.kabupaten = kabupaten;
+	}
+	
+	public Long getJumlah() {
+		return jumlah;
+	}
+
+	public void setJumlah(Long jumlah) {
+		this.jumlah = jumlah;
 	}
 
 }

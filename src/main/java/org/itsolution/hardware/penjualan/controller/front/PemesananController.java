@@ -72,11 +72,12 @@ public class PemesananController {
                 pemesanan.setTotalHarga(produkKeranjangDTO.getValue().getTotalHarga());
                 pemesanan.setTransfer(false);
                 pemesanan.setUserEntity(userEntity);
+                pemesanan.setKabupaten(pemesananDTO.getKabupaten());
                 pemesananService.save(pemesanan);
             }
             
             listKeranjang.clear();
-            eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
+            //eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
 
             return new ModelAndView("redirect:/");
         } else {

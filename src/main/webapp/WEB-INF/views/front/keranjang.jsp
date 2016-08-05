@@ -78,7 +78,8 @@
 								</td>
 								<td>Rp. <fmt:formatNumber
 										value="${produkKeranjang.value.totalHarga }"
-										type="number" /></td>
+										type="number" />
+								</td>
 								<td>
 									<a
 										class="btn btn-danger btn-xs" 
@@ -89,7 +90,7 @@
 							</tr>
 							<c:set
 								var="jumlahBarangTerbeli"
-								value="${ jumlahBarangTerbeli + produkKeranjang.value.jumlahBarang }" />
+								value="${jumlahBarangTerbeli + produkKeranjang.value.jumlahBarang }" />
 							<c:set
 								var="totalHargaDibayar"
 								value="${totalHargaDibayar + produkKeranjang.value.totalHarga }" />
@@ -104,10 +105,12 @@
 							<th>Rp. <fmt:formatNumber
 									value="${totalHargaDibayar }"
 									type="number" /></th>
-							<th width="5%"><button
+							<th width="5%">
+								<button
 									class="btn btn-xs btn-primary"
 									data-toggle="modal"
-									data-target="#checkout_modal">Checkout</button></th>
+									data-target="#checkout_modal">Checkout</button>
+							</th>
 						</tr>
 					</tfoot>
 				</table>
@@ -167,8 +170,20 @@
 									path="alamat"
 									cssClass="form-control"
 									placeholder="Alamat Penerima"
-									rows="3"
+									rows="2"
 									style="resize: none;" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<form:select
+									path="kabupaten"
+									cssClass="form-control" 
+									data-live-search="true">
+									<form:option value="banyumas">Banyumas</form:option>
+									<form:option value="banjarnegara">Banjarnegara</form:option>
+									<form:option value="purbalingga">Purbalingga</form:option>
+								</form:select>
 							</div>
 						</div>
 					</div>

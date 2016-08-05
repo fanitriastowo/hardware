@@ -42,7 +42,7 @@ Aplikasi yang digunakan untuk menejemen barang hardware komputer dan pemesanan.
 * Menampilkan Produk per-kategori dan per-brand (Front)
 * Pesanan Per alamat pengirim (Administrator)
 * Isi Content Halaman Summary (Administrator)
-* Report Daftar Pengiriman (Administrator)
+* ~~Report Daftar Pengiriman (Administrator)~~
 * Edit dan Hapus daftar Produk (Administrator)
 * ~~Edit dan Hapus daftar Kategori (Administrator)~~
 * ~~Edit dan Hapus daftar Brands (Administrator)~~

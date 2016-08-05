@@ -2,7 +2,11 @@
    language="java"
    contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/template/administrator/administrator-taglib.jsp"%>
+<%@ include 
+   file="/WEB-INF/template/administrator/administrator-taglib.jsp"%>
+<%@ taglib
+   uri="http://java.sun.com/jsp/jstl/fmt"
+   prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +48,10 @@
                   <div class="panel panel-default">
                      <div class="panel-heading">
                         <h3 class="panel-title">Pemesanan hari ini</h3>
+                        <a href='<spring:url value="/administrator/pemesanan/cetak_analisa_pasar" />'
+                           class="pull-right btn btn-info btn-sm">
+                           <span class="fa fa-print"></span>Cetak Analisa Pasar
+                        </a>
                      </div>
                      <div class="panel-body">
                         <table class="table table-hover">
@@ -52,8 +60,9 @@
                                  <th>#</th>
                                  <th>Tanggal</th>
                                  <th>Nama</th>
+                                 <th>Kota</th>
                                  <th>Email</th>
-                                 <th>Total Items</th>
+                                 <th width="8%">Total Items</th>
                                  <th>Total Harga</th>
                                  <th>Transfer?</th>
                                  <th>Action</th>
@@ -69,9 +78,12 @@
                                     <td><c:out value="${index.count }" /></td>
                                     <td><c:out value="${pemesanan.tanggalPemesanan }" /></td>
                                     <td><c:out value="${pemesanan.namaPenerima }" /></td>
+                                    <td><c:out value="${pemesanan.kabupaten }" /></td>
                                     <td><c:out value="${pemesanan.userEntity.username }" /></td>
-                                    <td><c:out value="${pemesanan.jumlahItems }" /></td>
-                                    <td>Rp. <c:out value="${pemesanan.totalHarga }" />
+                                    <td class="text-center"><c:out value="${pemesanan.jumlahItems }" /></td>
+                                    <td>Rp. <fmt:formatNumber
+                                             value="${pemesanan.totalHarga }"
+                                             type="number" />
                                     </td>
                                     <td><c:choose>
                                           <c:when test="${pemesanan.transfer }">
@@ -98,6 +110,7 @@
 
                            </tbody>
                         </table>
+                        
                      </div>
                   </div>
                </div>

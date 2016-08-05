@@ -40,6 +40,8 @@ public class PengirimanEntity implements Serializable {
 	@JoinColumn(name = "pemesanan_id")
 	private PemesananEntity pemesananEntity;
 
+	private String kabupaten;
+
 	public Integer getId() {
 		return id;
 	}
@@ -94,6 +96,14 @@ public class PengirimanEntity implements Serializable {
 
 	public void setPemesananEntity(PemesananEntity pemesananEntity) {
 		this.pemesananEntity = pemesananEntity;
+	}
+
+	public String getKabupaten() {
+		return kabupaten;
+	}
+
+	public void setKabupaten(String kabupaten) {
+		this.kabupaten = kabupaten;
 	}
 
 }

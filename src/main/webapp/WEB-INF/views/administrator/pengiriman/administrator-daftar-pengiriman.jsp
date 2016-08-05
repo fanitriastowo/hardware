@@ -38,6 +38,10 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">Pengiriman hari ini</h3>
+								<a href="#" 
+		                           class="pull-right btn btn-info btn-sm">
+		                           <span class="fa fa-print"></span>Cetak Analisa Pasar
+		                        </a>
 							</div>
 							<div class="panel-body">
 								<table class="table table-hover">

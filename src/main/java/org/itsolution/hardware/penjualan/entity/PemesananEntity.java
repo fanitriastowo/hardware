@@ -43,6 +43,8 @@ public class PemesananEntity implements Serializable {
 	@JoinColumn(name = "user_id")
 	private UserEntity userEntity;
 
+	private String kabupaten;
+
 	public Integer getId() {
 		return id;
 	}
@@ -137,6 +139,14 @@ public class PemesananEntity implements Serializable {
 
 	public void setUserEntity(UserEntity userEntity) {
 		this.userEntity = userEntity;
+	}
+
+	public String getKabupaten() {
+		return kabupaten;
+	}
+
+	public void setKabupaten(String kabupaten) {
+		this.kabupaten = kabupaten;
 	}
 
 }

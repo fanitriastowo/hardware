@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-08-04T10:52:39 -->
+<!-- 2016-08-05T11:52:58 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -18,6 +18,7 @@
 	<field name="pemesananEntity.produkEntity.nama" class="java.lang.String"/>
 	<field name="pemesananEntity.produkEntity.image" class="java.lang.String"/>
 	<field name="statusPengiriman" class="java.lang.String"/>
+	<field name="kabupaten" class="java.lang.String"/>
 	<title>
 		<band height="76" splitType="Stretch">
 			<staticText>
@@ -165,6 +166,18 @@ Cilacap Utara, Jawa Tengah]]></text>
 			<textField>
 				<reportElement x="353" y="110" width="191" height="58" uuid="d4f48951-a370-4ac4-9724-c9ef8fb3e18a"/>
 				<textFieldExpression><![CDATA[$F{pemesananEntity.alamatPengiriman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="287" y="168" width="66" height="20" uuid="32cdc564-93d2-403b-8a64-4446c6736203"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kabupaten:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="168" width="192" height="20" uuid="e5065f39-b61f-45c5-a26b-42bc9bf9b345"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kabupaten}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>

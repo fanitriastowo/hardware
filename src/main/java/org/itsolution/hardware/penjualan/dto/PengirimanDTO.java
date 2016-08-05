@@ -10,6 +10,7 @@ public class PengirimanDTO {
 	private String alamatPengiriman;
 	private Date tanggalPengiriman;
 	private String statusPengiriman;
+	private String kabupaten;
 
 	public Integer getPemesananId() {
 		return pemesananId;
@@ -57,6 +58,14 @@ public class PengirimanDTO {
 
 	public void setStatusPengiriman(String statusPengiriman) {
 		this.statusPengiriman = statusPengiriman;
+	}
+
+	public String getKabupaten() {
+		return kabupaten;
+	}
+
+	public void setKabupaten(String kabupaten) {
+		this.kabupaten = kabupaten;
 	}
 
 }

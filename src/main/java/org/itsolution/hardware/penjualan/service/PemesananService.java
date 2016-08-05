@@ -60,4 +60,8 @@ public class PemesananService {
         pemesananEntity.setTransfer(true);
         pemesananRepository.save(pemesananEntity);
     }
+
+    public List<Object[]> findAllForPieChart() {
+        return pemesananRepository.findAllForPieChart();
+    }
 }

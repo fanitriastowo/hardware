@@ -81,6 +81,17 @@
 								</div>
 								
 								<div class="form-group">
+									<label class="col-md-3 col-xs-12 control-label">Kabupaten</label>
+									<div class="col-md-6 col-xs-12">
+										<form:select path="kabupaten" cssClass="form-control select" data-live-search="true">
+											<form:option value="banyumas">Banyumas</form:option>
+											<form:option value="banjarnegara">Banjarnegara</form:option>
+											<form:option value="purbalingga">Purbalingga</form:option>
+										</form:select>
+									</div>
+								</div>
+								
+								<div class="form-group">
 									<label class="col-md-3 col-xs-12 control-label">Tgl Pengiriman</label>
 									<div class="col-md-6 col-xs-12">
 										<div class="input-group">
