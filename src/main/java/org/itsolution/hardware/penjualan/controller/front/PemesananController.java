@@ -77,7 +77,7 @@ public class PemesananController {
             }
             
             listKeranjang.clear();
-            //eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
+            eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
 
             return new ModelAndView("redirect:/");
         } else {

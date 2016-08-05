@@ -90,7 +90,7 @@ public class PengirimanController {
 	@RequestMapping("/tambah_post")
 	public ModelAndView tambahPengirimanPost(@ModelAttribute("pengiriman") PengirimanDTO dto) {
 		PengirimanEntity pengirimanEntity = pengirimanService.save(dto);
-		//eventPublisher.publishEvent(new OnCompleteAddPengirimanEvent(pengirimanEntity));
+		eventPublisher.publishEvent(new OnCompleteAddPengirimanEvent(pengirimanEntity));
 		return new ModelAndView("administrator/pengiriman/administrator-tambah-pengiriman");
 	}
 }

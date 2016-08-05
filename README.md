@@ -50,5 +50,5 @@ Aplikasi yang digunakan untuk menejemen barang hardware komputer dan pemesanan.
 * Halaman Setting (Administrator)
 * ~~Integerasi Google analytics (Administrator)~~
 * ~~Konfirmasi email pengiriman (Administrator)~~
-* report grafik pie pemesanan (Administrator)
+* ~~report grafik pie pemesanan (Administrator)~~
 * Jquery Validation (Administrator)
