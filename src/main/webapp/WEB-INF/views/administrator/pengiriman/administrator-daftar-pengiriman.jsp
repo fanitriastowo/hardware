@@ -38,7 +38,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">Pengiriman hari ini</h3>
-								<a href="#" 
+								<a href='<spring:url value="/administrator/pengiriman/cetak_analisa_pasar" />'
 		                           class="pull-right btn btn-info btn-sm">
 		                           <span class="fa fa-print"></span>Cetak Analisa Pasar
 		                        </a>
@@ -51,6 +51,7 @@
 											<th>Tanggal</th>
 											<th>JNE ID</th>
 											<th>Nama Lengkap</th>
+											<th>Daerah</th>
 											<th>Email</th>
 											<th>Status</th>
 											<th>Action</th>
@@ -64,6 +65,7 @@
 											<td><c:out value="${pengiriman.tanggalPengiriman }" /></td>
 											<td><c:out value="${pengiriman.jneId }" /></td>
 											<td><c:out value="${pengiriman.pemesananEntity.namaPenerima }" /></td>
+											<td><c:out value="${pengiriman.kabupaten }" /></td>
 											<td><c:out value="${pengiriman.userEntity.username }" /></td>
 											<td>
 												<c:choose>

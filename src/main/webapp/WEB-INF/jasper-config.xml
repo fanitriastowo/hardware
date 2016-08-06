@@ -25,4 +25,10 @@
 		p:url="classpath:/report/cetak_analisa_pemesanan.jrxml"
 		p:reportDataKey="dataSource" />
 
+	<bean
+		id="cetakAnalisisPengiriman"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+		p:url="classpath:/report/cetak_analisa_pengiriman.jrxml"
+		p:reportDataKey="dataSource" />
+
 </beans>

@@ -93,4 +93,28 @@ public class PengirimanController {
 		eventPublisher.publishEvent(new OnCompleteAddPengirimanEvent(pengirimanEntity));
 		return new ModelAndView("administrator/pengiriman/administrator-tambah-pengiriman");
 	}
+
+	@RequestMapping("/cetak_analisa_pasar")
+    public ModelAndView cetakAnalisaPasar(ModelMap modelMap, HttpServletRequest request) {
+
+        List<PengirimanDTO> listDTO = new ArrayList<>();
+        List<Object[]> list = pengirimanService.findAllForPieChart();
+
+        for (Object[] object : list) {
+            PengirimanDTO dto = new PengirimanDTO();
+            dto.setJumlah((Long) object[0]);
+            dto.setKabupaten((String) object[1]);
+            dto.setStatusPengiriman(Long.toString((Long) object[0]));
+            listDTO.add(dto);
+        }
+
+        String uri = request.getScheme() + "://" +  // "http" + "://
+                request.getServerName() + ":" +     // "localhost" + ":"
+                request.getServerPort() +           // "80"
+                request.getContextPath();           // hardware
+
+        modelMap.addAttribute("dataSource", listDTO);
+        modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
+        return new ModelAndView("cetakAnalisisPengiriman", modelMap);
+    }
 }

@@ -11,6 +11,7 @@ public class PengirimanDTO {
 	private Date tanggalPengiriman;
 	private String statusPengiriman;
 	private String kabupaten;
+	private Long jumlah;
 
 	public Integer getPemesananId() {
 		return pemesananId;
@@ -66,6 +67,14 @@ public class PengirimanDTO {
 
 	public void setKabupaten(String kabupaten) {
 		this.kabupaten = kabupaten;
+	}
+
+	public Long getJumlah() {
+		return jumlah;
+	}
+
+	public void setJumlah(Long jumlah) {
+		this.jumlah = jumlah;
 	}
 
 }

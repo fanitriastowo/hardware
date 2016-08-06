@@ -39,6 +39,7 @@ public class PengirimanService {
 		entity.setStatusPengiriman(dto.getStatusPengiriman());
 		entity.setTanggalPengiriman(dto.getTanggalPengiriman());
 		entity.setUserEntity(userEntity);
+		entity.setKabupaten(dto.getKabupaten());
 		pengirimanRepository.save(entity);
 		return entity;
 	}
@@ -50,5 +51,9 @@ public class PengirimanService {
 
 	public PengirimanEntity findOne(Integer id) {
 		return pengirimanRepository.findOne(id);
+	}
+
+	public List<Object[]> findAllForPieChart() {
+		return pengirimanRepository.findAllForPieChart();
 	}
 }
