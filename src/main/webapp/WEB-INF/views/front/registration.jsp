@@ -285,7 +285,16 @@
                    },
                    username : {
                        required : true,
-                       email : true
+                       email : true,
+                       remote : {
+                        url: "<spring:url value='/registration/available' />",
+                        type: "get",
+                        data: {
+                          username: function() {
+                            return $("#username").val();
+                          }
+                        }
+                      }
                    },
                    password : {
                        required : true,
@@ -309,7 +318,8 @@
                    },
                    username : {
                        required : "Username harus diisi",
-                       email : "Format username tidak valid, inputkan email dengan valid"
+                       email : "Format username tidak valid, inputkan email dengan valid",
+                       remote : "Username tersebut sudah tersedia!"
                    },
                    password : {
                        required : "Password harus diisi",

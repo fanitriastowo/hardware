@@ -76,9 +76,6 @@ public class InitDB {
         userAdmin.setTanggalLahir(new Date());
         userRepository.save(userAdmin);
         
-        VerificationToken token1 = new VerificationToken(UUID.randomUUID().toString(), userAdmin);
-        verificationTokenRepository.save(token1);
-        
         UserEntity userMember = new UserEntity();
         userMember.setUsername("fani.triastowo@gmail.com");
         userMember.setPassword(encoder.encode("fani"));
@@ -89,9 +86,6 @@ public class InitDB {
         userMember.setRole(roleMember);
         userMember.setTanggalLahir(new Date());
         userRepository.save(userMember);
-        
-        VerificationToken token2 = new VerificationToken(UUID.randomUUID().toString(), userMember);
-        verificationTokenRepository.save(token2);
 
         // =================================================================================================
 
