@@ -17,7 +17,7 @@
 				<h2>Profile: <c:out value="${principal.nama }" /></h2>
 				<p><strong>Username:</strong> <c:out value="${principal.username }" /> </p>
 				<p><strong>Telepon:</strong> <c:out value="${principal.phone }" /> </p>
-				<a href="#" class="btn btn-sm btn-default" disabled>
+				<a href='<spring:url value="/ubah_principal" />' class="btn btn-sm btn-default">
 					<span class="fa fa-gear"></span>&nbsp;Ubah Profile</a>
 
 				<hr />

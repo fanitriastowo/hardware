@@ -155,4 +155,20 @@ public class UserService {
         verificationTokenRepository.delete(verifiedToken);
         return null;
     }
+
+    public void ubahProfileMember(UserDTO userDTO) {
+
+        Integer tanggal = userDTO.getTanggal();
+        Integer bulan = userDTO.getBulan();
+        Integer tahun = userDTO.getTahun();
+
+        Calendar tanggalLahir = new GregorianCalendar();
+        tanggalLahir.set(tahun, bulan - 1, tanggal);
+
+        UserEntity userEntity = userRepository.findOne(userDTO.getId());
+        userEntity.setNama(userDTO.getNama());
+        userEntity.setPhone(userDTO.getPhone());
+        userEntity.setTanggalLahir(tanggalLahir.getTime());
+        userRepository.save(userEntity);
+    }
 }
