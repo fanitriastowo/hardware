@@ -66,10 +66,12 @@
 											<td>Rp. <c:out value="${produk.harga }" /></td>
 											<td><c:out value="${produk.jumlahTerbeli }" /></td>
 											<td>
+												<!-- 
 												<a class="btn btn-default btn-rounded btn-sm"
-													href='<spring:url value="/administrator/produk/prepare_update/${produk.id }" />'>
+													href='<spring:url value="/administrator/produk/prepare_update/${produk.id }" />' >
 														<span class="fa fa-pencil"></span>
-												</a> 
+												</a>  
+												-->
 												<a class="btn btn-danger btn-rounded btn-sm triggerDelete"
 													href='<spring:url value="/administrator/produk/delete/${produk.id}" />'>
 														<span class="fa fa-times"></span>
