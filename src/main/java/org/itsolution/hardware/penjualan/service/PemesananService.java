@@ -3,6 +3,7 @@ package org.itsolution.hardware.penjualan.service;
 import java.util.List;
 
 import org.itsolution.hardware.penjualan.entity.PemesananEntity;
+import org.itsolution.hardware.penjualan.entity.UserEntity;
 import org.itsolution.hardware.penjualan.repository.PemesananRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -14,54 +15,58 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PemesananService {
 
-    @Autowired
-    private PemesananRepository pemesananRepository;
+	@Autowired
+	private PemesananRepository pemesananRepository;
 
-    @CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
-            "pemesananFindOneByPemesananId" }, allEntries = true)
-    public void save(PemesananEntity pemesanaanEntity) {
-        pemesananRepository.save(pemesanaanEntity);
-    }
+	@CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
+			"pemesananFindOneByPemesananId" }, allEntries = true)
+	public void save(PemesananEntity pemesanaanEntity) {
+		pemesananRepository.save(pemesanaanEntity);
+	}
 
-    @CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
-            "pemesananFindOneByPemesananId" }, allEntries = true)
-    public void update(PemesananEntity pemesananEntity) {
-        pemesananRepository.save(pemesananEntity);
-    }
+	@CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
+			"pemesananFindOneByPemesananId" }, allEntries = true)
+	public void update(PemesananEntity pemesananEntity) {
+		pemesananRepository.save(pemesananEntity);
+	}
 
-    @CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
-            "pemesananFindOneByPemesananId" }, allEntries = true)
-    public void delete(PemesananEntity pemesananEntity) {
-        pemesananRepository.delete(pemesananEntity);
-    }
+	@CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
+			"pemesananFindOneByPemesananId" }, allEntries = true)
+	public void delete(PemesananEntity pemesananEntity) {
+		pemesananRepository.delete(pemesananEntity);
+	}
 
-    public PemesananEntity findOne(Integer id) {
-        return pemesananRepository.findOne(id);
-    }
+	public PemesananEntity findOne(Integer id) {
+		return pemesananRepository.findOne(id);
+	}
 
-    @Cacheable("pemesananFindAll")
-    public List<PemesananEntity> findAll() {
-        return pemesananRepository.findAll();
-    }
+	@Cacheable("pemesananFindAll")
+	public List<PemesananEntity> findAll() {
+		return pemesananRepository.findAll();
+	}
 
-    @Cacheable("pemesananFindAllOrderByTransfer")
-    public List<PemesananEntity> findAllOrderByTransfer() {
-        return pemesananRepository.findAllByOrderByTransferDesc();
-    }
+	@Cacheable("pemesananFindAllOrderByTransfer")
+	public List<PemesananEntity> findAllOrderByTransfer() {
+		return pemesananRepository.findAllByOrderByTransferDesc();
+	}
 
-    @Cacheable("pemesananFindOneByPemesananId")
-    public PemesananEntity findOneBypemesananId(Integer pemesananId) {
-        return pemesananRepository.findOneByPemesananId(pemesananId);
-    }
+	@Cacheable("pemesananFindOneByPemesananId")
+	public PemesananEntity findOneBypemesananId(Integer pemesananId) {
+		return pemesananRepository.findOneByPemesananId(pemesananId);
+	}
 
-    @CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
-            "pemesananFindOneByPemesananId" }, allEntries = true)
-    public void ubahStatusTransfer(PemesananEntity pemesananEntity) {
-        pemesananEntity.setTransfer(true);
-        pemesananRepository.save(pemesananEntity);
-    }
+	@CacheEvict(value = { "pemesananFindAll", "pemesananFindAllOrderByTransfer",
+			"pemesananFindOneByPemesananId" }, allEntries = true)
+	public void ubahStatusTransfer(PemesananEntity pemesananEntity) {
+		pemesananEntity.setTransfer(true);
+		pemesananRepository.save(pemesananEntity);
+	}
 
-    public List<Object[]> findAllForPieChart() {
-        return pemesananRepository.findAllForPieChart();
-    }
+	public List<Object[]> findAllForPieChart() {
+		return pemesananRepository.findAllForPieChart();
+	}
+
+	public List<PemesananEntity> findAllByUserEntity(UserEntity userEntity) {
+		return pemesananRepository.findAllByUserEntity(userEntity);
+	}
 }

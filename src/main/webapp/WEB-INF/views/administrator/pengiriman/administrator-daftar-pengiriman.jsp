@@ -49,6 +49,7 @@
 										<tr>
 											<th width="3%">#</th>
 											<th>Tanggal</th>
+											<th>Pemesanan ID</th>
 											<th>JNE ID</th>
 											<th>Nama Lengkap</th>
 											<th>Daerah</th>
@@ -63,6 +64,7 @@
 										<tr>
 											<td><c:out value="${index.count }" /></td>
 											<td><c:out value="${pengiriman.tanggalPengiriman }" /></td>
+											<td><c:out value="${pengiriman.pemesananEntity.pemesananId }" /></td>
 											<td><c:out value="${pengiriman.jneId }" /></td>
 											<td><c:out value="${pengiriman.pemesananEntity.namaPenerima }" /></td>
 											<td><c:out value="${pengiriman.kabupaten }" /></td>

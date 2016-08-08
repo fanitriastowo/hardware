@@ -56,4 +56,8 @@ public class PengirimanService {
 	public List<Object[]> findAllForPieChart() {
 		return pengirimanRepository.findAllForPieChart();
 	}
+
+	public List<PengirimanEntity> findAllByUserEntity(UserEntity userEntity) {
+		return pengirimanRepository.findAllByUserEntity(userEntity);
+	}
 }

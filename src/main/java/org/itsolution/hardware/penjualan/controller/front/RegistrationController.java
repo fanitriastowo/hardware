@@ -39,8 +39,8 @@ public class RegistrationController {
             RedirectAttributes redirectAttributes) {
         
         final UserEntity userEntity = userService.registerNewUser(userDTO);
-        //eventPublisher
-        //        .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
+        eventPublisher
+                .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
         redirectAttributes.addFlashAttribute("confirm", false);
         return new ModelAndView("redirect:/login");
     }

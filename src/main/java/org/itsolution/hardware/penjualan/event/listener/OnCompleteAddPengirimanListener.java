@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class OnCompleteAddPengirimanListener implements ApplicationListener<OnCompleteAddPengirimanEvent> {
 
-    private final String MESSAGE = "Pengiriman barang pesanan Anda sedang dilakukan proses packaging, "
+    private final String MESSAGE = "Terima Kasih telah mentransfer. "
+    		+ "Pengiriman barang pesanan Anda sedang dilakukan proses packaging, "
             + "barang akan sampai 3 sampai 4 hari mendatang.";
 
     @Autowired
@@ -32,7 +33,7 @@ public class OnCompleteAddPengirimanListener implements ApplicationListener<OnCo
     private final SimpleMailMessage constructEmailMessage(final PengirimanEntity entity) {
 
         final String recipientAddress = entity.getUserEntity().getUsername();
-        final String subject = "Terima Kasih";
+        final String subject = "Terima Kasih Telah Transfer";
         final String message = MESSAGE;
         final SimpleMailMessage email = new SimpleMailMessage();
 
