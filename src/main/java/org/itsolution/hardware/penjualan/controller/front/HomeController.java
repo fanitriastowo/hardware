@@ -27,7 +27,13 @@ public class HomeController {
 	    List<ProdukEntity> findAll = produkService.findAll();
 	    Collections.shuffle(findAll, new Random());
 	    
-		mav.addObject("produks", findAll);
+	    if (findAll.size() >= 12) {
+	    	List<ProdukEntity> listLimited = findAll.subList(0, 12);
+	    	mav.addObject("produks", listLimited);
+	    	return mav;
+	    }
+	    
+	    mav.addObject("produks", findAll);
 		return mav;
 	}
 	

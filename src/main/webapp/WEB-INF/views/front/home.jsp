@@ -41,7 +41,8 @@
                         <div class="overlay">
                            <a
                               class="preview btn btn-danger"
-                              href='<spring:url value="/${produk.id }" />'><i class="fa fa-eye"></i></a>
+                              href='<spring:url value="/${produk.id }" />'><i class="fa fa-eye"></i>
+                           </a>
                         </div>
                      </c:when>
                      <c:otherwise>
@@ -56,7 +57,8 @@
                         <div class="overlay">
                            <a
                               class="preview btn btn-danger"
-                              href='<spring:url value="/${produk.id }" />'><i class="fa fa-eye"></i></a>
+                              href='<spring:url value="/${produk.id }" />'><i class="fa fa-eye"></i>
+                           </a>
                         </div>
                      </c:otherwise>
                   </c:choose>

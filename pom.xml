@@ -276,7 +276,7 @@
 					<webApp>
 						<contextPath>/hardware.itsolution</contextPath>
 					</webApp>
-					<scanIntervalSeconds>1</scanIntervalSeconds>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
 				</configuration>
 			</plugin>
 		</plugins>
