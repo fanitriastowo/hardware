@@ -62,7 +62,9 @@
 		</li>
 
 		<!-- Setting -->
+		<!-- 
 		<li class="xn-title">Setting</li>
 		<li id="sidebar-setting"><a href='<spring:url value="/administrator/setting" />'><span class="fa fa-gear"></span><span class="xn-text">Setting</span></a></li>
+		-->
 	</ul>
 </div> <!-- .page-sidebar -->

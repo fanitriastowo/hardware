@@ -41,7 +41,7 @@
 								<h3 class="panel-title">Daftar Produk</h3>
 							</div>
 							<div class="panel-body">
-								<table class="table table-hover">
+								<table class="table table-hover datatable">
 									<thead>
 										<tr>
 											<th>#</th>
@@ -120,6 +120,7 @@
 	</div>
 
 	<%@ include file="/WEB-INF/template/administrator/administrator-js.jsp"%>
+	<script type="text/javascript" src='<spring:url value="/assets/administrator/js/plugins/datatables/jquery.dataTables.min.js" />'></script>    
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
