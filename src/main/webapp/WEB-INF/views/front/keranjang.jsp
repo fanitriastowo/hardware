@@ -181,8 +181,15 @@
 									cssClass="form-control" 
 									data-live-search="true">
 									<form:option value="banyumas">Banyumas</form:option>
-									<form:option value="banjarnegara">Banjarnegara</form:option>
 									<form:option value="purbalingga">Purbalingga</form:option>
+									<form:option value="banjarnegara">Banjarnegara</form:option>
+									<form:option value="purbalingga">Pemalang</form:option>
+									<form:option value="banyumas">Tegal</form:option>
+									<form:option value="banjarnegara">Bumiayu</form:option>
+									<form:option value="banjarnegara">Brebes</form:option>
+									<form:option value="banjarnegara">Kebumen</form:option>
+									<form:option value="banyumas">Cilacap</form:option>
+									<form:option value="purbalingga">Pekalongan</form:option>
 								</form:select>
 							</div>
 						</div>
