@@ -7,8 +7,10 @@
 		</li>
 
 		<!-- Dashboard -->
+		<!-- 
 		<li class="xn-title">Dashboard</li>
 		<li id="sidebar-dashboard"><a href='<spring:url value="/administrator/dashboard" />'><span class="fa fa-desktop"></span> <span class="xn-text">Summary</span></a></li>
+		-->
 
 		<!-- Transaksi -->
 		<li class="xn-title">Transaksi</li>

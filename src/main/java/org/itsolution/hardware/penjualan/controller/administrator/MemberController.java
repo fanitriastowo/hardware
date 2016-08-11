@@ -1,5 +1,7 @@
 package org.itsolution.hardware.penjualan.controller.administrator;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.itsolution.hardware.penjualan.dto.UserDTO;
 import org.itsolution.hardware.penjualan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +28,16 @@ public class MemberController {
 
     @RequestMapping("/tambah")
     public ModelAndView tambah() {
-        return new ModelAndView("administrator/member/administrator-tambah-member");
+        ModelAndView mav = new ModelAndView("administrator/member/administrator-tambah-member");
+        mav.addObject("member", new UserDTO());
+        return mav;
     }
 
     @RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
     public ModelAndView tambahPost(@ModelAttribute("member") UserDTO userDTO) {
         userService.save(userDTO);
+        //eventPublisher
+        //        .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
         return new ModelAndView("redirect:/administrator/member");
     }
 
@@ -52,5 +58,11 @@ public class MemberController {
     public ModelAndView delete(@PathVariable Integer id) {
         userService.delete(id);
         return new ModelAndView("redirect:/administrator/member");
+    }
+
+    // NON API
+    private String getAppUrl(HttpServletRequest request) {
+        return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()
+                + "/registration";
     }
 }

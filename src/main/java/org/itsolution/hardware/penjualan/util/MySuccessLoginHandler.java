@@ -19,7 +19,7 @@ public class MySuccessLoginHandler implements AuthenticationSuccessHandler {
 
 		Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
         if (roles.contains("ROLE_ADMIN")){
-            response.sendRedirect(request.getContextPath() + "/administrator/dashboard");   
+            response.sendRedirect(request.getContextPath() + "/administrator/pemesanan");   
             return;
         }
         response.sendRedirect(request.getContextPath() + "/");

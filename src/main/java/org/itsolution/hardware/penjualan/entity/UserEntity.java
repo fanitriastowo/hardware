@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.CascadeType;
 
 @Entity
 @Table(name = "master_user")
@@ -35,10 +36,10 @@ public class UserEntity implements Serializable {
 	@JoinColumn(name = "role_id")
 	private RoleEntity role;
 
-	@OneToMany(mappedBy = "userEntity")
+	@OneToMany(mappedBy = "userEntity", cascade = CascadeType.REMOVE)
 	private List<PemesananEntity> pemesananEntities;
 
-	@OneToMany(mappedBy = "userEntity")
+	@OneToMany(mappedBy = "userEntity", cascade = CascadeType.REMOVE)
 	private List<PengirimanEntity> pengirimanEntities;
 
 	public Integer getId() {

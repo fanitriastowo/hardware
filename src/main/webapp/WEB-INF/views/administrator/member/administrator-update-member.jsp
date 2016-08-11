@@ -175,7 +175,7 @@
                                        <form:option value="31">31</form:option>
                                     </form:select>
                                  </div>
-                                 <div class="col-md-2">
+                                 <div class="col-md-4">
                                     <form:select
                                        path="bulan"
                                        cssClass="form-control select">

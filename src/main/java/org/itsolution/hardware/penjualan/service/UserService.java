@@ -41,7 +41,7 @@ public class UserService {
             Integer tahun = userDTO.getTahun();
 
             Calendar tanggalLahir = new GregorianCalendar();
-            tanggalLahir.set(tahun, bulan, tanggal);
+            tanggalLahir.set(tahun, bulan - 1, tanggal);
 
             UserEntity userEntity = new UserEntity();
             userEntity.setNama(userDTO.getNama());
@@ -66,7 +66,7 @@ public class UserService {
             Integer tahun = userDTO.getTahun();
 
             Calendar tanggalLahir = new GregorianCalendar();
-            tanggalLahir.set(tahun, bulan, tanggal);
+            tanggalLahir.set(tahun, bulan - 1, tanggal);
 
             UserEntity userEntity = new UserEntity();
             userEntity.setNama(userDTO.getNama());
