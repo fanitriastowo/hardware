@@ -28,7 +28,7 @@
 	$(document).ready(function() {
 
 		/* hitung jumlah keranjang */
-		var url = '<spring:url value="/count_keranjang" />';
+		var url = '<spring:url value="/count_keranjang" />3';
 		$.getJSON(url, function(data) {
 			$('#product_total').html(data);
 		});
@@ -36,7 +36,7 @@
 
 		/* Search bar autocomplete */
 		$("#search-bar").autocomplete({
-			serviceUrl : "<spring:url value="/search_autocomplete" />", // path to the get products method
+			serviceUrl : '<spring:url value="/search_autocomplete" />', // path to the get products method
 			paramName : "term",
 			transformResult : function(response) {
 				return {
