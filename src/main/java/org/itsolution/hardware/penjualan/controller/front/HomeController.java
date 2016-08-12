@@ -37,7 +37,7 @@ public class HomeController {
 		mav.addObject("produks", findAll);
 		return mav;
 	}
-
+	
 	@RequestMapping("/search_autocomplete")
 	@ResponseBody
 	public List<ProdukEntity> searchAutocomplete(@RequestParam("term") String nama) {

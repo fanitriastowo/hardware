@@ -1,7 +1,6 @@
 package org.itsolution.hardware.penjualan.util;
 
 import java.util.Date;
-import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
@@ -10,13 +9,11 @@ import org.itsolution.hardware.penjualan.entity.KategoriEntity;
 import org.itsolution.hardware.penjualan.entity.ProdukEntity;
 import org.itsolution.hardware.penjualan.entity.RoleEntity;
 import org.itsolution.hardware.penjualan.entity.UserEntity;
-import org.itsolution.hardware.penjualan.entity.VerificationToken;
 import org.itsolution.hardware.penjualan.repository.BrandRepository;
 import org.itsolution.hardware.penjualan.repository.KategoriRepository;
 import org.itsolution.hardware.penjualan.repository.ProdukRepository;
 import org.itsolution.hardware.penjualan.repository.RoleRepository;
 import org.itsolution.hardware.penjualan.repository.UserRepository;
-import org.itsolution.hardware.penjualan.repository.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -28,9 +25,6 @@ public class InitDB {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private VerificationTokenRepository verificationTokenRepository;
 
     @Autowired
     private RoleRepository roleRepository;

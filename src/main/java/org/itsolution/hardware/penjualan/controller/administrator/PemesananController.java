@@ -52,7 +52,7 @@ public class PemesananController {
 
         modelMap.addAttribute("dataSource", list);
         modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
-        modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
+        modelMap.addAttribute("produkImage", uri + "/uploads/");
 
         return new ModelAndView("pemesanan", modelMap);
     }

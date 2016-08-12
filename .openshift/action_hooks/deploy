@@ -1,1 +1,0 @@
-ln -sf ${OPENSHIFT_DATA_DIR}images /var/lib/openshift/578f27ff7628e1b080000038/jbossews/webapps

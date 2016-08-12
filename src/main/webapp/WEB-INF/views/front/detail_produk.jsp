@@ -33,7 +33,7 @@
                         <img
                            alt="Image"
                            id="thumb"
-                           src='<spring:url value="/assets/images/produk/${detailProduk.image }" />'
+                           src='<spring:url value="/uploads/${detailProduk.image }" />'
                            class="img-rounded"
                            width="500px">
                      </a>

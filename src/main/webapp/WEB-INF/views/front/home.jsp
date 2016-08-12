@@ -32,7 +32,7 @@
                      <c:when test="${produk.image ne null}">
                         <img
                            alt="Image"
-                           src='<spring:url value="/assets/images/produk/${produk.image }" />'
+                           src='<spring:url value="/uploads/${produk.image }" />'
                            class="img-rounded">
                         <h5 class="text-center" style="overflow: hidden; white-space: nowrap;">
                            <strong><c:out value="${produk.nama}" /> </strong><br />
