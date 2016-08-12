@@ -63,11 +63,20 @@ public class PemesananController {
         List<PemesananDTO> listDTO = new ArrayList<>();
         List<Object[]> list = pemesananService.findAllForPieChart();
 
+        Long sum = 0L;
         for (Object[] object : list) {
+            sum += (Long) object[0];
+        }
+        
+        for (Object[] object : list) {
+            
             PemesananDTO dto = new PemesananDTO();
-            dto.setJumlah((Long) object[0]);
+            Long jumlah = (Long) object[0];
+            dto.setJumlah(jumlah);
             dto.setKabupaten((String) object[1]);
-            dto.setNama(Long.toString((Long) object[0]));
+            
+            Double percentage = (jumlah.doubleValue() / sum.doubleValue()) * 100;
+            dto.setNama(percentage.toString() + " %");
             listDTO.add(dto);
         }
 

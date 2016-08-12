@@ -59,6 +59,7 @@
                               <tr>
                                  <th>#</th>
                                  <th>Tanggal</th>
+                                 <th>ID</th>
                                  <th>Nama</th>
                                  <th>Kota</th>
                                  <th>Email</th>
@@ -76,6 +77,7 @@
                                  varStatus="index">
                                  <tr>
                                     <td><c:out value="${index.count }" /></td>
+                                    <td><c:out value="${pemesanan.pemesananId }" /></td>
                                     <td><c:out value="${pemesanan.tanggalPemesanan }" /></td>
                                     <td><c:out value="${pemesanan.namaPenerima }" /></td>
                                     <td><c:out value="${pemesanan.kabupaten }" /></td>
