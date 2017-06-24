@@ -28,7 +28,8 @@ public class OpenshiftDataDirectoryHandler extends HttpServlet {
 		String filePath = request.getRequestURI().substring(request.getContextPath().length());
 		filePath = URLDecoder.decode(filePath, "UTF-8");
 
-		File file = new File(System.getenv("OPENSHIFT_DATA_DIR") + filePath.replace("/uploads/", "/"));
+		// File file = new File(System.getenv("OPENSHIFT_DATA_DIR") + filePath.replace("/uploads/", "/"));
+		File file = new File("assets/images/produk/");
 		InputStream input = new FileInputStream(file);
 
 		response.setContentLength((int) file.length());

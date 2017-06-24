@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -13,15 +11,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.itsolution.hardware.penjualan.entity.base.BasisEntity;
+
 @Entity
 @Table(name = "transaksi_pengiriman")
-public class PengirimanEntity implements Serializable {
+public class PengirimanEntity extends BasisEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-	@GeneratedValue
-	private Integer id;
+  private static final long serialVersionUID = 1L;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
@@ -41,14 +37,6 @@ public class PengirimanEntity implements Serializable {
 	private PemesananEntity pemesananEntity;
 
 	private String kabupaten;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public UserEntity getUserEntity() {
 		return userEntity;

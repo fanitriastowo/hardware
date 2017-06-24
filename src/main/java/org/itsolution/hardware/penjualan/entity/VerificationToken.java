@@ -7,22 +7,18 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.itsolution.hardware.penjualan.entity.base.BasisEntity;
+
 @Entity
 @Table(name = "verification_token")
-public class VerificationToken implements Serializable {
+public class VerificationToken extends BasisEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private static final int EXPIRATION = 60 * 24;
-
-    @Id
-    @GeneratedValue
-    private Integer id;
 
     private String token;
 
@@ -39,14 +35,6 @@ public class VerificationToken implements Serializable {
         this.token = token;
         this.expiryDate = calculateExpiredDate(EXPIRATION);
         this.userEntity = userEntity;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getToken() {

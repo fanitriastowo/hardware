@@ -4,30 +4,21 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.itsolution.hardware.penjualan.entity.base.BasisEntity;
+
 @Entity
 @Table(name = "master_role")
-public class RoleEntity implements Serializable {
+public class RoleEntity extends BasisEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-	@GeneratedValue
-	private Integer id;
+  private static final long serialVersionUID = 1L;
+
 	private String name;
+
 	@OneToMany(mappedBy = "role")
 	private List<UserEntity> users;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

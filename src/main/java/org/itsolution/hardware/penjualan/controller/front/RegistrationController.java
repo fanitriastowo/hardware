@@ -48,6 +48,7 @@ public class RegistrationController {
     @RequestMapping("/registration_confirm")
     public ModelAndView confirmRegistrationMember(@RequestParam("token") final String token) {
         final String result = userService.validateVerificationToken(token);
+        System.out.println(result);
         return new ModelAndView("redirect:/login");
     }
 

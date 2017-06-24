@@ -78,8 +78,8 @@ public class ProdukController {
 		}
 
 		// Root Directory.
-		// String uploadRootPath = request.getServletContext().getRealPath("assets/images/produk");
-		String uploadRootPath = System.getenv("OPENSHIFT_DATA_DIR");
+		String uploadRootPath = request.getServletContext().getRealPath("assets/images/produk");
+		// String uploadRootPath = System.getenv("OPENSHIFT_DATA_DIR");
 		File uploadRootDir = new File(uploadRootPath);
 
 		// Create directory if it not exists.

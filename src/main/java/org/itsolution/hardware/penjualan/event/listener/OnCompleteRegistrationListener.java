@@ -48,7 +48,7 @@ public class OnCompleteRegistrationListener implements ApplicationListener<OnCom
         email.setTo(recipientAddress);
         email.setSubject(subject);
         email.setText(message + " \r\n" + confirmationUrl);
-        email.setFrom("itsolution@gmail.com");
+        email.setFrom("itsollution01@gmail.com");
         return email;
     }
 

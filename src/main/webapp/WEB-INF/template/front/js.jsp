@@ -28,7 +28,7 @@
 	$(document).ready(function() {
 
 		/* hitung jumlah keranjang */
-		var url = '<spring:url value="/count_keranjang" />3';
+		var url = '<spring:url value="/count_keranjang" />';
 		$.getJSON(url, function(data) {
 			$('#product_total').html(data);
 		});

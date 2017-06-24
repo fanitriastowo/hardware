@@ -2,7 +2,7 @@
    language="java"
    contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/template/front/taglib.jsp"%>
+<%@ include file="/WEB-INF/template/front/taglib.jsp"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +32,7 @@
                      <c:when test="${produk.image ne null}">
                         <img
                            alt="Image"
-                           src='<spring:url value="/uploads/${produk.image }" />'
+                           src='<spring:url value="/assets/images/produk/${produk.image }" />'
                            class="img-rounded">
                         <h5 class="text-center" style="overflow: hidden; white-space: nowrap;">
                            <strong><c:out value="${produk.nama}" /> </strong><br />

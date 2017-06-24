@@ -43,6 +43,14 @@
 								<strong>Oppssss.. Gagal Menyimpan</strong>
 							</div>
 						</c:if>
+					
+						<c:if test="${imagesizeexceed == true }">
+							<div class="alert alert-danger alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span></button>
+								<strong>Oppssss.. Gambar tidak boleh lebih dari 1 MB</strong>
+							</div>
+						</c:if>
 						
 						<form:form modelAttribute="produk" action="${pageContext.request.contextPath }/administrator/produk/tambah_post" cssClass="form-horizontal" method="post" enctype="multipart/form-data" >
 						<div class="panel panel-default">

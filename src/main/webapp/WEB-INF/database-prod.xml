@@ -5,24 +5,16 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
-
-	<context:property-placeholder />
-
-	<bean
-		class="org.apache.commons.dbcp.BasicDataSource"
-		id="dataSource">
-		<property
-			name="driverClassName"
-			value="org.postgresql.Driver" />
-		<property
-			name="url"
-			value="jdbc:postgresql://${OPENSHIFT_POSTGRESQL_DB_HOST}:${OPENSHIFT_POSTGRESQL_DB_PORT}/hardware" />
-		<property
-			name="username"
-			value="adminajufxfw" />
-		<property
-			name="password"
-			value="6TZGAjya5ikZ" />
+<!-- 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="propertyConfigurer">
+		<property name="location" value="classpath:/database-prod.properties" />
+	</bean>
+ -->
+	<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/hardware" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
 	</bean>
 
 	<bean
@@ -36,9 +28,9 @@
 			ref="dataSource" />
 		<property name="jpaProperties">
 			<props>
-				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
-				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.default_batch_fetch_size">10</prop>
 			</props>
 		</property>

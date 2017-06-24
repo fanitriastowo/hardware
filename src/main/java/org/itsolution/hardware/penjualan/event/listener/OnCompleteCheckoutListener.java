@@ -40,7 +40,7 @@ public class OnCompleteCheckoutListener implements ApplicationListener<OnComplet
         email.setTo(recipientAddress);
         email.setSubject(subject);
         email.setText(message);
-        email.setFrom("itsolution@gmail.com");
+        email.setFrom("itsollution01@gmail.com");
         return email;
     }
 

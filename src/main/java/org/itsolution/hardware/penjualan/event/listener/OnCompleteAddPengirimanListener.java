@@ -40,7 +40,7 @@ public class OnCompleteAddPengirimanListener implements ApplicationListener<OnCo
         email.setTo(recipientAddress);
         email.setSubject(subject);
         email.setText(message);
-        email.setFrom("itsolution@gmail.com");
+        email.setFrom("fani.triastowo@gmail.com");
         return email;
     }
 
