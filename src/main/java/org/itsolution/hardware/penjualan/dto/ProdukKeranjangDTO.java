@@ -4,46 +4,46 @@ import java.io.Serializable;
 
 public class ProdukKeranjangDTO implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	private String nama;
+   private static final long serialVersionUID = 1L;
 
-	private Long harga;
+   private String nama;
 
-	private Integer jumlahBarang;
+   private Long harga;
 
-	private Long totalHarga;
-	
-	public String getNama() {
-		return nama;
-	}
+   private Integer jumlahBarang;
 
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
+   private Long totalHarga;
 
-	public Long getHarga() {
-		return harga;
-	}
+   public String getNama() {
+      return nama;
+   }
 
-	public void setHarga(Long harga) {
-		this.harga = harga;
-	}
+   public void setNama(String nama) {
+      this.nama = nama;
+   }
 
-	public Integer getJumlahBarang() {
-		return jumlahBarang;
-	}
+   public Long getHarga() {
+      return harga;
+   }
 
-	public void setJumlahBarang(Integer jumlahBarang) {
-		this.jumlahBarang = jumlahBarang;
-	}
+   public void setHarga(Long harga) {
+      this.harga = harga;
+   }
 
-	public Long getTotalHarga() {
-		return totalHarga;
-	}
+   public Integer getJumlahBarang() {
+      return jumlahBarang;
+   }
 
-	public void setTotalHarga(Long totalHarga) {
-		this.totalHarga = totalHarga;
-	}
+   public void setJumlahBarang(Integer jumlahBarang) {
+      this.jumlahBarang = jumlahBarang;
+   }
+
+   public Long getTotalHarga() {
+      return totalHarga;
+   }
+
+   public void setTotalHarga(Long totalHarga) {
+      this.totalHarga = totalHarga;
+   }
 
 }

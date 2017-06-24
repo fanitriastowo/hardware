@@ -18,48 +18,48 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-	@Autowired
-	private ProdukService produkService;
+   @Autowired
+   private ProdukService produkService;
 
-	@RequestMapping("/")
-	public ModelAndView index() {
-		ModelAndView mav = new ModelAndView("front/home");
+   @RequestMapping("/")
+   public ModelAndView index() {
+      ModelAndView mav = new ModelAndView("front/home");
 
-		List<ProdukEntity> findAll = produkService.findAll();
-		Collections.shuffle(findAll, new Random());
+      List<ProdukEntity> findAll = produkService.findAll();
+      Collections.shuffle(findAll, new Random());
 
-		if (findAll.size() >= 12) {
-			List<ProdukEntity> listLimited = findAll.subList(0, 12);
-			mav.addObject("produks", listLimited);
-			return mav;
-		}
+      if (findAll.size() >= 12) {
+         List<ProdukEntity> listLimited = findAll.subList(0, 12);
+         mav.addObject("produks", listLimited);
+         return mav;
+      }
 
-		mav.addObject("produks", findAll);
-		return mav;
-	}
-	
-	@RequestMapping("/search_autocomplete")
-	@ResponseBody
-	public List<ProdukEntity> searchAutocomplete(@RequestParam("term") String nama) {
-		List<ProdukEntity> produkList = produkService.findAllByNamaLike(nama);
-		return produkList;
-	}
+      mav.addObject("produks", findAll);
+      return mav;
+   }
 
-	@RequestMapping(value = "/search_submit", method = RequestMethod.POST)
-	public ModelAndView searchSubmit(@RequestParam("search-result") String nama) {
-		if (nama == null) {
-			return new ModelAndView("redirect:/");
-		}
-		ProdukEntity produkEntity = produkService.findOneByNama(nama);
-		return new ModelAndView("redirect:/" + produkEntity.getId());
-	}
-	
-	@ExceptionHandler(NullPointerException.class)
-	public ModelAndView handleCustomException() {
-		ModelAndView model = new ModelAndView("error/error");
-		return model;
+   @RequestMapping("/search_autocomplete")
+   @ResponseBody
+   public List<ProdukEntity> searchAutocomplete(@RequestParam("term") String nama) {
+      List<ProdukEntity> produkList = produkService.findAllByNamaLike(nama);
+      return produkList;
+   }
 
-	}
+   @RequestMapping(value = "/search_submit", method = RequestMethod.POST)
+   public ModelAndView searchSubmit(@RequestParam("search-result") String nama) {
+      if (nama == null) {
+         return new ModelAndView("redirect:/");
+      }
+      ProdukEntity produkEntity = produkService.findOneByNama(nama);
+      return new ModelAndView("redirect:/" + produkEntity.getId());
+   }
+
+   @ExceptionHandler(NullPointerException.class)
+   public ModelAndView handleCustomException() {
+      ModelAndView model = new ModelAndView("error/error");
+      return model;
+
+   }
 
 
 }

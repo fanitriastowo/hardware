@@ -14,42 +14,42 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class BrandService {
 
-	@Autowired
-	private BrandRepository brandRepository;
+   @Autowired
+   private BrandRepository brandRepository;
 
-	@CacheEvict(value = "brandFindAll", allEntries = true)
-	public void save(BrandEntity brandEntity) {
-		if (brandEntity != null) {
-			brandRepository.save(brandEntity);
-		}
-	}
+   @CacheEvict(value = "brandFindAll", allEntries = true)
+   public void save(BrandEntity brandEntity) {
+      if (brandEntity != null) {
+         brandRepository.save(brandEntity);
+      }
+   }
 
-	@Cacheable("brandFindAll")
-	public List<BrandEntity> findAll() {
-		return brandRepository.findAll();
-	}
+   @Cacheable("brandFindAll")
+   public List<BrandEntity> findAll() {
+      return brandRepository.findAll();
+   }
 
-	public BrandEntity findOneByNama(String brand) {
-		return brandRepository.findOneByNama(brand);
-	}
+   public BrandEntity findOneByNama(String brand) {
+      return brandRepository.findOneByNama(brand);
+   }
 
-	public BrandEntity findOne(Integer id) {
-		return brandRepository.findOne(id);
-	}
+   public BrandEntity findOne(Integer id) {
+      return brandRepository.findOne(id);
+   }
 
-	@CacheEvict(value = {"brandFindAll", "produkFindAll"}, allEntries = true)
-	public void update(BrandEntity brandEntity) {
-		if (brandEntity != null) {
-			brandRepository.save(brandEntity);
-		}
-	}
+   @CacheEvict(value = {"brandFindAll", "produkFindAll"}, allEntries = true)
+   public void update(BrandEntity brandEntity) {
+      if (brandEntity != null) {
+         brandRepository.save(brandEntity);
+      }
+   }
 
-	@CacheEvict(value = {"brandFindAll", "produkFindAll"}, allEntries = true)
-	public void delete(Integer id) {
-		BrandEntity brandEntity = findOne(id);
-		if (brandEntity != null) {
-			brandRepository.delete(brandEntity);
-		}
-	}
+   @CacheEvict(value = {"brandFindAll", "produkFindAll"}, allEntries = true)
+   public void delete(Integer id) {
+      BrandEntity brandEntity = findOne(id);
+      if (brandEntity != null) {
+         brandRepository.delete(brandEntity);
+      }
+   }
 
 }

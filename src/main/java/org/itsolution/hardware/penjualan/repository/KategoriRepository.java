@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface KategoriRepository extends JpaRepository<KategoriEntity, Integer> {
 
-	KategoriEntity findOneByNama(String kategori);
+   KategoriEntity findOneByNama(String kategori);
 
 }

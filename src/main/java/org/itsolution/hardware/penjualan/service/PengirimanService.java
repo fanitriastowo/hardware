@@ -17,47 +17,47 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PengirimanService {
 
-	@Autowired
-	private PemesananService pemesananService;
+   @Autowired
+   private PemesananService pemesananService;
 
-	@Autowired
-	private PengirimanRepository pengirimanRepository;
+   @Autowired
+   private PengirimanRepository pengirimanRepository;
 
-	@Autowired
-	private UserService userService;
+   @Autowired
+   private UserService userService;
 
-	@CacheEvict(value = "pengirimanFindAll", allEntries = true)
-	public PengirimanEntity save(PengirimanDTO dto) {
+   @CacheEvict(value = "pengirimanFindAll", allEntries = true)
+   public PengirimanEntity save(PengirimanDTO dto) {
 
-		PemesananEntity pemesananEntity = pemesananService.findOneBypemesananId(dto.getPemesananId());
-		UserEntity userEntity = userService.findOneByUsername(dto.getEmail());
+      PemesananEntity pemesananEntity = pemesananService.findOneBypemesananId(dto.getPemesananId());
+      UserEntity userEntity = userService.findOneByUsername(dto.getEmail());
 
-		PengirimanEntity entity = new PengirimanEntity();
-		entity.setAlamatPengiriman(dto.getAlamatPengiriman());
-		entity.setJneId(dto.getJneId());
-		entity.setPemesananEntity(pemesananEntity);
-		entity.setStatusPengiriman(dto.getStatusPengiriman());
-		entity.setTanggalPengiriman(dto.getTanggalPengiriman());
-		entity.setUserEntity(userEntity);
-		entity.setKabupaten(dto.getKabupaten());
-		pengirimanRepository.save(entity);
-		return entity;
-	}
+      PengirimanEntity entity = new PengirimanEntity();
+      entity.setAlamatPengiriman(dto.getAlamatPengiriman());
+      entity.setJneId(dto.getJneId());
+      entity.setPemesananEntity(pemesananEntity);
+      entity.setStatusPengiriman(dto.getStatusPengiriman());
+      entity.setTanggalPengiriman(dto.getTanggalPengiriman());
+      entity.setUserEntity(userEntity);
+      entity.setKabupaten(dto.getKabupaten());
+      pengirimanRepository.save(entity);
+      return entity;
+   }
 
-	@Cacheable("pengirimanFindAll")
-	public List<PengirimanEntity> findAll() {
-		return pengirimanRepository.findAll();
-	}
+   @Cacheable("pengirimanFindAll")
+   public List<PengirimanEntity> findAll() {
+      return pengirimanRepository.findAll();
+   }
 
-	public PengirimanEntity findOne(Integer id) {
-		return pengirimanRepository.findOne(id);
-	}
+   public PengirimanEntity findOne(Integer id) {
+      return pengirimanRepository.findOne(id);
+   }
 
-	public List<Object[]> findAllForPieChart() {
-		return pengirimanRepository.findAllForPieChart();
-	}
+   public List<Object[]> findAllForPieChart() {
+      return pengirimanRepository.findAllForPieChart();
+   }
 
-	public List<PengirimanEntity> findAllByUserEntity(UserEntity userEntity) {
-		return pengirimanRepository.findAllByUserEntity(userEntity);
-	}
+   public List<PengirimanEntity> findAllByUserEntity(UserEntity userEntity) {
+      return pengirimanRepository.findAllByUserEntity(userEntity);
+   }
 }

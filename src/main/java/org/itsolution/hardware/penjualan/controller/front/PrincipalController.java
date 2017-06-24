@@ -1,6 +1,7 @@
 package org.itsolution.hardware.penjualan.controller.front;
 
 import org.itsolution.hardware.penjualan.dto.UserDTO;
+
 import java.security.Principal;
 import java.util.List;
 import java.util.Calendar;
@@ -22,68 +23,68 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PrincipalController {
 
-	@Autowired
-	private UserService userService;
+   @Autowired
+   private UserService userService;
 
-	@Autowired
-	private PemesananService pemesananService;
+   @Autowired
+   private PemesananService pemesananService;
 
-	@Autowired
-	private PengirimanService pengirimanService;
+   @Autowired
+   private PengirimanService pengirimanService;
 
-	@PreAuthorize("hasRole('ROLE_MEMBER')")
-	@RequestMapping("/setting")
-	public ModelAndView settingPage(Principal principal) {
+   @PreAuthorize("hasRole('ROLE_MEMBER')")
+   @RequestMapping("/setting")
+   public ModelAndView settingPage(Principal principal) {
 
-		if (principal == null) {
-			return new ModelAndView("redirect:/login");
-		}
+      if (principal == null) {
+         return new ModelAndView("redirect:/login");
+      }
 
-		ModelAndView modelAndView = new ModelAndView("front/principal");
-		String username = principal.getName();
-		UserEntity userEntity = userService.findOneByUsername(username);
-		List<PemesananEntity> pemesanans = pemesananService.findAllByUserEntity(userEntity);
-		List<PengirimanEntity> pengirimans = pengirimanService.findAllByUserEntity(userEntity);
-		modelAndView.addObject("principal", userEntity);
-		modelAndView.addObject("pemesanans", pemesanans);
-		modelAndView.addObject("pengirimans", pengirimans);
-		return modelAndView;
-	}
+      ModelAndView modelAndView = new ModelAndView("front/principal");
+      String username = principal.getName();
+      UserEntity userEntity = userService.findOneByUsername(username);
+      List<PemesananEntity> pemesanans = pemesananService.findAllByUserEntity(userEntity);
+      List<PengirimanEntity> pengirimans = pengirimanService.findAllByUserEntity(userEntity);
+      modelAndView.addObject("principal", userEntity);
+      modelAndView.addObject("pemesanans", pemesanans);
+      modelAndView.addObject("pengirimans", pengirimans);
+      return modelAndView;
+   }
 
-	@PreAuthorize("hasRole('ROLE_MEMBER')")
-	@RequestMapping("/ubah_principal")
-	public ModelAndView ubahProfilePage(Principal principal) {
+   @PreAuthorize("hasRole('ROLE_MEMBER')")
+   @RequestMapping("/ubah_principal")
+   public ModelAndView ubahProfilePage(Principal principal) {
 
-		ModelAndView modelAndView = new ModelAndView("front/ubah_principal");
-		
-		if (principal == null) {
-			return new ModelAndView("redirect:/login");
-		}
+      ModelAndView modelAndView = new ModelAndView("front/ubah_principal");
 
-		String username = principal.getName();
-		UserEntity userEntity = userService.findOneByUsername(username);
+      if (principal == null) {
+         return new ModelAndView("redirect:/login");
+      }
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(userEntity.getTanggalLahir());
-		
-		UserDTO dto = new UserDTO();
-		dto.setId(userEntity.getId());
-		dto.setNama(userEntity.getNama());
-		dto.setPhone(userEntity.getPhone());
-		dto.setTanggal(calendar.get(Calendar.DATE));
-        dto.setBulan(calendar.get(Calendar.MONTH) + 1);
-        dto.setTahun(calendar.get(Calendar.YEAR));
+      String username = principal.getName();
+      UserEntity userEntity = userService.findOneByUsername(username);
 
-		modelAndView.addObject("principal", dto);
-		return modelAndView;
-	}
+      Calendar calendar = Calendar.getInstance();
+      calendar.setTime(userEntity.getTanggalLahir());
 
-	@PreAuthorize("hasRole('ROLE_MEMBER')")
-	@RequestMapping(value = "/submit_ubah_principal")
-	public ModelAndView submitUbahProfile(@ModelAttribute("principal") UserDTO userDTO) {
+      UserDTO dto = new UserDTO();
+      dto.setId(userEntity.getId());
+      dto.setNama(userEntity.getNama());
+      dto.setPhone(userEntity.getPhone());
+      dto.setTanggal(calendar.get(Calendar.DATE));
+      dto.setBulan(calendar.get(Calendar.MONTH) + 1);
+      dto.setTahun(calendar.get(Calendar.YEAR));
 
-		userService.ubahProfileMember(userDTO);
+      modelAndView.addObject("principal", dto);
+      return modelAndView;
+   }
 
-		return new ModelAndView("redirect:/setting");
-	}
+   @PreAuthorize("hasRole('ROLE_MEMBER')")
+   @RequestMapping(value = "/submit_ubah_principal")
+   public ModelAndView submitUbahProfile(@ModelAttribute("principal") UserDTO userDTO) {
+
+      userService.ubahProfileMember(userDTO);
+
+      return new ModelAndView("redirect:/setting");
+   }
 }

@@ -10,10 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class RoleService {
 
-	@Autowired
-	private RoleRepository roleRepository;
+   @Autowired
+   private RoleRepository roleRepository;
 
-	public void save(RoleEntity roleAdmin) {
-		roleRepository.save(roleAdmin);
-	}
+   public void save(RoleEntity roleAdmin) {
+      roleRepository.save(roleAdmin);
+   }
 }

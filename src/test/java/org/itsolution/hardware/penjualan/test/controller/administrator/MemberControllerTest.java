@@ -20,134 +20,134 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/dispatcher-servlet.xml",
-        "file:src/main/webapp/WEB-INF/applicationContext.xml" })
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/dispatcher-servlet.xml",
+        "file:src/main/webapp/WEB-INF/applicationContext.xml"})
 @WebAppConfiguration
 @Transactional
 @ActiveProfiles("dev")
 public class MemberControllerTest {
 
-    @Autowired
-    private WebApplicationContext webApplicationContext;
+   @Autowired
+   private WebApplicationContext webApplicationContext;
 
-    @Autowired
-    private UserService userService;
+   @Autowired
+   private UserService userService;
 
-    private MockMvc mockMvc;
+   private MockMvc mockMvc;
 
-    @Before
-    public void setUp() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
+   @Before
+   public void setUp() {
+      mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+   }
 
-    @Test
-    public void testAksesDaftarMember() {
-        try {
-            this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/member"))
+   @Test
+   public void testAksesDaftarMember() {
+      try {
+         this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/member"))
 
-                    .andExpect(MockMvcResultMatchers.status().isOk())
+                 .andExpect(MockMvcResultMatchers.status().isOk())
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("memberList", userService.findAllMember()))
+                 .andExpect(MockMvcResultMatchers.model().attribute("memberList", userService.findAllMember()))
 
-                    .andExpect(MockMvcResultMatchers.view().name("administrator/member/administrator-daftar-member"));
+                 .andExpect(MockMvcResultMatchers.view().name("administrator/member/administrator-daftar-member"));
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(e.getMessage());
-        }
-    }
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 
-    @Test
-    public void testAmbilSatuMemberBerdasarkanIDUntukUpdate() {
-        try {
-            this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/member/prepare_update/{id}", 2))
+   @Test
+   public void testAmbilSatuMemberBerdasarkanIDUntukUpdate() {
+      try {
+         this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/member/prepare_update/{id}", 2))
 
-                    .andExpect(MockMvcResultMatchers.status().isOk())
+                 .andExpect(MockMvcResultMatchers.status().isOk())
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member", Matchers.instanceOf(UserDTO.class)))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member", Matchers.instanceOf(UserDTO.class)))
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member",
-                            Matchers.hasProperty("id", Matchers.is(2))))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member",
+                         Matchers.hasProperty("id", Matchers.is(2))))
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member",
-                            Matchers.hasProperty("tanggal", Matchers.is(21))))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member",
+                         Matchers.hasProperty("tanggal", Matchers.is(21))))
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member",
-                            Matchers.hasProperty("bulan", Matchers.is(7))))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member",
+                         Matchers.hasProperty("bulan", Matchers.is(7))))
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member",
-                            Matchers.hasProperty("tahun", Matchers.is(2016))))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member",
+                         Matchers.hasProperty("tahun", Matchers.is(2016))))
 
-                    .andExpect(MockMvcResultMatchers.view().name("administrator/member/administrator-update-member"));
+                 .andExpect(MockMvcResultMatchers.view().name("administrator/member/administrator-update-member"));
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(e.getMessage());
-        }
-    }
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 
-    @Test
-    public void testSubmitAddBrand() {
-        try {
-            this.mockMvc.perform(MockMvcRequestBuilders.post("/administrator/member/tambah_post").param("nama", "BLAH")
-                    .param("phone", "085291070216").param("username", "blah").param("password", "blah")
-                    .param("tanggal", "1").param("bulan", "3").param("tahun", "2000").param("jenisKelamin", "lakilaki"))
+   @Test
+   public void testSubmitAddBrand() {
+      try {
+         this.mockMvc.perform(MockMvcRequestBuilders.post("/administrator/member/tambah_post").param("nama", "BLAH")
+                 .param("phone", "085291070216").param("username", "blah").param("password", "blah")
+                 .param("tanggal", "1").param("bulan", "3").param("tahun", "2000").param("jenisKelamin", "lakilaki"))
 
-                    .andExpect(MockMvcResultMatchers.status().isMovedTemporarily())
+                 .andExpect(MockMvcResultMatchers.status().isMovedTemporarily())
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member", Matchers.notNullValue()))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member", Matchers.notNullValue()))
 
-                    .andExpect(MockMvcResultMatchers.redirectedUrl("/administrator/member"));
+                 .andExpect(MockMvcResultMatchers.redirectedUrl("/administrator/member"));
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(e.getMessage());
-        }
-    }
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 
-    @Test
-    public void testSubmitUpdateBrand() {
-        try {
-            UserDTO userDTO = userService.findOne(2);
-            Assert.assertThat(userDTO.getId(), Matchers.is(2));
-            Assert.assertThat(userDTO.getNama(), Matchers.equalTo("Angga Setyo"));
-            
-            this.mockMvc.perform(MockMvcRequestBuilders.post("/administrator/member/update").param("id", "2")
-                    .param("nama", "BLAH").param("phone", "085291070216").param("username", "blah")
-                    .param("password", "blah").param("tanggal", "1").param("bulan", "3").param("tahun", "2000")
-                    .param("jenisKelamin", "lakilaki"))
+   @Test
+   public void testSubmitUpdateBrand() {
+      try {
+         UserDTO userDTO = userService.findOne(2);
+         Assert.assertThat(userDTO.getId(), Matchers.is(2));
+         Assert.assertThat(userDTO.getNama(), Matchers.equalTo("Angga Setyo"));
 
-                    .andExpect(MockMvcResultMatchers.status().isMovedTemporarily())
+         this.mockMvc.perform(MockMvcRequestBuilders.post("/administrator/member/update").param("id", "2")
+                 .param("nama", "BLAH").param("phone", "085291070216").param("username", "blah")
+                 .param("password", "blah").param("tanggal", "1").param("bulan", "3").param("tahun", "2000")
+                 .param("jenisKelamin", "lakilaki"))
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member", Matchers.notNullValue()))
+                 .andExpect(MockMvcResultMatchers.status().isMovedTemporarily())
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("member",
-                            Matchers.hasProperty("id", Matchers.is(2))))
+                 .andExpect(MockMvcResultMatchers.model().attribute("member", Matchers.notNullValue()))
 
-                    .andExpect(MockMvcResultMatchers.redirectedUrl("/administrator/member"));
-            
-            UserDTO newUserDTO = userService.findOne(2);
-            Assert.assertThat(newUserDTO.getId(), Matchers.is(2));
-            Assert.assertThat(newUserDTO.getNama(), Matchers.equalTo("BLAH"));
+                 .andExpect(MockMvcResultMatchers.model().attribute("member",
+                         Matchers.hasProperty("id", Matchers.is(2))))
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(e.getMessage());
-        }
-    }
+                 .andExpect(MockMvcResultMatchers.redirectedUrl("/administrator/member"));
 
-    @Test
-    public void testDeleteBrand() {
-        try {
-            this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/member/delete/{id}", 3))
+         UserDTO newUserDTO = userService.findOne(2);
+         Assert.assertThat(newUserDTO.getId(), Matchers.is(2));
+         Assert.assertThat(newUserDTO.getNama(), Matchers.equalTo("BLAH"));
 
-                    .andExpect(MockMvcResultMatchers.status().isMovedTemporarily())
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 
-                    .andExpect(MockMvcResultMatchers.redirectedUrl("/administrator/member"));
+   @Test
+   public void testDeleteBrand() {
+      try {
+         this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/member/delete/{id}", 3))
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(e.getMessage());
-        }
-    }
+                 .andExpect(MockMvcResultMatchers.status().isMovedTemporarily())
+
+                 .andExpect(MockMvcResultMatchers.redirectedUrl("/administrator/member"));
+
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 }

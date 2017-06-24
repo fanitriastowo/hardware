@@ -1,68 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
 <!-- 2016-08-06T00:07:39 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<parameter name="logo" class="java.lang.String"/>
-	<field name="kabupaten" class="java.lang.String"/>
-	<field name="jumlah" class="java.lang.Long"/>
-	<field name="statusPengiriman" class="java.lang.String"/>
-	<title>
-		<band height="76" splitType="Stretch">
-			<staticText>
-				<reportElement x="0" y="0" width="310" height="40" uuid="e6aacf04-2bcf-4191-9ccc-021d857a744d"/>
-				<textElement textAlignment="Left">
-					<font fontName="SansSerif" size="24" isBold="true"/>
-				</textElement>
-				<text><![CDATA[ANALISA PENGIRIMAN]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="-1" y="40" width="40" height="20" uuid="c53adeea-4c3d-494c-8943-f78f5186b033"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="SansSerif" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Hari Ini:]]></text>
-			</staticText>
-			<textField pattern="dd MMMM yyyy">
-				<reportElement x="39" y="40" width="100" height="20" uuid="335d9187-959f-4cc3-92b1-24ef3ebd2ebd"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="SansSerif"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
-				<reportElement mode="Opaque" x="310" y="0" width="242" height="60" backcolor="#EE2841" uuid="4e635660-afe0-423e-9e3b-99360bd9e5b7"/>
-				<box>
-					<topPen lineWidth="1.0" lineColor="#828282"/>
-					<leftPen lineWidth="1.0" lineColor="#828282"/>
-					<bottomPen lineWidth="1.0" lineColor="#828282"/>
-					<rightPen lineWidth="1.0" lineColor="#828282"/>
-				</box>
-				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
-			</image>
-		</band>
-	</title>
-	<summary>
-		<band height="493" splitType="Stretch">
-			<pie3DChart>
-				<chart evaluationTime="Report" theme="default">
-					<reportElement x="-1" y="10" width="553" height="320" uuid="1d8c9860-e29e-4045-8fb7-d20fc846a52a"/>
-					<chartTitle/>
-					<chartSubtitle/>
-					<chartLegend/>
-				</chart>
-				<pieDataset>
-					<keyExpression><![CDATA[$F{kabupaten}]]></keyExpression>
-					<valueExpression><![CDATA[$F{jumlah}]]></valueExpression>
-					<labelExpression><![CDATA[$F{statusPengiriman}]]></labelExpression>
-				</pieDataset>
-				<pie3DPlot>
-					<plot/>
-					<itemLabel/>
-				</pie3DPlot>
-			</pie3DChart>
-		</band>
-	</summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="pemesanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="9320b503-b2b0-48b9-815d-2119b2b900f1">
+   <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+   <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+   <property name="com.jaspersoft.studio.unit." value="pixel"/>
+   <parameter name="logo" class="java.lang.String"/>
+   <field name="kabupaten" class="java.lang.String"/>
+   <field name="jumlah" class="java.lang.Long"/>
+   <field name="statusPengiriman" class="java.lang.String"/>
+   <title>
+      <band height="76" splitType="Stretch">
+         <staticText>
+            <reportElement x="0" y="0" width="310" height="40"
+                           uuid="e6aacf04-2bcf-4191-9ccc-021d857a744d"/>
+            <textElement textAlignment="Left">
+               <font fontName="SansSerif" size="24" isBold="true"/>
+            </textElement>
+            <text><![CDATA[ANALISA PENGIRIMAN]]></text>
+         </staticText>
+         <staticText>
+            <reportElement x="-1" y="40" width="40" height="20"
+                           uuid="c53adeea-4c3d-494c-8943-f78f5186b033"/>
+            <textElement textAlignment="Left" verticalAlignment="Middle">
+               <font fontName="SansSerif" isBold="true"/>
+            </textElement>
+            <text><![CDATA[Hari Ini:]]></text>
+         </staticText>
+         <textField pattern="dd MMMM yyyy">
+            <reportElement x="39" y="40" width="100" height="20"
+                           uuid="335d9187-959f-4cc3-92b1-24ef3ebd2ebd"/>
+            <textElement textAlignment="Left" verticalAlignment="Middle">
+               <font fontName="SansSerif"/>
+            </textElement>
+            <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+         </textField>
+         <image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+            <reportElement mode="Opaque" x="310" y="0" width="242" height="60" backcolor="#EE2841"
+                           uuid="4e635660-afe0-423e-9e3b-99360bd9e5b7"/>
+            <box>
+               <topPen lineWidth="1.0" lineColor="#828282"/>
+               <leftPen lineWidth="1.0" lineColor="#828282"/>
+               <bottomPen lineWidth="1.0" lineColor="#828282"/>
+               <rightPen lineWidth="1.0" lineColor="#828282"/>
+            </box>
+            <imageExpression><![CDATA[$P{logo}]]></imageExpression>
+         </image>
+      </band>
+   </title>
+   <summary>
+      <band height="493" splitType="Stretch">
+         <pie3DChart>
+            <chart evaluationTime="Report" theme="default">
+               <reportElement x="-1" y="10" width="553" height="320"
+                              uuid="1d8c9860-e29e-4045-8fb7-d20fc846a52a"/>
+               <chartTitle/>
+               <chartSubtitle/>
+               <chartLegend/>
+            </chart>
+            <pieDataset>
+               <keyExpression><![CDATA[$F{kabupaten}]]></keyExpression>
+               <valueExpression><![CDATA[$F{jumlah}]]></valueExpression>
+               <labelExpression><![CDATA[$F{statusPengiriman}]]></labelExpression>
+            </pieDataset>
+            <pie3DPlot>
+               <plot/>
+               <itemLabel/>
+            </pie3DPlot>
+         </pie3DChart>
+      </band>
+   </summary>
 </jasperReport>

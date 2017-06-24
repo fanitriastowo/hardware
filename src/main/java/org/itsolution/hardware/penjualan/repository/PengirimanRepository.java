@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PengirimanRepository extends JpaRepository<PengirimanEntity, Integer> {
 
-	@Query("SELECT COUNT(P.kabupaten) AS jumlah, P.kabupaten AS kabupaten FROM PengirimanEntity P GROUP BY P.kabupaten")
-	List<Object[]> findAllForPieChart();
+   @Query("SELECT COUNT(P.kabupaten) AS jumlah, P.kabupaten AS kabupaten FROM PengirimanEntity P GROUP BY P.kabupaten")
+   List<Object[]> findAllForPieChart();
 
-	List<PengirimanEntity> findAllByUserEntity(UserEntity userEntity);
+   List<PengirimanEntity> findAllByUserEntity(UserEntity userEntity);
 }

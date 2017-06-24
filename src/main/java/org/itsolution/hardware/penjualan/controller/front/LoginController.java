@@ -8,14 +8,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class LoginController {
 
-	@RequestMapping("/login")
-	public ModelAndView login() {
-		return new ModelAndView("front/login");
-	}
+   @RequestMapping("/login")
+   public ModelAndView login() {
+      return new ModelAndView("front/login");
+   }
 
-	@RequestMapping(value = "/loginfail")
-	public ModelAndView loginFail(RedirectAttributes redirectAttributes) {
-		redirectAttributes.addFlashAttribute("fail", true);
-		return new ModelAndView("redirect:/login");
-	}
+   @RequestMapping(value = "/loginfail")
+   public ModelAndView loginFail(RedirectAttributes redirectAttributes) {
+      redirectAttributes.addFlashAttribute("fail", true);
+      return new ModelAndView("redirect:/login");
+   }
 }

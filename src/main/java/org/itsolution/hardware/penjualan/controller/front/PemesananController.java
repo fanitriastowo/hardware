@@ -29,61 +29,61 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @SessionAttributes(value = "produk_keranjang")
 public class PemesananController {
 
-    @Autowired
-    private UserService userService;
+   @Autowired
+   private UserService userService;
 
-    @Autowired
-    private PemesananService pemesananService;
+   @Autowired
+   private PemesananService pemesananService;
 
-    @Autowired
-    private ProdukService produkService;
-    
-    @Autowired
-    private ApplicationEventPublisher eventPublisher;
+   @Autowired
+   private ProdukService produkService;
 
-    @RequestMapping("/checkout")
-    public ModelAndView checkoutProduk(
-            @ModelAttribute("produk_keranjang") HashMap<Integer, ProdukKeranjangDTO> listKeranjang,
-            @ModelAttribute("pemesanan") PemesananDTO pemesananDTO, Principal principal,
-            RedirectAttributes redirectAttributes) {
+   @Autowired
+   private ApplicationEventPublisher eventPublisher;
 
-        if (SecurityContextHolder.getContext().getAuthentication() != null
-                && SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && principal != null) {
+   @RequestMapping("/checkout")
+   public ModelAndView checkoutProduk(
+           @ModelAttribute("produk_keranjang") HashMap<Integer, ProdukKeranjangDTO> listKeranjang,
+           @ModelAttribute("pemesanan") PemesananDTO pemesananDTO, Principal principal,
+           RedirectAttributes redirectAttributes) {
 
-            String username = principal.getName();
-            UserEntity userEntity = userService.findOneByUsername(username);
+      if (SecurityContextHolder.getContext().getAuthentication() != null
+              && SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && principal != null) {
 
-            for (Map.Entry<Integer, ProdukKeranjangDTO> produkKeranjangDTO : listKeranjang.entrySet()) {
-                ProdukEntity produkEntity = produkService.findOneByNama(produkKeranjangDTO.getValue().getNama());
-                produkEntity.setJumlahTerbeli(
-                        produkEntity.getJumlahTerbeli() + produkKeranjangDTO.getValue().getJumlahBarang());
-                produkEntity.setStok(produkEntity.getStok() - produkKeranjangDTO.getValue().getJumlahBarang());
-                produkService.update(produkEntity);
+         String username = principal.getName();
+         UserEntity userEntity = userService.findOneByUsername(username);
 
-                PemesananEntity pemesanan = new PemesananEntity();
-                pemesanan.setPemesananId(IDGenerator.generatePemesananID());
-                pemesanan.setAlamatPengiriman(pemesananDTO.getAlamat());
-                pemesanan.setJumlahItems(produkKeranjangDTO.getValue().getJumlahBarang());
-                pemesanan.setNamaItem(produkKeranjangDTO.getValue().getNama());
-                pemesanan.setNamaPenerima(pemesananDTO.getNama());
-                pemesanan.setPhonePenerima(pemesananDTO.getPhone());
-                pemesanan.setProdukEntity(produkEntity);
-                pemesanan.setTanggalPemesanan(new Date());
-                pemesanan.setTotalHarga(produkKeranjangDTO.getValue().getTotalHarga());
-                pemesanan.setTransfer(false);
-                pemesanan.setUserEntity(userEntity);
-                pemesanan.setKabupaten(pemesananDTO.getKabupaten());
-                pemesananService.save(pemesanan);
-            }
-            
-            listKeranjang.clear();
-            eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
+         for (Map.Entry<Integer, ProdukKeranjangDTO> produkKeranjangDTO : listKeranjang.entrySet()) {
+            ProdukEntity produkEntity = produkService.findOneByNama(produkKeranjangDTO.getValue().getNama());
+            produkEntity.setJumlahTerbeli(
+                    produkEntity.getJumlahTerbeli() + produkKeranjangDTO.getValue().getJumlahBarang());
+            produkEntity.setStok(produkEntity.getStok() - produkKeranjangDTO.getValue().getJumlahBarang());
+            produkService.update(produkEntity);
 
-            return new ModelAndView("redirect:/");
-        } else {
-            redirectAttributes.addFlashAttribute("login", false);
-            return new ModelAndView("redirect:/login");
-        }
+            PemesananEntity pemesanan = new PemesananEntity();
+            pemesanan.setPemesananId(IDGenerator.generatePemesananID());
+            pemesanan.setAlamatPengiriman(pemesananDTO.getAlamat());
+            pemesanan.setJumlahItems(produkKeranjangDTO.getValue().getJumlahBarang());
+            pemesanan.setNamaItem(produkKeranjangDTO.getValue().getNama());
+            pemesanan.setNamaPenerima(pemesananDTO.getNama());
+            pemesanan.setPhonePenerima(pemesananDTO.getPhone());
+            pemesanan.setProdukEntity(produkEntity);
+            pemesanan.setTanggalPemesanan(new Date());
+            pemesanan.setTotalHarga(produkKeranjangDTO.getValue().getTotalHarga());
+            pemesanan.setTransfer(false);
+            pemesanan.setUserEntity(userEntity);
+            pemesanan.setKabupaten(pemesananDTO.getKabupaten());
+            pemesananService.save(pemesanan);
+         }
 
-    }
+         listKeranjang.clear();
+         eventPublisher.publishEvent(new OnCompleteCheckoutEvent(userEntity));
+
+         return new ModelAndView("redirect:/");
+      } else {
+         redirectAttributes.addFlashAttribute("login", false);
+         return new ModelAndView("redirect:/login");
+      }
+
+   }
 }

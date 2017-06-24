@@ -5,17 +5,17 @@ import org.springframework.context.ApplicationEvent;
 
 public class OnCompleteAddPengirimanEvent extends ApplicationEvent {
 
-    private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-    private final PengirimanEntity pengirimanEntity;
+   private final PengirimanEntity pengirimanEntity;
 
-    public OnCompleteAddPengirimanEvent(PengirimanEntity entity) {
-        super(entity);
-        this.pengirimanEntity = entity;
-    }
+   public OnCompleteAddPengirimanEvent(PengirimanEntity entity) {
+      super(entity);
+      this.pengirimanEntity = entity;
+   }
 
-    public PengirimanEntity getPengirimanEntity() {
-        return pengirimanEntity;
-    }
+   public PengirimanEntity getPengirimanEntity() {
+      return pengirimanEntity;
+   }
 
 }

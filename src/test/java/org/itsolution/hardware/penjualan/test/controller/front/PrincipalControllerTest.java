@@ -19,39 +19,39 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/dispatcher-servlet.xml",
-		"file:src/main/webapp/WEB-INF/applicationContext.xml" })
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/dispatcher-servlet.xml",
+        "file:src/main/webapp/WEB-INF/applicationContext.xml"})
 @WebAppConfiguration
 @Transactional
 @ActiveProfiles("dev")
 public class PrincipalControllerTest {
 
-	@Autowired
-	private WebApplicationContext webApplicationContext;
+   @Autowired
+   private WebApplicationContext webApplicationContext;
 
-	private MockMvc mockMvc;
+   private MockMvc mockMvc;
 
-	@Before
-	public void setUp() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-	}
+   @Before
+   public void setUp() {
+      mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+   }
 
-	@Test
-	public void testAksesDaftarBrand() {
-		try {
-			this.mockMvc.perform(MockMvcRequestBuilders.get("/setting"))
+   @Test
+   public void testAksesDaftarBrand() {
+      try {
+         this.mockMvc.perform(MockMvcRequestBuilders.get("/setting"))
 
-					.andExpect(MockMvcResultMatchers.status().isOk())
+                 .andExpect(MockMvcResultMatchers.status().isOk())
 
-					.andExpect(
-							MockMvcResultMatchers.model().attribute("principal", Matchers.instanceOf(UserEntity.class)))
+                 .andExpect(
+                         MockMvcResultMatchers.model().attribute("principal", Matchers.instanceOf(UserEntity.class)))
 
-					.andExpect(MockMvcResultMatchers.view().name("front/principal"));
+                 .andExpect(MockMvcResultMatchers.view().name("front/principal"));
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-	}
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 
 }

@@ -14,39 +14,39 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class KategoriService {
 
-    @Autowired
-    private KategoriRepository kategoriRepository;
+   @Autowired
+   private KategoriRepository kategoriRepository;
 
-    @CacheEvict(value = "kategoriFindAll", allEntries = true)
-    public void save(KategoriEntity kategori) {
-        if (kategori != null) {
-            kategoriRepository.save(kategori);
-        }
-    }
+   @CacheEvict(value = "kategoriFindAll", allEntries = true)
+   public void save(KategoriEntity kategori) {
+      if (kategori != null) {
+         kategoriRepository.save(kategori);
+      }
+   }
 
-    @Cacheable("kategoriFindAll")
-    public List<KategoriEntity> findAll() {
-        return kategoriRepository.findAll();
-    }
+   @Cacheable("kategoriFindAll")
+   public List<KategoriEntity> findAll() {
+      return kategoriRepository.findAll();
+   }
 
-    public KategoriEntity findOneByNama(String kategori) {
-        return kategoriRepository.findOneByNama(kategori);
-    }
+   public KategoriEntity findOneByNama(String kategori) {
+      return kategoriRepository.findOneByNama(kategori);
+   }
 
-    public KategoriEntity findOne(int id) {
-        return kategoriRepository.findOne(id);
-    }
+   public KategoriEntity findOne(int id) {
+      return kategoriRepository.findOne(id);
+   }
 
-    @CacheEvict(value = {"kategoriFindAll", "produkFindAll"}, allEntries = true)
-    public void update(KategoriEntity kategoriEntity) {
-        if (kategoriEntity != null) {
-            kategoriRepository.save(kategoriEntity);
-        }
-    }
+   @CacheEvict(value = {"kategoriFindAll", "produkFindAll"}, allEntries = true)
+   public void update(KategoriEntity kategoriEntity) {
+      if (kategoriEntity != null) {
+         kategoriRepository.save(kategoriEntity);
+      }
+   }
 
-    @CacheEvict(value = {"kategoriFindAll", "produkFindAll"}, allEntries = true)
-    public void delete(Integer id) {
-        kategoriRepository.delete(id);
-    }
+   @CacheEvict(value = {"kategoriFindAll", "produkFindAll"}, allEntries = true)
+   public void delete(Integer id) {
+      kategoriRepository.delete(id);
+   }
 
 }

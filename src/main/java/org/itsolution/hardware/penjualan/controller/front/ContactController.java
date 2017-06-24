@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/contact")
 public class ContactController {
 
-	@RequestMapping
-	public ModelAndView contact() {
-		return new ModelAndView("front/contact");
-	}
+   @RequestMapping
+   public ModelAndView contact() {
+      return new ModelAndView("front/contact");
+   }
 }

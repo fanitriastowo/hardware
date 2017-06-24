@@ -16,125 +16,125 @@ import org.itsolution.hardware.penjualan.entity.base.BasisEntity;
 @Table(name = "transaksi_pemesanan")
 public class PemesananEntity extends BasisEntity implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	private Integer pemesananId;
+   private Integer pemesananId;
 
-	@ManyToOne
-	@JoinColumn(name = "produk_id")
-	private ProdukEntity produkEntity;
+   @ManyToOne
+   @JoinColumn(name = "produk_id")
+   private ProdukEntity produkEntity;
 
-	private String namaPenerima;
-	private String phonePenerima;
-	private String namaItem;
-	private String alamatPengiriman;
-	private Integer jumlahItems;
-	private Long totalHarga;
-	private Boolean transfer;
+   private String namaPenerima;
+   private String phonePenerima;
+   private String namaItem;
+   private String alamatPengiriman;
+   private Integer jumlahItems;
+   private Long totalHarga;
+   private Boolean transfer;
 
-	@Temporal(TemporalType.DATE)
-	private Date tanggalPemesanan;
+   @Temporal(TemporalType.DATE)
+   private Date tanggalPemesanan;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private UserEntity userEntity;
+   @ManyToOne
+   @JoinColumn(name = "user_id")
+   private UserEntity userEntity;
 
-	private String kabupaten;
+   private String kabupaten;
 
-	public Integer getPemesananId() {
-		return pemesananId;
-	}
+   public Integer getPemesananId() {
+      return pemesananId;
+   }
 
-	public void setPemesananId(Integer pemesananId) {
-		this.pemesananId = pemesananId;
-	}
+   public void setPemesananId(Integer pemesananId) {
+      this.pemesananId = pemesananId;
+   }
 
-	public ProdukEntity getProdukEntity() {
-		return produkEntity;
-	}
+   public ProdukEntity getProdukEntity() {
+      return produkEntity;
+   }
 
-	public void setProdukEntity(ProdukEntity produkEntity) {
-		this.produkEntity = produkEntity;
-	}
+   public void setProdukEntity(ProdukEntity produkEntity) {
+      this.produkEntity = produkEntity;
+   }
 
-	public String getNamaPenerima() {
-		return namaPenerima;
-	}
+   public String getNamaPenerima() {
+      return namaPenerima;
+   }
 
-	public void setNamaPenerima(String namaPenerima) {
-		this.namaPenerima = namaPenerima;
-	}
+   public void setNamaPenerima(String namaPenerima) {
+      this.namaPenerima = namaPenerima;
+   }
 
-	public String getPhonePenerima() {
-		return phonePenerima;
-	}
+   public String getPhonePenerima() {
+      return phonePenerima;
+   }
 
-	public void setPhonePenerima(String phonePenerima) {
-		this.phonePenerima = phonePenerima;
-	}
+   public void setPhonePenerima(String phonePenerima) {
+      this.phonePenerima = phonePenerima;
+   }
 
-	public String getNamaItem() {
-		return namaItem;
-	}
+   public String getNamaItem() {
+      return namaItem;
+   }
 
-	public void setNamaItem(String namaItem) {
-		this.namaItem = namaItem;
-	}
+   public void setNamaItem(String namaItem) {
+      this.namaItem = namaItem;
+   }
 
-	public String getAlamatPengiriman() {
-		return alamatPengiriman;
-	}
+   public String getAlamatPengiriman() {
+      return alamatPengiriman;
+   }
 
-	public void setAlamatPengiriman(String alamatPengiriman) {
-		this.alamatPengiriman = alamatPengiriman;
-	}
+   public void setAlamatPengiriman(String alamatPengiriman) {
+      this.alamatPengiriman = alamatPengiriman;
+   }
 
-	public Integer getJumlahItems() {
-		return jumlahItems;
-	}
+   public Integer getJumlahItems() {
+      return jumlahItems;
+   }
 
-	public void setJumlahItems(Integer jumlahItems) {
-		this.jumlahItems = jumlahItems;
-	}
+   public void setJumlahItems(Integer jumlahItems) {
+      this.jumlahItems = jumlahItems;
+   }
 
-	public Long getTotalHarga() {
-		return totalHarga;
-	}
+   public Long getTotalHarga() {
+      return totalHarga;
+   }
 
-	public void setTotalHarga(Long totalHarga) {
-		this.totalHarga = totalHarga;
-	}
+   public void setTotalHarga(Long totalHarga) {
+      this.totalHarga = totalHarga;
+   }
 
-	public Boolean getTransfer() {
-		return transfer;
-	}
+   public Boolean getTransfer() {
+      return transfer;
+   }
 
-	public void setTransfer(Boolean transfer) {
-		this.transfer = transfer;
-	}
+   public void setTransfer(Boolean transfer) {
+      this.transfer = transfer;
+   }
 
-	public Date getTanggalPemesanan() {
-		return tanggalPemesanan;
-	}
+   public Date getTanggalPemesanan() {
+      return tanggalPemesanan;
+   }
 
-	public void setTanggalPemesanan(Date tanggalPemesanan) {
-		this.tanggalPemesanan = tanggalPemesanan;
-	}
+   public void setTanggalPemesanan(Date tanggalPemesanan) {
+      this.tanggalPemesanan = tanggalPemesanan;
+   }
 
-	public UserEntity getUserEntity() {
-		return userEntity;
-	}
+   public UserEntity getUserEntity() {
+      return userEntity;
+   }
 
-	public void setUserEntity(UserEntity userEntity) {
-		this.userEntity = userEntity;
-	}
+   public void setUserEntity(UserEntity userEntity) {
+      this.userEntity = userEntity;
+   }
 
-	public String getKabupaten() {
-		return kabupaten;
-	}
+   public String getKabupaten() {
+      return kabupaten;
+   }
 
-	public void setKabupaten(String kabupaten) {
-		this.kabupaten = kabupaten;
-	}
+   public void setKabupaten(String kabupaten) {
+      this.kabupaten = kabupaten;
+   }
 
 }

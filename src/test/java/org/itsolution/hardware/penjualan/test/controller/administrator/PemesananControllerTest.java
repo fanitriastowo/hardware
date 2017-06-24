@@ -20,42 +20,42 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/dispatcher-servlet.xml",
-        "file:src/main/webapp/WEB-INF/applicationContext.xml" })
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/dispatcher-servlet.xml",
+        "file:src/main/webapp/WEB-INF/applicationContext.xml"})
 @WebAppConfiguration
 @Transactional
 @ActiveProfiles("dev")
 public class PemesananControllerTest {
 
-    @Autowired
-    private WebApplicationContext webApplicationContext;
+   @Autowired
+   private WebApplicationContext webApplicationContext;
 
-    private MockMvc mockMvc;
+   private MockMvc mockMvc;
 
-    @Before
-    public void setUp() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
+   @Before
+   public void setUp() {
+      mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+   }
 
-    @Test
-    @Ignore
-    public void testAksesDaftarBrand() {
+   @Test
+   @Ignore
+   public void testAksesDaftarBrand() {
 
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        try {
-            this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/pemesanan/cetak/{id}", 1))
+      MockHttpServletRequest request = new MockHttpServletRequest();
+      try {
+         this.mockMvc.perform(MockMvcRequestBuilders.get("/administrator/pemesanan/cetak/{id}", 1))
 
-                    .andExpect(MockMvcResultMatchers.status().isOk())
+                 .andExpect(MockMvcResultMatchers.status().isOk())
 
-                    .andExpect(MockMvcResultMatchers.model().attribute("url",
-                            Matchers.is(request.getServletContext().getRealPath("/assets/images/produk/"))))
+                 .andExpect(MockMvcResultMatchers.model().attribute("url",
+                         Matchers.is(request.getServletContext().getRealPath("/assets/images/produk/"))))
 
-                    .andExpect(MockMvcResultMatchers.view().name("pemesanan"));
+                 .andExpect(MockMvcResultMatchers.view().name("pemesanan"));
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assert.fail(e.getMessage());
-        }
-    }
+      } catch (Exception e) {
+         e.printStackTrace();
+         Assert.fail(e.getMessage());
+      }
+   }
 
 }

@@ -13,27 +13,27 @@ import org.itsolution.hardware.penjualan.entity.base.BasisEntity;
 @Table(name = "master_role")
 public class RoleEntity extends BasisEntity implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	private String name;
+   private String name;
 
-	@OneToMany(mappedBy = "role")
-	private List<UserEntity> users;
+   @OneToMany(mappedBy = "role")
+   private List<UserEntity> users;
 
-	public String getName() {
-		return name;
-	}
+   public String getName() {
+      return name;
+   }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+   public void setName(String name) {
+      this.name = name;
+   }
 
-	public List<UserEntity> getUsers() {
-		return users;
-	}
+   public List<UserEntity> getUsers() {
+      return users;
+   }
 
-	public void setUsers(List<UserEntity> users) {
-		this.users = users;
-	}
+   public void setUsers(List<UserEntity> users) {
+      this.users = users;
+   }
 
 }

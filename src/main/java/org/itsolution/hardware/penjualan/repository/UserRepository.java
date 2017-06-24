@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-	UserEntity findOneByUsername(String username);
+   UserEntity findOneByUsername(String username);
 
-	List<UserEntity> findAllByRole(RoleEntity roleMember);
+   List<UserEntity> findAllByRole(RoleEntity roleMember);
 
 }

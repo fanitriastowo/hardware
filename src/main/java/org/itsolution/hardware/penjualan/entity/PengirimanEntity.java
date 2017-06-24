@@ -17,81 +17,81 @@ import org.itsolution.hardware.penjualan.entity.base.BasisEntity;
 @Table(name = "transaksi_pengiriman")
 public class PengirimanEntity extends BasisEntity implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private UserEntity userEntity;
+   @ManyToOne
+   @JoinColumn(name = "user_id")
+   private UserEntity userEntity;
 
-	private String jneId;
+   private String jneId;
 
-	private String alamatPengiriman;
+   private String alamatPengiriman;
 
-	@Temporal(TemporalType.DATE)
-	private Date tanggalPengiriman;
+   @Temporal(TemporalType.DATE)
+   private Date tanggalPengiriman;
 
-	private String statusPengiriman;
+   private String statusPengiriman;
 
-	@OneToOne
-	@JoinColumn(name = "pemesanan_id")
-	private PemesananEntity pemesananEntity;
+   @OneToOne
+   @JoinColumn(name = "pemesanan_id")
+   private PemesananEntity pemesananEntity;
 
-	private String kabupaten;
+   private String kabupaten;
 
-	public UserEntity getUserEntity() {
-		return userEntity;
-	}
+   public UserEntity getUserEntity() {
+      return userEntity;
+   }
 
-	public void setUserEntity(UserEntity userEntity) {
-		this.userEntity = userEntity;
-	}
+   public void setUserEntity(UserEntity userEntity) {
+      this.userEntity = userEntity;
+   }
 
-	public String getJneId() {
-		return jneId;
-	}
+   public String getJneId() {
+      return jneId;
+   }
 
-	public void setJneId(String jneId) {
-		this.jneId = jneId;
-	}
+   public void setJneId(String jneId) {
+      this.jneId = jneId;
+   }
 
-	public String getAlamatPengiriman() {
-		return alamatPengiriman;
-	}
+   public String getAlamatPengiriman() {
+      return alamatPengiriman;
+   }
 
-	public void setAlamatPengiriman(String alamatPengiriman) {
-		this.alamatPengiriman = alamatPengiriman;
-	}
+   public void setAlamatPengiriman(String alamatPengiriman) {
+      this.alamatPengiriman = alamatPengiriman;
+   }
 
-	public Date getTanggalPengiriman() {
-		return tanggalPengiriman;
-	}
+   public Date getTanggalPengiriman() {
+      return tanggalPengiriman;
+   }
 
-	public void setTanggalPengiriman(Date tanggalPengiriman) {
-		this.tanggalPengiriman = tanggalPengiriman;
-	}
+   public void setTanggalPengiriman(Date tanggalPengiriman) {
+      this.tanggalPengiriman = tanggalPengiriman;
+   }
 
-	public String getStatusPengiriman() {
-		return statusPengiriman;
-	}
+   public String getStatusPengiriman() {
+      return statusPengiriman;
+   }
 
-	public void setStatusPengiriman(String statusPengiriman) {
-		this.statusPengiriman = statusPengiriman;
-	}
+   public void setStatusPengiriman(String statusPengiriman) {
+      this.statusPengiriman = statusPengiriman;
+   }
 
-	public PemesananEntity getPemesananEntity() {
-		return pemesananEntity;
-	}
+   public PemesananEntity getPemesananEntity() {
+      return pemesananEntity;
+   }
 
-	public void setPemesananEntity(PemesananEntity pemesananEntity) {
-		this.pemesananEntity = pemesananEntity;
-	}
+   public void setPemesananEntity(PemesananEntity pemesananEntity) {
+      this.pemesananEntity = pemesananEntity;
+   }
 
-	public String getKabupaten() {
-		return kabupaten;
-	}
+   public String getKabupaten() {
+      return kabupaten;
+   }
 
-	public void setKabupaten(String kabupaten) {
-		this.kabupaten = kabupaten;
-	}
+   public void setKabupaten(String kabupaten) {
+      this.kabupaten = kabupaten;
+   }
 
 }

@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean
-		id="pemesanan"
-		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-		p:url="classpath:/report/pemesanan.jrxml"
-		p:reportDataKey="dataSource" />
+   <bean
+           id="pemesanan"
+           class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+           p:url="classpath:/report/pemesanan.jrxml"
+           p:reportDataKey="dataSource"/>
 
-	<bean
-		id="pengiriman"
-		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-		p:url="classpath:/report/pengiriman.jrxml"
-		p:reportDataKey="dataSource" />
+   <bean
+           id="pengiriman"
+           class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+           p:url="classpath:/report/pengiriman.jrxml"
+           p:reportDataKey="dataSource"/>
 
-	<bean
-		id="cetakAnalisisPemesanan"
-		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-		p:url="classpath:/report/cetak_analisa_pemesanan.jrxml"
-		p:reportDataKey="dataSource" />
+   <bean
+           id="cetakAnalisisPemesanan"
+           class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+           p:url="classpath:/report/cetak_analisa_pemesanan.jrxml"
+           p:reportDataKey="dataSource"/>
 
-	<bean
-		id="cetakAnalisisPengiriman"
-		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-		p:url="classpath:/report/cetak_analisa_pengiriman.jrxml"
-		p:reportDataKey="dataSource" />
+   <bean
+           id="cetakAnalisisPengiriman"
+           class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
+           p:url="classpath:/report/cetak_analisa_pengiriman.jrxml"
+           p:reportDataKey="dataSource"/>
 
 </beans>

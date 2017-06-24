@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/administrator/dashboard")
 public class DashboardController {
 
-	@RequestMapping
-	public ModelAndView index() {
-		return new ModelAndView("administrator/administrator-dashboard");
-	}
+   @RequestMapping
+   public ModelAndView index() {
+      return new ModelAndView("administrator/administrator-dashboard");
+   }
 }

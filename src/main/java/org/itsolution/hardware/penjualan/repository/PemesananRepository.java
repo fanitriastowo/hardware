@@ -11,13 +11,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PemesananRepository extends JpaRepository<PemesananEntity, Integer> {
 
-	List<PemesananEntity> findAllByOrderByTransferDesc();
+   List<PemesananEntity> findAllByOrderByTransferDesc();
 
-	PemesananEntity findOneByPemesananId(Integer pemesananId);
+   PemesananEntity findOneByPemesananId(Integer pemesananId);
 
-	@Query("SELECT COUNT(P.kabupaten) AS jumlah, P.kabupaten AS kabupaten FROM PemesananEntity P GROUP BY P.kabupaten")
-	List<Object[]> findAllForPieChart();
+   @Query("SELECT COUNT(P.kabupaten) AS jumlah, P.kabupaten AS kabupaten FROM PemesananEntity P GROUP BY P.kabupaten")
+   List<Object[]> findAllForPieChart();
 
-	List<PemesananEntity> findAllByUserEntity(UserEntity userEntity);
+   List<PemesananEntity> findAllByUserEntity(UserEntity userEntity);
 
 }

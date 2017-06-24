@@ -20,128 +20,128 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(value = {"kategoriEntity", "brandEntity", "pemesananEntities"})
 public class ProdukEntity extends BasisEntity implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	private String nama;
+   private String nama;
 
-	private Long harga;
+   private Long harga;
 
-	@Lob
-	@Column(length = Integer.MAX_VALUE, name = "detail_produk")
-	private String detailProduk;
+   @Lob
+   @Column(length = Integer.MAX_VALUE, name = "detail_produk")
+   private String detailProduk;
 
-	@Column(name = "jumlah_terbeli", columnDefinition="int default 0")
-	private Integer jumlahTerbeli = 0;
+   @Column(name = "jumlah_terbeli", columnDefinition = "int default 0")
+   private Integer jumlahTerbeli = 0;
 
-	@Lob
-	@Column(length = Integer.MAX_VALUE)
-	private String deskripsi;
+   @Lob
+   @Column(length = Integer.MAX_VALUE)
+   private String deskripsi;
 
-	private String image;
+   private String image;
 
-	private Integer stok;
+   private Integer stok;
 
-	@Lob
-	@Column(length = Integer.MAX_VALUE)
-	private String spesifikasi;
+   @Lob
+   @Column(length = Integer.MAX_VALUE)
+   private String spesifikasi;
 
-	@ManyToOne
-	@JoinColumn(name = "kategori_id")
-	private KategoriEntity kategoriEntity;
+   @ManyToOne
+   @JoinColumn(name = "kategori_id")
+   private KategoriEntity kategoriEntity;
 
-	@ManyToOne
-	@JoinColumn(name = "brand_id")
-	private BrandEntity brandEntity;
+   @ManyToOne
+   @JoinColumn(name = "brand_id")
+   private BrandEntity brandEntity;
 
-	@OneToMany(mappedBy = "produkEntity")
-	private List<PemesananEntity> pemesananEntities;
+   @OneToMany(mappedBy = "produkEntity")
+   private List<PemesananEntity> pemesananEntities;
 
-	public String getNama() {
-		return nama;
-	}
+   public String getNama() {
+      return nama;
+   }
 
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
+   public void setNama(String nama) {
+      this.nama = nama;
+   }
 
-	public Long getHarga() {
-		return harga;
-	}
+   public Long getHarga() {
+      return harga;
+   }
 
-	public void setHarga(Long harga) {
-		this.harga = harga;
-	}
+   public void setHarga(Long harga) {
+      this.harga = harga;
+   }
 
-	public String getDetailProduk() {
-		return detailProduk;
-	}
+   public String getDetailProduk() {
+      return detailProduk;
+   }
 
-	public void setDetailProduk(String detailProduk) {
-		this.detailProduk = detailProduk;
-	}
+   public void setDetailProduk(String detailProduk) {
+      this.detailProduk = detailProduk;
+   }
 
-	public Integer getJumlahTerbeli() {
-		return jumlahTerbeli;
-	}
+   public Integer getJumlahTerbeli() {
+      return jumlahTerbeli;
+   }
 
-	public void setJumlahTerbeli(Integer jumlahTerbeli) {
-		this.jumlahTerbeli = jumlahTerbeli;
-	}
+   public void setJumlahTerbeli(Integer jumlahTerbeli) {
+      this.jumlahTerbeli = jumlahTerbeli;
+   }
 
-	public String getDeskripsi() {
-		return deskripsi;
-	}
+   public String getDeskripsi() {
+      return deskripsi;
+   }
 
-	public void setDeskripsi(String deskripsi) {
-		this.deskripsi = deskripsi;
-	}
+   public void setDeskripsi(String deskripsi) {
+      this.deskripsi = deskripsi;
+   }
 
-	public String getImage() {
-		return image;
-	}
+   public String getImage() {
+      return image;
+   }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+   public void setImage(String image) {
+      this.image = image;
+   }
 
-	public Integer getStok() {
-		return stok;
-	}
+   public Integer getStok() {
+      return stok;
+   }
 
-	public void setStok(Integer stok) {
-		this.stok = stok;
-	}
+   public void setStok(Integer stok) {
+      this.stok = stok;
+   }
 
-	public String getSpesifikasi() {
-		return spesifikasi;
-	}
+   public String getSpesifikasi() {
+      return spesifikasi;
+   }
 
-	public void setSpesifikasi(String spesifikasi) {
-		this.spesifikasi = spesifikasi;
-	}
+   public void setSpesifikasi(String spesifikasi) {
+      this.spesifikasi = spesifikasi;
+   }
 
-	public KategoriEntity getKategoriEntity() {
-		return kategoriEntity;
-	}
+   public KategoriEntity getKategoriEntity() {
+      return kategoriEntity;
+   }
 
-	public void setKategoriEntity(KategoriEntity kategoriEntity) {
-		this.kategoriEntity = kategoriEntity;
-	}
+   public void setKategoriEntity(KategoriEntity kategoriEntity) {
+      this.kategoriEntity = kategoriEntity;
+   }
 
-	public BrandEntity getBrandEntity() {
-		return brandEntity;
-	}
+   public BrandEntity getBrandEntity() {
+      return brandEntity;
+   }
 
-	public void setBrandEntity(BrandEntity brandEntity) {
-		this.brandEntity = brandEntity;
-	}
+   public void setBrandEntity(BrandEntity brandEntity) {
+      this.brandEntity = brandEntity;
+   }
 
-	public List<PemesananEntity> getPemesananEntities() {
-		return pemesananEntities;
-	}
+   public List<PemesananEntity> getPemesananEntities() {
+      return pemesananEntities;
+   }
 
-	public void setPemesananEntities(List<PemesananEntity> pemesananEntities) {
-		this.pemesananEntities = pemesananEntities;
-	}
+   public void setPemesananEntities(List<PemesananEntity> pemesananEntities) {
+      this.pemesananEntities = pemesananEntities;
+   }
 
 }

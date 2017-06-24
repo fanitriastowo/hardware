@@ -16,53 +16,53 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/administrator/member")
 public class MemberController {
 
-    @Autowired
-    private UserService userService;
+   @Autowired
+   private UserService userService;
 
-    @RequestMapping
-    public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("administrator/member/administrator-daftar-member");
-        modelAndView.addObject("memberList", userService.findAllMember());
-        return modelAndView;
-    }
+   @RequestMapping
+   public ModelAndView index() {
+      ModelAndView modelAndView = new ModelAndView("administrator/member/administrator-daftar-member");
+      modelAndView.addObject("memberList", userService.findAllMember());
+      return modelAndView;
+   }
 
-    @RequestMapping("/tambah")
-    public ModelAndView tambah() {
-        ModelAndView mav = new ModelAndView("administrator/member/administrator-tambah-member");
-        mav.addObject("member", new UserDTO());
-        return mav;
-    }
+   @RequestMapping("/tambah")
+   public ModelAndView tambah() {
+      ModelAndView mav = new ModelAndView("administrator/member/administrator-tambah-member");
+      mav.addObject("member", new UserDTO());
+      return mav;
+   }
 
-    @RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
-    public ModelAndView tambahPost(@ModelAttribute("member") UserDTO userDTO) {
-        userService.save(userDTO);
-        //eventPublisher
-        //        .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
-        return new ModelAndView("redirect:/administrator/member");
-    }
+   @RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
+   public ModelAndView tambahPost(@ModelAttribute("member") UserDTO userDTO) {
+      userService.save(userDTO);
+      //eventPublisher
+      //        .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
+      return new ModelAndView("redirect:/administrator/member");
+   }
 
-    @RequestMapping("/prepare_update/{id}")
-    public ModelAndView prepareUpdate(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("administrator/member/administrator-update-member");
-        modelAndView.addObject("member", userService.findOne(id));
-        return modelAndView;
-    }
+   @RequestMapping("/prepare_update/{id}")
+   public ModelAndView prepareUpdate(@PathVariable Integer id) {
+      ModelAndView modelAndView = new ModelAndView("administrator/member/administrator-update-member");
+      modelAndView.addObject("member", userService.findOne(id));
+      return modelAndView;
+   }
 
-    @RequestMapping("/update")
-    public ModelAndView update(@ModelAttribute("member") UserDTO userDTO) {
-        userService.update(userDTO);
-        return new ModelAndView("redirect:/administrator/member");
-    }
+   @RequestMapping("/update")
+   public ModelAndView update(@ModelAttribute("member") UserDTO userDTO) {
+      userService.update(userDTO);
+      return new ModelAndView("redirect:/administrator/member");
+   }
 
-    @RequestMapping("/delete/{id}")
-    public ModelAndView delete(@PathVariable Integer id) {
-        userService.delete(id);
-        return new ModelAndView("redirect:/administrator/member");
-    }
+   @RequestMapping("/delete/{id}")
+   public ModelAndView delete(@PathVariable Integer id) {
+      userService.delete(id);
+      return new ModelAndView("redirect:/administrator/member");
+   }
 
-    // NON API
-    private String getAppUrl(HttpServletRequest request) {
-        return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()
-                + "/registration";
-    }
+   // NON API
+   private String getAppUrl(HttpServletRequest request) {
+      return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()
+              + "/registration";
+   }
 }

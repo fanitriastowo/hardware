@@ -21,47 +21,47 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/registration")
 public class RegistrationController {
 
-    @Autowired
-    private ApplicationEventPublisher eventPublisher;
+   @Autowired
+   private ApplicationEventPublisher eventPublisher;
 
-    @Autowired
-    private UserService userService;
+   @Autowired
+   private UserService userService;
 
-    @RequestMapping
-    public ModelAndView registrationPage() {
-        ModelAndView modelAndView = new ModelAndView("front/registration");
-        modelAndView.addObject("user", new UserDTO());
-        return modelAndView;
-    }
+   @RequestMapping
+   public ModelAndView registrationPage() {
+      ModelAndView modelAndView = new ModelAndView("front/registration");
+      modelAndView.addObject("user", new UserDTO());
+      return modelAndView;
+   }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView registerNewMember(@ModelAttribute("user") UserDTO userDTO, final HttpServletRequest request,
-            RedirectAttributes redirectAttributes) {
-        
-        final UserEntity userEntity = userService.registerNewUser(userDTO);
-        eventPublisher
-                .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
-        redirectAttributes.addFlashAttribute("confirm", false);
-        return new ModelAndView("redirect:/login");
-    }
+   @RequestMapping(method = RequestMethod.POST)
+   public ModelAndView registerNewMember(@ModelAttribute("user") UserDTO userDTO, final HttpServletRequest request,
+                                         RedirectAttributes redirectAttributes) {
 
-    @RequestMapping("/registration_confirm")
-    public ModelAndView confirmRegistrationMember(@RequestParam("token") final String token) {
-        final String result = userService.validateVerificationToken(token);
-        System.out.println(result);
-        return new ModelAndView("redirect:/login");
-    }
+      final UserEntity userEntity = userService.registerNewUser(userDTO);
+      eventPublisher
+              .publishEvent(new OnCompleteRegistrationEvent(getAppUrl(request), request.getLocale(), userEntity));
+      redirectAttributes.addFlashAttribute("confirm", false);
+      return new ModelAndView("redirect:/login");
+   }
 
-    @RequestMapping("/available")
-    @ResponseBody
-    public String checkUsernameAvailable(@RequestParam("username") String username) {
-        Boolean available = userService.findOneByUsername(username) == null;
-        return available.toString();
-    }
+   @RequestMapping("/registration_confirm")
+   public ModelAndView confirmRegistrationMember(@RequestParam("token") final String token) {
+      final String result = userService.validateVerificationToken(token);
+      System.out.println(result);
+      return new ModelAndView("redirect:/login");
+   }
 
-    // NON API
-    private String getAppUrl(HttpServletRequest request) {
-        return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()
-                + "/registration";
-    }
+   @RequestMapping("/available")
+   @ResponseBody
+   public String checkUsernameAvailable(@RequestParam("username") String username) {
+      Boolean available = userService.findOneByUsername(username) == null;
+      return available.toString();
+   }
+
+   // NON API
+   private String getAppUrl(HttpServletRequest request) {
+      return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()
+              + "/registration";
+   }
 }

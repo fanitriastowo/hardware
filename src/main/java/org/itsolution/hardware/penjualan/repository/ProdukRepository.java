@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProdukRepository extends JpaRepository<ProdukEntity, Integer> {
 
-	ProdukEntity findOneByNama(String nama);
+   ProdukEntity findOneByNama(String nama);
 
-	@Query("SELECT p FROM ProdukEntity p WHERE p.nama LIKE %:term%")
-	List<ProdukEntity> findAllByNamaLike(@Param("term") String nama);
+   @Query("SELECT p FROM ProdukEntity p WHERE p.nama LIKE %:term%")
+   List<ProdukEntity> findAllByNamaLike(@Param("term") String nama);
 
 }

@@ -1,24 +1,24 @@
 @CHARSET "UTF-8";
 
 body {
-	padding-top: 50px;
-	color: #34495e;
-	background: #f5f5f5;
-	font-weight: 300;
+   padding-top: 50px;
+   color: #34495e;
+   background: #f5f5f5;
+   font-weight: 300;
 }
 
 .agree-statement {
-	font-size: 12px;
+   font-size: 12px;
 }
 
 .line {
-	width: 1px;
-	height: 450px;
-	display: block;
-	border-left: 2px solid #ddd;
-	margin: auto;
+   width: 1px;
+   height: 450px;
+   display: block;
+   border-left: 2px solid #ddd;
+   margin: auto;
 }
 
 .registration-panel {
-	margin-top: 50px;
+   margin-top: 50px;
 }

@@ -20,73 +20,73 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/administrator/pemesanan")
 public class PemesananController {
 
-    @Autowired
-    private PemesananService pemesananService;
+   @Autowired
+   private PemesananService pemesananService;
 
-    @RequestMapping
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("administrator/administrator-pemesanan");
-        mav.addObject("pemesanans", pemesananService.findAllOrderByTransfer());
-        return mav;
-    }
-    
-    @RequestMapping("/ubah_status_transfer/{id}")
-    public ModelAndView ubahStatusTransfer(@PathVariable Integer id) {
-        
-        PemesananEntity pemesananEntity = pemesananService.findOne(id);
-        pemesananService.ubahStatusTransfer(pemesananEntity);
-        return new ModelAndView("redirect:/administrator/pemesanan");
-    }
+   @RequestMapping
+   public ModelAndView index() {
+      ModelAndView mav = new ModelAndView("administrator/administrator-pemesanan");
+      mav.addObject("pemesanans", pemesananService.findAllOrderByTransfer());
+      return mav;
+   }
 
-    @RequestMapping("/cetak/{id}")
-    public ModelAndView cetakPemesanan(@PathVariable("id") Integer id, ModelMap modelMap, HttpServletRequest request) {
+   @RequestMapping("/ubah_status_transfer/{id}")
+   public ModelAndView ubahStatusTransfer(@PathVariable Integer id) {
 
-        PemesananEntity pemesananEntity = pemesananService.findOne(id);
-        List<PemesananEntity> list = new ArrayList<>();
-        list.add(pemesananEntity);
+      PemesananEntity pemesananEntity = pemesananService.findOne(id);
+      pemesananService.ubahStatusTransfer(pemesananEntity);
+      return new ModelAndView("redirect:/administrator/pemesanan");
+   }
 
-        String uri = request.getScheme() + "://" +  // "http" + "://
-                request.getServerName() + ":" +     // "localhost" + ":"
-                request.getServerPort() +           // "80"
-                request.getContextPath();           // hardware
+   @RequestMapping("/cetak/{id}")
+   public ModelAndView cetakPemesanan(@PathVariable("id") Integer id, ModelMap modelMap, HttpServletRequest request) {
 
-        modelMap.addAttribute("dataSource", list);
-        modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
-        modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
+      PemesananEntity pemesananEntity = pemesananService.findOne(id);
+      List<PemesananEntity> list = new ArrayList<>();
+      list.add(pemesananEntity);
 
-        return new ModelAndView("pemesanan", modelMap);
-    }
+      String uri = request.getScheme() + "://" +  // "http" + "://
+              request.getServerName() + ":" +     // "localhost" + ":"
+              request.getServerPort() +           // "80"
+              request.getContextPath();           // hardware
 
-    @RequestMapping("/cetak_analisa_pasar")
-    public ModelAndView cetakAnalisaPasar(ModelMap modelMap, HttpServletRequest request) {
+      modelMap.addAttribute("dataSource", list);
+      modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
+      modelMap.addAttribute("produkImage", uri + "/assets/images/produk/");
 
-        List<PemesananDTO> listDTO = new ArrayList<>();
-        List<Object[]> list = pemesananService.findAllForPieChart();
+      return new ModelAndView("pemesanan", modelMap);
+   }
 
-        Long sum = 0L;
-        for (Object[] object : list) {
-            sum += (Long) object[0];
-        }
-        
-        for (Object[] object : list) {
-            
-            PemesananDTO dto = new PemesananDTO();
-            Long jumlah = (Long) object[0];
-            dto.setJumlah(jumlah);
-            dto.setKabupaten((String) object[1]);
-            
-            Double percentage = (jumlah.doubleValue() / sum.doubleValue()) * 100;
-            dto.setNama(percentage.toString() + " %");
-            listDTO.add(dto);
-        }
+   @RequestMapping("/cetak_analisa_pasar")
+   public ModelAndView cetakAnalisaPasar(ModelMap modelMap, HttpServletRequest request) {
 
-        String uri = request.getScheme() + "://" +  // "http" + "://
-                request.getServerName() + ":" +     // "localhost" + ":"
-                request.getServerPort() +           // "80"
-                request.getContextPath();           // hardware
+      List<PemesananDTO> listDTO = new ArrayList<>();
+      List<Object[]> list = pemesananService.findAllForPieChart();
 
-        modelMap.addAttribute("dataSource", listDTO);
-        modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
-        return new ModelAndView("cetakAnalisisPemesanan", modelMap);
-    }
+      Long sum = 0L;
+      for (Object[] object : list) {
+         sum += (Long) object[0];
+      }
+
+      for (Object[] object : list) {
+
+         PemesananDTO dto = new PemesananDTO();
+         Long jumlah = (Long) object[0];
+         dto.setJumlah(jumlah);
+         dto.setKabupaten((String) object[1]);
+
+         Double percentage = (jumlah.doubleValue() / sum.doubleValue()) * 100;
+         dto.setNama(percentage.toString() + " %");
+         listDTO.add(dto);
+      }
+
+      String uri = request.getScheme() + "://" +  // "http" + "://
+              request.getServerName() + ":" +     // "localhost" + ":"
+              request.getServerPort() +           // "80"
+              request.getContextPath();           // hardware
+
+      modelMap.addAttribute("dataSource", listDTO);
+      modelMap.addAttribute("logo", uri + "/assets/administrator/img/logo.png");
+      return new ModelAndView("cetakAnalisisPemesanan", modelMap);
+   }
 }

@@ -17,49 +17,49 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/administrator/brand")
 public class BrandController {
 
-	@Autowired
-	private BrandService brandService;
+   @Autowired
+   private BrandService brandService;
 
-	@RequestMapping
-	public ModelAndView index() {
-		List<BrandEntity> brandList = brandService.findAll();
-		ModelAndView mav = new ModelAndView("administrator/brand/administrator-daftar-brand");
-		mav.addObject("brandList", brandList);
-		return mav;
-	}
+   @RequestMapping
+   public ModelAndView index() {
+      List<BrandEntity> brandList = brandService.findAll();
+      ModelAndView mav = new ModelAndView("administrator/brand/administrator-daftar-brand");
+      mav.addObject("brandList", brandList);
+      return mav;
+   }
 
-	@RequestMapping("/tambah")
-	public ModelAndView tambah(@ModelAttribute("brand") BrandEntity brandEntity) {
-		return new ModelAndView("administrator/brand/administrator-tambah-brand");
-	}
+   @RequestMapping("/tambah")
+   public ModelAndView tambah(@ModelAttribute("brand") BrandEntity brandEntity) {
+      return new ModelAndView("administrator/brand/administrator-tambah-brand");
+   }
 
-	@RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
-	public ModelAndView tambahPost(@ModelAttribute("brand") BrandEntity brandEntity) {
-		brandService.save(brandEntity);
-		return new ModelAndView("redirect:/administrator/brand");
-	}
+   @RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
+   public ModelAndView tambahPost(@ModelAttribute("brand") BrandEntity brandEntity) {
+      brandService.save(brandEntity);
+      return new ModelAndView("redirect:/administrator/brand");
+   }
 
-	@RequestMapping("/prepare_update/{id}")
-	public ModelAndView prepareUpdate(@PathVariable Integer id) {
-		ModelAndView modelAndView = new ModelAndView("administrator/brand/administrator-update-brand");
-		modelAndView.addObject("brand", brandService.findOne(id));
-		return modelAndView;
-	}
+   @RequestMapping("/prepare_update/{id}")
+   public ModelAndView prepareUpdate(@PathVariable Integer id) {
+      ModelAndView modelAndView = new ModelAndView("administrator/brand/administrator-update-brand");
+      modelAndView.addObject("brand", brandService.findOne(id));
+      return modelAndView;
+   }
 
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public ModelAndView updatePost(@ModelAttribute("brand") BrandEntity brandEntity, BindingResult result) {
+   @RequestMapping(value = "/update", method = RequestMethod.POST)
+   public ModelAndView updatePost(@ModelAttribute("brand") BrandEntity brandEntity, BindingResult result) {
 
-		if (result.hasErrors()) {
-			return new ModelAndView("redirect:/administrator/brand");
-		}
+      if (result.hasErrors()) {
+         return new ModelAndView("redirect:/administrator/brand");
+      }
 
-		brandService.update(brandEntity);
-		return new ModelAndView("redirect:/administrator/brand");
-	}
-	
-	@RequestMapping("/delete/{id}")
-	public ModelAndView deleteBrand(@PathVariable Integer id) {
-		brandService.delete(id);
-		return new ModelAndView("redirect:/administrator/brand");
-	}
+      brandService.update(brandEntity);
+      return new ModelAndView("redirect:/administrator/brand");
+   }
+
+   @RequestMapping("/delete/{id}")
+   public ModelAndView deleteBrand(@PathVariable Integer id) {
+      brandService.delete(id);
+      return new ModelAndView("redirect:/administrator/brand");
+   }
 }

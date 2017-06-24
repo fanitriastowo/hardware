@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BrandRepository extends JpaRepository<BrandEntity, Integer> {
 
-	BrandEntity findOneByNama(String brand);
+   BrandEntity findOneByNama(String brand);
 
 }

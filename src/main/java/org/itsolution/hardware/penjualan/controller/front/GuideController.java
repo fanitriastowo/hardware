@@ -8,9 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/guide")
 public class GuideController {
 
-	@RequestMapping
-	public ModelAndView guide() {
-		return new ModelAndView("front/guide");
-	}
+   @RequestMapping
+   public ModelAndView guide() {
+      return new ModelAndView("front/guide");
+   }
 
 }

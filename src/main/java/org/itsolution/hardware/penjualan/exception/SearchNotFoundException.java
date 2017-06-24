@@ -19,20 +19,20 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * <p> Custom Class Exception untuk pencarian produk yang tidak ditemukan.
  * Class extends ke {@link Exception}
  * </p>
- * 
+ *
  * @author Fani Triastowo
  */
 @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Produk Tidak Ditemukan") // 404
 public class SearchNotFoundException extends Exception {
 
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	public SearchNotFoundException() {
-		super();
-	}
+   public SearchNotFoundException() {
+      super();
+   }
 
-	public SearchNotFoundException(String namaProduk) {
-		super(namaProduk);
-	}
+   public SearchNotFoundException(String namaProduk) {
+      super(namaProduk);
+   }
 
 }

@@ -16,47 +16,47 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/administrator/kategori")
 public class KategoriController {
 
-	@Autowired
-	private KategoriService kategoriService;
+   @Autowired
+   private KategoriService kategoriService;
 
-	@RequestMapping
-	public ModelAndView index() {
-		List<KategoriEntity> kategoriList = kategoriService.findAll();
-		ModelAndView mav = new ModelAndView("administrator/kategori/administrator-daftar-kategori");
-		mav.addObject("kategoriList", kategoriList);
-		return mav;
-	}
+   @RequestMapping
+   public ModelAndView index() {
+      List<KategoriEntity> kategoriList = kategoriService.findAll();
+      ModelAndView mav = new ModelAndView("administrator/kategori/administrator-daftar-kategori");
+      mav.addObject("kategoriList", kategoriList);
+      return mav;
+   }
 
-	@RequestMapping("/tambah")
-	public ModelAndView tambah() {
-		ModelAndView mav = new ModelAndView("administrator/kategori/administrator-tambah-kategori");
-		mav.addObject("kategori", new KategoriEntity());
-		return mav;
-	}
+   @RequestMapping("/tambah")
+   public ModelAndView tambah() {
+      ModelAndView mav = new ModelAndView("administrator/kategori/administrator-tambah-kategori");
+      mav.addObject("kategori", new KategoriEntity());
+      return mav;
+   }
 
-	@RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
-	public ModelAndView tambahPost(@ModelAttribute("kategori") KategoriEntity kategoriEntity) {
-		kategoriService.save(kategoriEntity);
-		return new ModelAndView("redirect:/administrator/kategori");
-	}
+   @RequestMapping(value = "/tambah_post", method = RequestMethod.POST)
+   public ModelAndView tambahPost(@ModelAttribute("kategori") KategoriEntity kategoriEntity) {
+      kategoriService.save(kategoriEntity);
+      return new ModelAndView("redirect:/administrator/kategori");
+   }
 
-	@RequestMapping("/prepare_update/{id}")
-	public ModelAndView prepareUpdate(@PathVariable Integer id) {
-		ModelAndView mav = new ModelAndView("administrator/kategori/administrator-update-kategori");
-		KategoriEntity kategoriEntity = kategoriService.findOne(id);
-		mav.addObject("kategori", kategoriEntity);
-		return mav;
-	}
+   @RequestMapping("/prepare_update/{id}")
+   public ModelAndView prepareUpdate(@PathVariable Integer id) {
+      ModelAndView mav = new ModelAndView("administrator/kategori/administrator-update-kategori");
+      KategoriEntity kategoriEntity = kategoriService.findOne(id);
+      mav.addObject("kategori", kategoriEntity);
+      return mav;
+   }
 
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public ModelAndView submitUpdate(@ModelAttribute("kategori") KategoriEntity kategoriEntity) {
-		kategoriService.update(kategoriEntity);
-		return new ModelAndView("redirect:/administrator/kategori");
-	}
-	
-	@RequestMapping("/delete/{id}")
-	public ModelAndView delete(@PathVariable Integer id) {
-		kategoriService.delete(id);
-		return new ModelAndView("redirect:/administrator/kategori");
-	}
+   @RequestMapping(value = "/update", method = RequestMethod.POST)
+   public ModelAndView submitUpdate(@ModelAttribute("kategori") KategoriEntity kategoriEntity) {
+      kategoriService.update(kategoriEntity);
+      return new ModelAndView("redirect:/administrator/kategori");
+   }
+
+   @RequestMapping("/delete/{id}")
+   public ModelAndView delete(@PathVariable Integer id) {
+      kategoriService.delete(id);
+      return new ModelAndView("redirect:/administrator/kategori");
+   }
 }
