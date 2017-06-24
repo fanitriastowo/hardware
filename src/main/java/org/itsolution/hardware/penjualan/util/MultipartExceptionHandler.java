@@ -32,7 +32,6 @@ public class MultipartExceptionHandler extends OncePerRequestFilter {
    private void handle(HttpServletRequest request, HttpServletResponse response,
                        MaxUploadSizeExceededException e) throws ServletException, IOException {
       // imagesizeexceed
-      System.out.println(e.getMessage());
       new ModelAndView("redirect:/administrator/produk");
    }
 
