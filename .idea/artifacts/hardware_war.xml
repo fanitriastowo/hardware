@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="hardware:war">
-    <output-path>D:/maven-targets/hardware</output-path>
+    <output-path>H:/maven-targets/hardware</output-path>
     <root id="archive" name="hardware-1.0.war">
       <element id="artifact" artifact-name="hardware:war exploded" />
     </root>

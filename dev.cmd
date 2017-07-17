@@ -1,0 +1,1 @@
+call mvn jetty:run -P dev -Dspring.profiles.active=dev --offline -DskipTest

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="hardware:war exploded">
-    <output-path>D:/maven-targets/hardware/hardware-1.0</output-path>
+    <output-path>H:/maven-targets/hardware/hardware-1.0</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -89,7 +89,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="D:/maven-targets/hardware/hardware-1.0/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="H:/maven-targets/hardware/hardware-1.0/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="hardware/web/Web" />
     </root>

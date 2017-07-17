@@ -309,9 +309,9 @@
             </dependency>
          </dependencies>
          <properties>
-            <build.dir>D:/maven-targets/${project.name}</build.dir>
-            <build.outputDir>D:/maven-targets/${project.name}/classes</build.outputDir>
-            <build.testOutputDir>D:/maven-targets/${project.name}/test-classes</build.testOutputDir>
+            <build.dir>H:/maven-targets/${project.name}</build.dir>
+            <build.outputDir>H:/maven-targets/${project.name}/classes</build.outputDir>
+            <build.testOutputDir>H:/maven-targets/${project.name}/test-classes</build.testOutputDir>
          </properties>
       </profile>
       <profile>

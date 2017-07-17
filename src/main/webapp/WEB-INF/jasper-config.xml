@@ -10,25 +10,25 @@
    <bean
            id="pemesanan"
            class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-           p:url="classpath:/report/pemesanan.jrxml"
+           p:url="classpath:/report/pemesanan.jasper"
            p:reportDataKey="dataSource"/>
 
    <bean
            id="pengiriman"
            class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-           p:url="classpath:/report/pengiriman.jrxml"
+           p:url="classpath:/report/pengiriman.jasper"
            p:reportDataKey="dataSource"/>
 
    <bean
            id="cetakAnalisisPemesanan"
            class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-           p:url="classpath:/report/cetak_analisa_pemesanan.jrxml"
+           p:url="classpath:/report/cetak_analisa_pemesanan.jasper"
            p:reportDataKey="dataSource"/>
 
    <bean
            id="cetakAnalisisPengiriman"
            class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView"
-           p:url="classpath:/report/cetak_analisa_pengiriman.jrxml"
+           p:url="classpath:/report/cetak_analisa_pengiriman.jasper"
            p:reportDataKey="dataSource"/>
 
 </beans>

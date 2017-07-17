@@ -42,8 +42,8 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://D:/maven-targets/hardware/classes" />
-    <output-test url="file://D:/maven-targets/hardware/test-classes" />
+    <output url="file://H:/maven-targets/hardware/classes" />
+    <output-test url="file://H:/maven-targets/hardware/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
